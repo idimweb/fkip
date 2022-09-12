@@ -1,0 +1,19 @@
+upload file excell ke dalam db
+tambah data lainnya = isi manual
+
+buat kondisi jika tgl mulai diisi otomatis tanggal sampai sama dengan mulai
+default tampilan formnya 1 hari
+
+form jam dan tempat pada kegiatan dipindahkan ke kegiatan detil
+
+jenis kegiatan luring / daring
+
+kondisi jika kegiatan daring tidak muncul tempat
+jika kegiatan luring muncul form dengan isian tempat (form radio button)
+tamu/peserta pada kegiatan detail
+
+buku tamu
+dari instansi diganti asal instansi
+peserta diganti identitas tamu (3 form nama, instansi, no HP dan jabatan)
+form tamu menggunakan tambah data
+Tulisan Aplikasi warna hitam
