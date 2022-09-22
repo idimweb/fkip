@@ -15,103 +15,541 @@
 
      <br />
      <br />
+     <!-- row -->
+     <!-- <div class="row">
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Jumlah Partisipasi Tamu per Tiga Bulan </h3>
+
+                 <div id=""></div>
+             </div>
+         </div>
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Data Rapat Berdasarkan Status </h3>
+                 <ul class="list-inline text-right">
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open</h5>
+                     </li>
+                     <li>
+                         <h5><i class="fa fa-circle text-warning m-r-5"></i>closed</h5>
+                     </li>
+                 </ul>
+                 <div id="morris-area-chart"></div>
+             </div>
+         </div>
+     </div> -->
 
      <div class="row">
-         <div class="col-md-8 col-sm-12">
-             <div class="row">
-                 <div class="col-sm-12">
-                     <div class="white-box small-box-widget">
-                         <ul class="list-inline row">
-                             <li class="col-xs-3 p-t-10">
-                                 <div class="icon-box bg-primary">
-                                     <i class="icon-bag"></i>
-                                 </div>
-                             </li>
-                             <li class="col-xs-9 p-l-20">
-                                 <h4>Admin MPK Wilayah</h4>
-                                 <h4>Progress<span class="pull-right text-warning font-22 font-normal">60</span></h4>
-                                 <!-- <div class="ct-sales-chart"></div> -->
-                             </li>
-                         </ul>
-                     </div>
-                 </div>
-                 <div class="col-sm-12">
-                     <div class="white-box small-box-widget">
-                         <ul class="list-inline row">
-                             <li class="col-xs-3 p-t-10">
-                                 <div class="icon-box bg-success">
-                                     <i class="icon-user"></i>
-                                 </div>
-                             </li>
-                             <li class="col-xs-9 p-l-20">
-                                 <h4>Daftar Kader Muhammadiyah Indonesia</h4>
-                                 <h4>Progress<span class="pull-right text-warning font-22 font-normal">50</span></h4>
-                                 <!-- <div class="ct-uq-chart chart-pos"></div> -->
-                             </li>
-                         </ul>
-                     </div>
-                 </div>
-                 <!-- <div class="col-sm-6">
-                     <div class="white-box small-box-widget">
-                         <div class="p-t-10 p-b-10">
-                             <div class="icon-box bg-warning">
-                                 <i class="icon-refresh"></i>
-                             </div>
-                             <div class="detail-box">
-                                 <h4>Progress<span class="pull-right text-warning font-22 font-normal">42%</span></h4>
-                                 <div class="progress">
-                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
-                                         <span class="sr-only">42% Complete</span>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-sm-6">
-                     <div class="white-box small-box-widget">
-                         <div class="p-t-10 p-b-10">
-                             <div class="icon-box bg-danger">
-                                 <i class="icon-cloud-download"></i>
-                             </div>
-                             <div class="detail-box">
-                                 <h4>Downloading<span class="pull-right text-danger font-22 font-normal">42%</span></h4>
-                                 <div class="progress">
-                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
-                                         <span class="sr-only">42% Complete</span>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div> -->
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Jumlah Partisipasi Tamu per Tiga Bulan </h3>
+
+                 <div id="triwulan"></div>
+             </div>
+         </div>
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Jumlah Peserta dan Kegiatan per Bulan </h3>
+                 <ul class="list-inline text-right">
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta</h5>
+                     </li>
+                     <li>
+                         <h5><i class="fa fa-circle text-warning m-r-5"></i>Jumlah Kegiatan</h5>
+                     </li>
+                 </ul>
+                 <div id="total"></div>
              </div>
          </div>
      </div>
-     <!-- <div class="col-md-4 col-sm-12">
-         <div class="white-box circle-chart-widget">
-             <div class="circle-chart">
-                 <div class="c1">
-                     <input class="knob" data-min="0" data-max="100" data-bgColor="#e4edef" data-fgColor="#0283cc" data-displayInput=false data-width="182" data-height="182" data-thickness=".05" data-linecap=round value="58" readonly>
-                 </div>
-                 <div class="c2">
-                     <input class="knob" data-min="0" data-max="100" data-bgColor="#e4edef" data-fgColor="#e74a25" data-displayInput=false data-width="154" data-height="154" data-thickness=".05" data-linecap=round value="45" readonly>
-                 </div>
-                 <div class="c3">
-                     <input class="knob" data-min="0" data-max="100" data-bgColor="#e4edef" data-fgColor="#00bbd9" data-displayInput=false data-width="125" data-height="125" data-thickness=".05" data-linecap=round value="32" readonly>
-                 </div>
-                 <div class="chart-overlap"><i class="icon-trophy"></i></div>
+
+     <div class="row">
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Bidang AIK, PTKIM dan Kemahasiswaan </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="aik"></div>
              </div>
-             <ul class="list-inline m-b-0 m-t-30 t-a-c">
-                 <li>
-                     <h6 class="font-15"><i class="fa fa-circle m-r-5 text-primary"></i>58%</h6>
-                 </li>
-                 <li>
-                     <h6 class="font-15"><i class="fa fa-circle m-r-5 text-danger"></i>45%</h6>
-                 </li>
-                 <li>
-                     <h6 class="font-15"><i class="fa fa-circle m-r-5 text-info"></i>32%</h6>
-                 </li>
-             </ul>
          </div>
-     </div> -->
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Bidang Umum </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="umum"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="row">
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Bidang Litbang dan Pengembangan Usaha </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="litbang"></div>
+             </div>
+         </div>
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Rapat Harian Majelis Diktilitbang PP Muhammadiyah </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="khusus"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="row">
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Bidang Akademik, Penjaminan Mutu, SDM dan Kerja Sama Luar Negeri </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="akademik"></div>
+             </div>
+         </div>
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Buku Tamu </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="bukutamu"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="row">
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Rapat Pleno Majelis Diktilitbang PP Muhammadiyah </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="ptki"></div>
+             </div>
+         </div>
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Bidang Riset, PPM, dan Publikasi </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="riset"></div>
+             </div>
+         </div>
+     </div>
+
+     <div class="row">
+         <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Keuangan </h3>
+                 <ul class="list-inline text-right">
+                     <!-- <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li> -->
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta per Bulan</h5>
+                     </li>
+                 </ul>
+                 <div id="kerjasama"></div>
+             </div>
+         </div>
+         <!-- <div class="col-md-6 col-sm-12 col-xs-12">
+             <div class="white-box">
+                 <h3 class="box-title">Jumlah Riset, PPM, dan Publikasi </h3>
+                 <ul class="list-inline text-right">
+                     <li>
+                         <h5><i class="fa fa-circle text-info m-r-5"></i>open by agenda</h5>
+                     </li>
+         <li>
+             <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah per Bulan</h5>
+         </li>
+         </ul>
+         <div id="riset"></div> -->
+     </div>
  </div>
+ </div>
+
+
+ <script type="text/javascript">
+     $(function() {
+
+         "use strict";
+
+         // Dashboard 1 Morris-chart
+
+         //  Morris.Area({
+         //      element: 'morris-area-chart',
+         //      data: [
+
+         //          <?php foreach ($agenda_by_status->result_array() as $agen_by) : ?> {
+         //                  period: '<?= $agen_by['date_created'] ?>',
+         //                  open: <?= $agen_by['open'] ?>,
+         //                  closed: <?= $agen_by['closed'] ?>,
+         //              },
+         //          <?php endforeach; ?>
+
+         //      ],
+         //      xkey: 'period',
+         //      ykeys: ['open', 'closed'],
+         //      labels: ['open', 'closed'],
+         //      pointSize: 3,
+         //      fillOpacity: 0,
+         //      pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+         //      behaveLikeLine: true,
+         //      gridLineColor: '#e0e0e0',
+         //      lineWidth: 1,
+         //      hideHover: 'auto',
+         //      lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+         //      resize: true
+
+         //  });
+
+         Morris.Bar({
+             element: 'triwulan',
+             data: [
+                 <?php foreach ($triwulan1->result_array() as $agen_by) : ?> {
+                         period: '<?= $agen_by['tahun'] ?>',
+                         tri1: <?= $agen_by['triwulan1'] ?>,
+                     },
+                 <?php endforeach; ?>
+                 <?php foreach ($triwulan2->result_array() as $agen_by) : ?> {
+                         period: '<?= $agen_by['tahun'] ?>',
+                         tri2: <?= $agen_by['triwulan2'] ?>,
+                     },
+                 <?php endforeach; ?>
+                 <?php foreach ($triwulan3->result_array() as $agen_by) : ?> {
+                         period: '<?= $agen_by['tahun'] ?>',
+                         tri3: <?= $agen_by['triwulan3'] ?>,
+                     },
+                 <?php endforeach; ?>
+                 <?php foreach ($triwulan4->result_array() as $agen_by) : ?> {
+                         period: '<?= $agen_by['tahun'] ?>',
+                         tri4: <?= $agen_by['triwulan4'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'period',
+             ykeys: ['tri1', 'tri2', 'tri3', 'tri4'],
+             labels: ['Januari - Maret', 'April - Juni', 'Juli - September', 'Oktober - Desember'],
+             pointSize: 3,
+             fillOpacity: 0,
+             //  pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+         });
+
+
+
+
+         Morris.Area({
+             element: 'total',
+             data: [
+
+                 <?php foreach ($total->result_array() as $agen_by) : ?> {
+                         bulan: '<?= $agen_by['date_created'] ?>',
+                         peserta: <?= $agen_by['jumlah_peserta'] ?>,
+                         kegiatan: <?= $agen_by['jumlah_kegiatan'] ?>,
+                     },
+                 <?php endforeach; ?>
+
+             ],
+             xkey: 'bulan',
+             ykeys: ['peserta', 'kegiatan'],
+             labels: ['peserta', 'kegiatan'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+
+         });
+
+         Morris.Area({
+             element: 'umum',
+             data: [
+
+                 <?php foreach ($umum->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'aik',
+             data: [
+
+                 <?php foreach ($aik->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'litbang',
+             data: [
+
+                 <?php foreach ($litbang->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'khusus',
+             data: [
+
+                 <?php foreach ($khusus->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'akademik',
+             data: [
+
+                 <?php foreach ($akademik->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'kerjasama',
+             data: [
+
+                 <?php foreach ($kerjasama->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'bukutamu',
+             data: [
+
+                 <?php foreach ($bukutamu->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'ptki',
+             data: [
+
+                 <?php foreach ($ptki->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+         Morris.Area({
+             element: 'riset',
+             data: [
+
+                 <?php foreach ($riset->result_array() as $dataqr) : ?> {
+                         bulan: '<?= $dataqr['date_created'] ?>',
+                         jumlah: <?= $dataqr['jumlah_peserta'] ?>,
+                     },
+                 <?php endforeach; ?>
+             ],
+             xkey: 'bulan',
+             ykeys: ['jumlah'],
+             labels: ['jumlah'],
+             pointSize: 3,
+             fillOpacity: 0,
+             pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             behaveLikeLine: true,
+             gridLineColor: '#e0e0e0',
+             lineWidth: 1,
+             hideHover: 'auto',
+             lineColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             resize: true
+
+         });
+
+
+
+
+     });
+ </script>

@@ -60,7 +60,7 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']    = 'REQUEST_URI';
+$config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
@@ -84,7 +84,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']    = 'english';
+$config['language']	= 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -408,11 +408,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']    = '';
-$config['cookie_domain']    = '';
-$config['cookie_path']        = '/';
-$config['cookie_secure']    = FALSE;
-$config['cookie_httponly']     = FALSE;
+$config['cookie_prefix']	= '';
+$config['cookie_domain']	= '';
+$config['cookie_path']		= '/';
+$config['cookie_secure']	= FALSE;
+$config['cookie_httponly'] 	= FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -530,10 +530,10 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 $config['aplikasi'] = 'Batas penggunaan aplikasi sudah berakhir silahkan perpanjang untuk selanjut nya';
-$config['selamat_datang'] = "<font size='20'><b>Sistem Perkaderan Nasional</b></font>";
-$config['deskripsi'] = "";
-$config['th'] = '2020';
-$config['bl'] = '01';
-$config['d'] = '01';
+$config['selamat_datang'] = "<font size='20'><b>Sistem Informasi Program/Kegiatan Majelis Diktilitbang PPM</b></font>";
+$config['deskripsi']="";
+$config['th']='2020';
+$config['bl']='01';
+$config['d']='01';
 
 /*dont delelete*/
