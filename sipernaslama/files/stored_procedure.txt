@@ -1,2 +1,0 @@
-$qry=mysql_query("CALL form_mhsakademik('$_SESSION[username]')");
-  $d=mysql_fetch_array($qry);  

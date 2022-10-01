@@ -1,2 +1,0 @@
-tampil total peserta per 3 bulan
-buat grafik untuk bidang, pengurus, asistensi, total peserta perbulan dalam waktu tertentu
