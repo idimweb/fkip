@@ -22,7 +22,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="int" class='control-label col-md-3'><b>Pengurus<?php echo form_error('id_anggota[]') ?></b></label>
+                <label for="int" class='control-label col-md-3'><b>Anggota FKIP<?php echo form_error('id_anggota[]') ?></b></label>
                 <div class='col-md-9'>
                   <div class="modal-body">
                     <table class="table" id="example">
@@ -69,7 +69,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="int" class='control-label col-md-3'><b>Asistensi<?php echo form_error('id_asistensi[]') ?></b></label>
                 <div class='col-md-9'>
                   <div class="modal-body">
@@ -115,9 +115,9 @@
                     </table>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="int" class='control-label col-md-3'><b>Staf<?php echo form_error('id_staf[]') ?></b></label>
                 <div class='col-md-9'>
                   <div class="modal-body">
@@ -158,7 +158,7 @@
                     </table>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- <div class="form-group">
                       <label for="int" class='control-label col-md-3'><b>Pengurus<?php echo form_error('id_anggota[]') ?></b></label>
@@ -195,22 +195,18 @@
                         </div>
                       </div>
                   </div> -->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="varchar" class='control-label col-md-3'><b>Tamu/Peserta<?php echo form_error('tamu') ?></b></label>
                 <div class='col-md-9'>
                   <input type="file" class="form-control" name="tamu" id="tamu" placeholder="" value="" />
                 </div>
-              </div>
+              </div> -->
               <div class="form-group">
-                <label for="varchar" class='control-label col-md-3'><b>Lainya<?php echo form_error('nama_lainya[]') ?></b></label>
+                <label for="varchar" class='control-label col-md-3'><b>Peserta Lainya<?php echo form_error('nama_lainya[]') ?></b></label>
                 <div class='col-md-6'>
                   <table class="table">
                     <tbody id="viewTable">
-                      <!-- <tr>
-                              <td colspan="2">
-                                <input type="text" class="form-control" name="nama_lainya[]" id="nama_lainya" placeholder="Ketik nama" data-role="" value="" />
-                              </td>
-                            </tr> -->
+                     
                     </tbody>
                   </table>
 
@@ -396,7 +392,7 @@
 </div>
 
 <!-- asistensi -->
-<div class="modal fade" id="modal_not3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="modal_not3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" style="width: 80%" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -413,7 +409,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <script type="text/javascript">
   $(document).ready(function() {

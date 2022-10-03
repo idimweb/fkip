@@ -13,7 +13,7 @@
           <label for="varchar" class='control-label col-md-3'><b>Program/Kegiatan</b></label>
           <div class='col-md-9'>
             <select name="id_notulen" class="form-control" id="id_notulen">
-              <option value="">Pilih Bidang</option>
+              <option value="">Pilih Program Studi</option>
               <?php foreach ($data_notulen->result_array() as $not) : ?>
                 <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
               <?php endforeach; ?>
