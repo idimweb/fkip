@@ -18,7 +18,7 @@ class Asistensi_model extends CI_Model
     // datatables
     function json()
     {
-        $this->datatables->select('id_asistensi,nama_asistensi,bidang,nohp,email');
+        $this->datatables->select('id_asistensi,nama_asistensi,bidang,prodi,email');
         $this->datatables->from('asistensi');
         //add this line for join
         //$this->datatables->join('table2', 'asistensi.field = table2.field');
@@ -39,7 +39,7 @@ class Asistensi_model extends CI_Model
 
     function json_checkbox()
     {
-        $this->datatables->select('id_asistensi,nama_asistensi,bidang,nohp,email');
+        $this->datatables->select('id_asistensi,nama_asistensi,bidang,prodi,email');
         $this->datatables->from('asistensi');
         //add this line for join
         //$this->datatables->join('table2', 'asistensi.field = table2.field');
@@ -67,7 +67,7 @@ class Asistensi_model extends CI_Model
         $this->db->like('id_asistensi', $q);
         $this->db->or_like('nama_asistensi', $q);
         $this->db->or_like('bidang', $q);
-        $this->db->or_like('nohp', $q);
+        $this->db->or_like('prodi', $q);
         $this->db->or_like('email', $q);
         $this->db->from($this->table);
         return $this->db->count_all_results();
@@ -80,7 +80,7 @@ class Asistensi_model extends CI_Model
         $this->db->like('id_asistensi', $q);
         $this->db->or_like('nama_asistensi', $q);
         $this->db->or_like('bidang', $q);
-        $this->db->or_like('nohp', $q);
+        $this->db->or_like('prodi', $q);
         $this->db->or_like('email', $q);
         $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();

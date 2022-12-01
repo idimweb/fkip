@@ -30,6 +30,7 @@ class Notulen_detail extends CI_Controller
     $this->load->model('Lainya_model');
     $this->load->library('form_validation');
     $this->load->library('datatables');
+    $this->load->library('encrypt');
   }
 
   public function index()
@@ -104,7 +105,7 @@ class Notulen_detail extends CI_Controller
         'hasil' => $this->Anggota_model->aktiv_anggota($id),
         'nama' => $row->nama,
         'jabatan' => $row->jabatan,
-        'nohp' => $row->nohp,
+        'prodi' => $row->prodi,
         'email' => $row->email,
 
       );
@@ -124,7 +125,7 @@ class Notulen_detail extends CI_Controller
         'hasil' => $this->Asistensi_model->aktiv_asistensi($id),
         'nama_asistensi' => $row->nama_asistensi,
         'bidang' => $row->bidang,
-        'nohp' => $row->nohp,
+        'prodi' => $row->prodi,
         'email' => $row->email,
 
       );

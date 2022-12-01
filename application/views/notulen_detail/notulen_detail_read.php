@@ -87,7 +87,7 @@
             <td><a href="<?php echo site_url('notulen_detail') ?>" class="btn btn-default"><i class='fa fa-home'></i>Back To Home</a></td>
           </tr>
           <th>
-            Pengurus
+            Anggota FKIP UAD
           </th>
           <th></th>
           <tbody>
@@ -105,7 +105,7 @@
             }
             ?>
             <th>
-              Asistensi
+              TIM KERJA
             </th>
             <?php
             foreach ($hasil as $item1) {
@@ -114,55 +114,6 @@
             ?>
                 <tr>
                   <td><?php echo $item1->nama_asistensi; ?></td>
-                </tr>
-
-            <?php
-              }
-            }
-            ?>
-            <th>
-              Tamu
-            </th>
-            <?php
-            foreach ($hasil as $item1) {
-              if ($item1->first_name != NULL) {
-                # code...
-            ?>
-                <tr>
-                  <td><?php echo $item1->first_name . ' ' . $item1->last_name; ?></td>
-                </tr>
-
-            <?php
-              }
-            }
-            ?>
-            <th>
-              Staf
-            </th>
-            <?php
-            foreach ($hasil as $item1) {
-              if ($item1->nama_staf != NULL) {
-                # code...
-            ?>
-                <tr>
-                  <td><?php echo $item1->nama_staf; ?></td>
-                </tr>
-
-            <?php
-              }
-            }
-            ?>
-            <th>
-              Tamu/Lainya
-            </th>
-            <?php
-            $no = 0;
-            foreach ($hasil as $item1) {
-              if ($item1->nama_lainya != NULL) {
-                # code...
-            ?>
-                <tr>
-                  <td><?php echo $item1->nama_lainya; ?></td>
                 </tr>
 
             <?php

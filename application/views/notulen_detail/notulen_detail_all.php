@@ -12,15 +12,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="5">Jumlah Peserta</th>
+                  <th colspan="5">Jumlah Peserta Rapat FKIP</th>
                 </tr>
                 <tr>
                   <th width="80px">No</th>
                   <th>Bulan</th>
-                  <th>Anggota</th>
-                  <th>Asistensi</th>
-                  <th>Staf</th>
-                  <th>Tamu</th>
+                  <th>Anggota FKIP</th>
+                  <!-- <th>Asistensi</th> -->
                   <th>Lainya</th>
                   <th>Tahun</th>
                 </tr>
@@ -62,9 +60,7 @@
                     ?>
                     <td><?php echo $data->bulan; ?></td>
                     <td><?php echo $data->anggota; ?></td>
-                    <td><?php echo $data->asistensi; ?></td>
-                    <td><?php echo $data->staf; ?></td>
-                    <td><?php echo $data->tamu; ?></td>
+                    <!-- <td><?php echo $data->asistensi; ?></td> -->
                     <td><?php echo $data->lainya; ?></td>
                     <td><?php echo $data->tahun; ?></td>
                   </tr>
@@ -74,6 +70,8 @@
                 <?php $no++;
                 } ?>
             </table>
+
+
 
             <table class="table">
               <thead>
@@ -187,7 +185,7 @@
         </table>
         <br>
 
-        <h3>Data Pengurus Majelis Diktilitbang PPM</h3>
+        <h3>Data Anggota FKIP UAD</h3>
 
         <table class="table" id="angg">
           <thead>
@@ -207,8 +205,13 @@
                 <td><?= $no; ?></td>
                 <td><?php echo $data->nama; ?></td>
                 <td><?php echo $data->jabatan; ?></td>
+                <?php
+                $text = $data->id_anggota;
+                $encrypttext = urlencode($this->encrypt->encode($text));
+
+                ?>
                 <td>
-                  <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $data->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                  <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
                 </td>
               </tr>
 
@@ -227,45 +230,6 @@
 
         </table>
 
-        <h3>Data Asistensi Majelis Diktilitbang PPM</h3>
-
-        <table class="table" id="asis">
-          <thead>
-            <tr>
-              <th width="80px">No</th>
-              <th>Nama</th>
-              <th>Bidang</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            $no = 1;
-            foreach ($asistensi as $data) {
-            ?>
-              <tr>
-                <td><?= $no; ?></td>
-                <td><?php echo $data->nama_asistensi; ?></td>
-                <td><?php echo $data->bidang; ?></td>
-                <td>
-                  <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $data->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
-                </td>
-              </tr>
-
-            <?php
-              $no++;
-            } ?>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th width="80px">No</th>
-              <th>Nama</th>
-              <th>Bidang</th>
-              <th>Aksi</th>
-            </tr>
-          </tfoot>
-
-        </table>
       </div>
     </div>
   </div>

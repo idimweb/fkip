@@ -19,7 +19,7 @@ class Anggota_model extends CI_Model
     // datatables
     function json()
     {
-        $this->datatables->select('id_anggota,nama,jabatan,nohp,email');
+        $this->datatables->select('id_anggota,nama,jabatan,prodi,email');
         $this->datatables->from('anggota');
         //      $this->datatables->
         //add this line for join
@@ -49,7 +49,7 @@ class Anggota_model extends CI_Model
 
     function json_checkbox()
     {
-        $this->datatables->select('a.id_anggota,a.nama,a.jabatan,a.nohp,a.email');
+        $this->datatables->select('a.id_anggota,a.nama,a.jabatan,a.prodi,a.email');
         $this->datatables->from('anggota a');
         //      $this->datatables->
         //add this line for join
@@ -79,7 +79,7 @@ class Anggota_model extends CI_Model
         $this->db->like('id_anggota', $q);
         $this->db->or_like('nama', $q);
         $this->db->or_like('jabatan', $q);
-        $this->db->or_like('nohp', $q);
+        $this->db->or_like('prodi', $q);
         $this->db->or_like('email', $q);
         // $this->db->or_like('foto', $q);
         // $this->db->or_like('level', $q);
@@ -96,7 +96,7 @@ class Anggota_model extends CI_Model
         $this->db->like('id_anggota', $q);
         $this->db->or_like('nama', $q);
         $this->db->or_like('jabatan', $q);
-        $this->db->or_like('nohp', $q);
+        $this->db->or_like('prodi', $q);
         $this->db->or_like('email', $q);
         $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
