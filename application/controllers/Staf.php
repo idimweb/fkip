@@ -186,4 +186,3 @@ class Staf extends CI_Controller {
 
 
 }
-?>

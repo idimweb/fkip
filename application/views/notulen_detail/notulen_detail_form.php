@@ -11,8 +11,65 @@
               <div class="form-group">
                 <label for="int" class='control-label col-md-3'><b>Bidang<?php echo form_error('id_notulen') ?></b></label>
                 <div class='col-md-9'>
-                  <input type="text" class="form-control" id="id_notulen" placeholder="Cari Data Bidang..." />
-                  <div class="nilai_notulen"></div>
+                  <?php
+                  if ($this->session->level == 'hdp') {
+                  ?>
+                    <input type="text" class="form-control" value="Tim Kerja Humas dan Promosi" readonly />
+                    <input type="hidden" name="id_notulen" value="27">
+
+                  <?php
+                  } elseif ($this->session->level == 'ia') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Implementasi AIK" readonly />
+                    <input type="hidden" name="id_notulen" value="28">
+
+                  <?php } elseif ($this->session->level == 'kda') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Kemahasiswaan dan Alumni" readonly />
+                    <input type="hidden" name="id_notulen" value="29">
+
+                  <?php } elseif ($this->session->level == 'kndi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Kerjasama Nasional dan Internasional" readonly />
+                    <input type="hidden" name="id_notulen" value="30">
+
+                  <?php } elseif ($this->session->level == 'ppdp') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Pengembangan Pendidikan dan Pembelajaran" readonly />
+                    <input type="hidden" name="id_notulen" value="31">
+
+                  <?php } elseif ($this->session->level == 'ps') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Pengembangan SDM" readonly />
+                    <input type="hidden" name="id_notulen" value="32">
+
+                  <?php } elseif ($this->session->level == 'pkrpdp') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Percepatan kinerja riset, Pengabdian dan Publikasi" readonly />
+                    <input type="hidden" name="id_notulen" value="33">
+
+                  <?php } elseif ($this->session->level == 'ta') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Akreditasi" readonly />
+                    <input type="hidden" name="id_notulen" value="34">
+
+                  <?php } elseif ($this->session->level == 'admin') { ?>
+
+                    <input type="text" class="form-control" id="id_notulen" placeholder="Cari Data Bidang..." />
+                    <div class="nilai_notulen"></div>
+
+                  <?php } ?>
+
+
+
+
                 </div>
               </div>
               <div class="form-group">
@@ -69,8 +126,8 @@
                 </div>
               </div>
 
-              <!-- <div class="form-group">
-                <label for="int" class='control-label col-md-3'><b>Asistensi<?php echo form_error('id_asistensi[]') ?></b></label>
+              <div class="form-group">
+                <label for="int" class='control-label col-md-3'><b>Peserta Tim Kerja<?php echo form_error('id_asistensi[]') ?></b></label>
                 <div class='col-md-9'>
                   <div class="modal-body">
                     <table class="table" id="example2">
@@ -78,135 +135,209 @@
                         <tr>
                           <th width="80px">No</th>
                           <th>Peserta</th>
-                          <th>Jabatan</th>
+                          <th>Tim Kerja</th>
                           <th width="200px">Kehadiran</th>
                         </tr>
                       </thead>
+                      <!-- humas dan promosi -->
                       <?php
                       $no = 1;
                       foreach ($asistensi as $ang) :
                       ?>
-                        <tr>
+                        <?php
+                        if ($this->session->level == 'hdp' && $ang->bidang == 'Humas dan Promosi') {
+                        ?>
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
 
-                          <td>
-                            <?php echo $no++ ?>
-                          </td>
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
 
-                          <td>
-                            <?php echo $ang->nama_asistensi ?>
-                          </td>
-                          <td>
-                            <?php echo $ang->bidang ?>
-                          </td>
-                          <td>
-                            <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
-                          </td>
+                        <?php
+                        } elseif ($this->session->level == 'ia' && $ang->bidang == 'Implementasi AIK') {
+                        ?>
 
-                        </tr>
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'kda' && $ang->bidang == 'Kemahasiswaan dan Alumni') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'kndi' && $ang->bidang == 'Kerjasama Nasional dan Internasional') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'ppdp' && $ang->bidang == 'Pengembangan Pendidikan dan Pembelajaran') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'ps' && $ang->bidang == 'Pengembangan SDM') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pkrpdp' && $ang->bidang == 'Percepatan kinerja riset, Pengabdian dan Publikasi') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'ta' && $ang->bidang == 'Tim Akreditasi') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'admin') { ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } ?>
+
                       <?php endforeach; ?>
+                      <!-- humas dan promosi -->
                       <tfoot>
                         <tr>
                           <th width="80px">No</th>
                           <th>Peserta</th>
-                          <th>Jabatan</th>
+                          <th>Tim Kerja</th>
                           <th width="200px">Kehadiran</th>
                         </tr>
                       </tfoot>
                     </table>
                   </div>
                 </div>
-              </div> -->
+              </div>
 
-              <!-- <div class="form-group">
-                <label for="int" class='control-label col-md-3'><b>Staf<?php echo form_error('id_staf[]') ?></b></label>
-                <div class='col-md-9'>
-                  <div class="modal-body">
-                    <table class="table" id="example3">
-                      <thead>
-                        <tr>
-                          <th width="80px">No</th>
-                          <th>Nama Staf</th>
-                          <th width="200px">Kehadiran</th>
-                        </tr>
-                      </thead>
-                      <?php
-                      $no = 1;
-                      foreach ($staf as $ang) :
-                      ?>
-                        <tr>
-
-                          <td>
-                            <?php echo $no++ ?>
-                          </td>
-
-                          <td>
-                            <?php echo $ang->nama_staf ?>
-                          </td>
-                          <td>
-                            <input type='checkbox' id='id_staf' name='id_staf[]' value='<?php echo $ang->id_staf ?>' />
-                          </td>
-
-                        </tr>
-                      <?php endforeach; ?>
-                      <tfoot>
-                        <tr>
-                          <th width="80px">No</th>
-                          <th>Nama Staf</th>
-                          <th width="200px">Kehadiran</th>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- <div class="form-group">
-                      <label for="int" class='control-label col-md-3'><b>Pengurus<?php echo form_error('id_anggota[]') ?></b></label>
-                      <div class='col-md-9'>
-                        <div class="modal-body">
-                           <table class="table" id="datatables2">
-                              <thead>
-                                  <tr>
-                                      <th width="80px">No</th>
-                                      <th>Peserta</th>
-                                      <th>Jabatan</th>
-                                      <th width="200px">Kehadiran</th>
-                                  </tr>
-                              </thead>
-                          </table>
-                        </div>
-                      </div>
-                    </div> -->
-
-              <!-- <div class="form-group">
-                      <label for="int" class='control-label col-md-3'><b>Asistensi<?php echo form_error('id_asistensi[]') ?></b></label>
-                      <div class='col-md-9'>
-                        <div class="modal-body">
-                           <table class="table" id="datatables3">
-                              <thead>
-                                  <tr>
-                                      <th width="80px">No</th>
-                                      <th>Peserta</th>
-                                      <th>Bidang</th>
-                                      <th width="200px">Kehadiran</th>
-                                  </tr>
-                              </thead>
-                          </table>
-                        </div>
-                      </div>
-                  </div> -->
-              <!-- <div class="form-group">
-                <label for="varchar" class='control-label col-md-3'><b>Tamu/Peserta<?php echo form_error('tamu') ?></b></label>
-                <div class='col-md-9'>
-                  <input type="file" class="form-control" name="tamu" id="tamu" placeholder="" value="" />
-                </div>
-              </div> -->
               <div class="form-group">
                 <label for="varchar" class='control-label col-md-3'><b>Peserta Lainya<?php echo form_error('nama_lainya[]') ?></b></label>
                 <div class='col-md-6'>
                   <table class="table">
                     <tbody id="viewTable">
-                     
+
                     </tbody>
                   </table>
 
@@ -372,7 +503,7 @@
 </div>
 
 <!-- Peserta -->
-<div class="modal fade" id="modal_not2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="modal_not2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" style="width: 80%" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -389,7 +520,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- asistensi -->
 <!-- <div class="modal fade" id="modal_not3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

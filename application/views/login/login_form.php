@@ -33,6 +33,13 @@
                                     <option value="admin">Administrator</option>
                                     <option value="user">User</option>
                                     <option value="hdp">Humas Dan Promosi</option>
+                                    <option value="ia">Implementasi AIK</option>
+                                    <option value="kda">Kemahasiswaan dan Alumni</option>
+                                    <option value="kndi">Kerjasama Nasional dan Internasional</option>
+                                    <option value="ppdp">Pengembangan Pendidikan dan Pembelajaran</option>
+                                    <option value="ps">Pengembangan SDM </option>
+                                    <option value="pkrpdp">Percepatan kinerja riset, Pengabdian dan Publikasi</option>
+                                    <option value="ta">Tim Akreditasi</option>
                                 </select>
                             </div>
                         </div>

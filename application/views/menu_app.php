@@ -135,7 +135,7 @@ echo $this->session->flashdata('pesan');
                 <h4>Level Akses</h4>
                 <br />
                 <?php
-                $level = ['admin', 'user', 'humas dan promosi'];
+                $level = ['admin', 'user', 'hdp', 'ia', 'kda', 'kndi', 'ppdp', 'ps', 'pkrpdp', 'ta'];
                 foreach ($level as $s) :
                 ?>
                   <div class="form-group">

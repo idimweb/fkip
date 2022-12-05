@@ -65,9 +65,9 @@
             <td><?php echo $hasil[0]->jumlah; ?></td>
           </tr>
           <tr>
-            <?php if ($this->session->level == 'admin') : ?>
-              <td><a href="<?php echo base_url('notulen_detail/edit/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Detail</a></td>
-            <?php endif; ?>
+
+            <td><a href="<?php echo base_url('notulen_detail/edit/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Detail</a></td>
+
           </tr>
           <tr>
             <th>Daftar Hadir</th>
@@ -75,14 +75,14 @@
           <tr>
 
             <td>
-              <?php if ($this->session->level == 'admin') : ?>
-                <a href="<?php echo base_url('notulen_detail/edit_peserta/' . $a->id_not_detail); ?>" class="btn btn-info">Tambah Peserta</a>
-              <?php endif; ?>
+
+              <a href="<?php echo base_url('notulen_detail/edit_peserta/' . $a->id_not_detail); ?>" class="btn btn-info">Tambah Peserta</a>
+
             </td>
             <td>
-              <?php if ($this->session->level == 'admin') : ?>
-                <a href="<?php echo base_url('notulen_detail/hapus_peserta/' . $a->id_not_detail); ?>" class="btn btn-danger">Hapus Peserta</a>
-              <?php endif; ?>
+
+              <a href="<?php echo base_url('notulen_detail/hapus_peserta/' . $a->id_not_detail); ?>" class="btn btn-danger">Hapus Peserta</a>
+
             </td>
             <td><a href="<?php echo site_url('notulen_detail') ?>" class="btn btn-default"><i class='fa fa-home'></i>Back To Home</a></td>
           </tr>

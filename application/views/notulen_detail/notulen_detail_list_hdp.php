@@ -6,50 +6,25 @@
       <p class='text-muted m-b-30'>Tabel Data <?= $judul ?></p>
       <div class='table-responsive'>
 
-        <a href="<?= base_url('notulen_detail/lihat_semua') ?>" class="btn btn-info"><i></i> Semua Kegiatan</a>
         <a href="<?= base_url('notulen_detail/tambah') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah data</a>
+        <a href="<?= base_url('notulen_detail/lihat_semua') ?>" class="btn btn-info"><i></i> Semua Kegiatan</a>
         <hr />
         <div class="form-group">
           <label for="varchar" class='control-label col-md-3'><b>Program/Kegiatan</b></label>
           <div class='col-md-9'>
             <select name="id_notulen" class="form-control" id="id_notulen">
+              <!-- <option value="14">Pilih Program Studi</option> -->
 
+              <!-- hdp -->
               <?php foreach ($data_notulen->result_array() as $not) : ?>
                 <?php
-                if ($not['id_notulen'] == 27 && $this->session->level == 'hdp') {
-                ?>
-                  <option value="27"><?= $not['agenda'] ?></option>
-                <?php } elseif ($not['id_notulen'] == 28 && $this->session->level == 'ia') {
+                if ($not['id_notulen'] == 27) {
                 ?>
                   <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                } elseif ($not['id_notulen'] == 29 && $this->session->level == 'kda') {
-                ?>
-                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                } elseif ($not['id_notulen'] == 30 && $this->session->level == 'kndi') {
-                ?>
-                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                } elseif ($not['id_notulen'] == 31 && $this->session->level == 'ppdp') {
-                ?>
-                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                } elseif ($not['id_notulen'] == 32 && $this->session->level == 'ps') {
-                ?>
-                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                } elseif ($not['id_notulen'] == 33 && $this->session->level == 'pkrpdp') {
-                ?>
-                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                } elseif ($not['id_notulen'] == 34 && $this->session->level == 'ta') {
-                ?>
-                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
-                <?php
-                }
+                <?php }
                 ?>
               <?php endforeach; ?>
+              <!--end hdp -->
 
             </select>
             <hr />
