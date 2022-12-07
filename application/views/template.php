@@ -15,6 +15,10 @@
     <link href="<?= base_url() ?>assets/template/plugins/components/morrisjs/morris.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/template/plugins/components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- fulcalendar -->
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/template/plugins/components/calendar/dist/fullcalendar.css">
+
     <link href="<?= base_url() ?>assets/template/css/animate.css" rel="stylesheet">
     <!-- ===== Custom CSS ===== -->
     <link href="<?= base_url() ?>assets/template/css/style.css" rel="stylesheet">
@@ -328,6 +332,10 @@
     <script src="<?= base_url() ?>assets/template/plugins/components/styleswitcher/jQuery.style.switcher.js"></script>
     <!-- datatable -->
     <script src="<?= base_url() ?>assets/template/plugins/components/datatables/jquery.dataTables.min.js"></script>
+
+    <!-- calendar -->
+    <script src="<?= base_url() ?>/assets/template/plugins/components/moment/moment.js"></script>
+    <script src="<?= base_url() ?>/assets/template/plugins/components/calendar/dist/fullcalendar.min.js"></script>
 
     <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>

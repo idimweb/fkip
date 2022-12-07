@@ -47,6 +47,78 @@
                 ?>
                   <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
                 <?php
+                } elseif ($not['id_notulen'] == 9 && $this->session->level == 'pgpaud') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 10 && $this->session->level == 'pgsd') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 11 && $this->session->level == 'pbio') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 12 && $this->session->level == 'pfis') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 13 && $this->session->level == 'pmat') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 14 && $this->session->level == 'ppkn') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 15 && $this->session->level == 'pbi') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 16 && $this->session->level == 'pbsi') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 17 && $this->session->level == 'bk') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 18 && $this->session->level == 'pvto') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 19 && $this->session->level == 'pvte') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 20 && $this->session->level == 'ppg') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 21 && $this->session->level == 'mpmat') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 22 && $this->session->level == 'mpbi') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 23 && $this->session->level == 'mpfis') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 24 && $this->session->level == 'mp') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 25 && $this->session->level == 'mpgv') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
+                } elseif ($not['id_notulen'] == 26 && $this->session->level == 'mbk') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
                 }
                 ?>
               <?php endforeach; ?>

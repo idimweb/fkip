@@ -60,6 +60,114 @@
                     <input type="text" class="form-control" value="Tim Akreditasi" readonly />
                     <input type="hidden" name="id_notulen" value="34">
 
+                  <?php } elseif ($this->session->level == 'pgpaud') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Guru Pendidikan Anak Usia DIni" readonly />
+                    <input type="hidden" name="id_notulen" value="9">
+
+                  <?php } elseif ($this->session->level == 'pgsd') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Guru Sekolah Dasar" readonly />
+                    <input type="hidden" name="id_notulen" value="10">
+
+                  <?php } elseif ($this->session->level == 'pbio') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Biologi" readonly />
+                    <input type="hidden" name="id_notulen" value="11">
+
+                  <?php } elseif ($this->session->level == 'pfis') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Fisika" readonly />
+                    <input type="hidden" name="id_notulen" value="12">
+
+                  <?php } elseif ($this->session->level == 'pmat') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Matematika" readonly />
+                    <input type="hidden" name="id_notulen" value="13">
+
+                  <?php } elseif ($this->session->level == 'ppkn') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Pancasila dan Kewarganegaraan" readonly />
+                    <input type="hidden" name="id_notulen" value="14">
+
+                  <?php } elseif ($this->session->level == 'pbi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Bahasa Inggris" readonly />
+                    <input type="hidden" name="id_notulen" value="15">
+
+                  <?php } elseif ($this->session->level == 'pbsi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan dan Sastra Indonesia" readonly />
+                    <input type="hidden" name="id_notulen" value="16">
+
+                  <?php } elseif ($this->session->level == 'bk') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Bimbingan Konseling" readonly />
+                    <input type="hidden" name="id_notulen" value="17">
+
+                  <?php } elseif ($this->session->level == 'pvto') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Pendidikan Vokasional Teknik Otomotif" readonly />
+                    <input type="hidden" name="id_notulen" value="18">
+
+                  <?php } elseif ($this->session->level == 'pvte') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Pendidikan Vokasional Teknik Elektronika" readonly />
+                    <input type="hidden" name="id_notulen" value="19">
+
+                  <?php } elseif ($this->session->level == 'ppg') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Program Profesi Guru" readonly />
+                    <input type="hidden" name="id_notulen" value="20">
+
+                  <?php } elseif ($this->session->level == 'mpmat') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Matematika" readonly />
+                    <input type="hidden" name="id_notulen" value="21">
+
+                  <?php } elseif ($this->session->level == 'mpbi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Bahasa Inggris" readonly />
+                    <input type="hidden" name="id_notulen" value="22">
+
+                  <?php } elseif ($this->session->level == 'mpfis') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Fisika" readonly />
+                    <input type="hidden" name="id_notulen" value="23">
+
+                  <?php } elseif ($this->session->level == 'mp') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Manajemen Pendidikan" readonly />
+                    <input type="hidden" name="id_notulen" value="24">
+
+                  <?php } elseif ($this->session->level == 'mpgv') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Guru Vokasi" readonly />
+                    <input type="hidden" name="id_notulen" value="25">
+
+                  <?php } elseif ($this->session->level == 'mbk') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Bimbingan Konseling" readonly />
+                    <input type="hidden" name="id_notulen" value="26">
+
                   <?php } elseif ($this->session->level == 'admin') { ?>
 
                     <input type="text" class="form-control" id="id_notulen" placeholder="Cari Data Bidang..." />

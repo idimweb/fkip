@@ -11,8 +11,173 @@
               <div class="form-group">
                 <label for="int" class='control-label col-md-3'><b>Bidang<?php echo form_error('id_notulen') ?></b></label>
                 <div class='col-md-9'>
-                  <input type="text" class="form-control" id="id_notulen" placeholder="Cari Data Bidang..." />
-                  <div class="nilai_notulen"></div>
+                  <?php
+                  if ($this->session->level == 'hdp') {
+                  ?>
+                    <input type="text" class="form-control" value="Tim Kerja Humas dan Promosi" readonly />
+                    <input type="hidden" name="id_notulen" value="27">
+
+                  <?php
+                  } elseif ($this->session->level == 'ia') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Implementasi AIK" readonly />
+                    <input type="hidden" name="id_notulen" value="28">
+
+                  <?php } elseif ($this->session->level == 'kda') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Kemahasiswaan dan Alumni" readonly />
+                    <input type="hidden" name="id_notulen" value="29">
+
+                  <?php } elseif ($this->session->level == 'kndi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Kerjasama Nasional dan Internasional" readonly />
+                    <input type="hidden" name="id_notulen" value="30">
+
+                  <?php } elseif ($this->session->level == 'ppdp') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Pengembangan Pendidikan dan Pembelajaran" readonly />
+                    <input type="hidden" name="id_notulen" value="31">
+
+                  <?php } elseif ($this->session->level == 'ps') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Pengembangan SDM" readonly />
+                    <input type="hidden" name="id_notulen" value="32">
+
+                  <?php } elseif ($this->session->level == 'pkrpdp') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Kerja Percepatan kinerja riset, Pengabdian dan Publikasi" readonly />
+                    <input type="hidden" name="id_notulen" value="33">
+
+                  <?php } elseif ($this->session->level == 'ta') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Akreditasi" readonly />
+                    <input type="hidden" name="id_notulen" value="34">
+
+                  <?php } elseif ($this->session->level == 'pgpaud') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Guru Pendidikan Anak Usia DIni" readonly />
+                    <input type="hidden" name="id_notulen" value="9">
+
+                  <?php } elseif ($this->session->level == 'pgsd') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Guru Sekolah Dasar" readonly />
+                    <input type="hidden" name="id_notulen" value="10">
+
+                  <?php } elseif ($this->session->level == 'pbio') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Biologi" readonly />
+                    <input type="hidden" name="id_notulen" value="11">
+
+                  <?php } elseif ($this->session->level == 'pfis') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Fisika" readonly />
+                    <input type="hidden" name="id_notulen" value="12">
+
+                  <?php } elseif ($this->session->level == 'pmat') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Matematika" readonly />
+                    <input type="hidden" name="id_notulen" value="13">
+
+                  <?php } elseif ($this->session->level == 'ppkn') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Pancasila dan Kewarganegaraan" readonly />
+                    <input type="hidden" name="id_notulen" value="14">
+
+                  <?php } elseif ($this->session->level == 'pbi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan Bahasa Inggris" readonly />
+                    <input type="hidden" name="id_notulen" value="15">
+
+                  <?php } elseif ($this->session->level == 'pbsi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Pendidikan dan Sastra Indonesia" readonly />
+                    <input type="hidden" name="id_notulen" value="16">
+
+                  <?php } elseif ($this->session->level == 'bk') {
+                  ?>
+
+                    <input type="text" class="form-control" value="(S1) Bimbingan Konseling" readonly />
+                    <input type="hidden" name="id_notulen" value="17">
+
+                  <?php } elseif ($this->session->level == 'pvto') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Pendidikan Vokasional Teknik Otomotif" readonly />
+                    <input type="hidden" name="id_notulen" value="18">
+
+                  <?php } elseif ($this->session->level == 'pvte') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Pendidikan Vokasional Teknik Elektronika" readonly />
+                    <input type="hidden" name="id_notulen" value="19">
+
+                  <?php } elseif ($this->session->level == 'ppg') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Program Profesi Guru" readonly />
+                    <input type="hidden" name="id_notulen" value="20">
+
+                  <?php } elseif ($this->session->level == 'mpmat') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Matematika" readonly />
+                    <input type="hidden" name="id_notulen" value="21">
+
+                  <?php } elseif ($this->session->level == 'mpbi') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Bahasa Inggris" readonly />
+                    <input type="hidden" name="id_notulen" value="22">
+
+                  <?php } elseif ($this->session->level == 'mpfis') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Fisika" readonly />
+                    <input type="hidden" name="id_notulen" value="23">
+
+                  <?php } elseif ($this->session->level == 'mp') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Manajemen Pendidikan" readonly />
+                    <input type="hidden" name="id_notulen" value="24">
+
+                  <?php } elseif ($this->session->level == 'mpgv') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Pendidikan Guru Vokasi" readonly />
+                    <input type="hidden" name="id_notulen" value="25">
+
+                  <?php } elseif ($this->session->level == 'mbk') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Magister Bimbingan Konseling" readonly />
+                    <input type="hidden" name="id_notulen" value="26">
+
+                  <?php } elseif ($this->session->level == 'admin') { ?>
+
+                    <input type="text" class="form-control" id="id_notulen" placeholder="Cari Data Bidang..." />
+                    <div class="nilai_notulen"></div>
+
+                  <?php } ?>
+
+
+
+
                 </div>
               </div>
               <div class="form-group">
@@ -183,44 +348,7 @@
 </div>
 
 <!-- Peserta -->
-<div class="modal fade" id="modal_not2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" style="width: 80%" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <table class="table" id="datatables2">
-          <thead>
-            <tr>
-              <th width="80px">No</th>
-              <th>Peserta</th>
-              <th>Jabatan</th>
-              <th width="200px">Kehadiran</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- asistensi -->
-<div class="modal fade" id="modal_not3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" style="width: 80%" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <table class="table" id="datatables3">
-          <thead>
-            <tr>
-              <th width="80px">No</th>
-              <th>Peserta</th>
-              <th>Bidang</th>
-              <th width="200px">Kehadiran</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script type="text/javascript">
   $(document).ready(function() {

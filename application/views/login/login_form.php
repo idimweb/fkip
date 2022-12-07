@@ -40,6 +40,24 @@
                                     <option value="ps">Pengembangan SDM </option>
                                     <option value="pkrpdp">Percepatan kinerja riset, Pengabdian dan Publikasi</option>
                                     <option value="ta">Tim Akreditasi</option>
+                                    <option value="bk">bk</option>
+                                    <option value="pbi">pbi</option>
+                                    <option value="pbsi">pbsi</option>
+                                    <option value="pmat">pmat</option>
+                                    <option value="pfis">pfis</option>
+                                    <option value="ppkn">ppkn</option>
+                                    <option value="pbio">pbio</option>
+                                    <option value="pgsd">pgsd</option>
+                                    <option value="pgpaud">pgpaud</option>
+                                    <option value="pvto">pvto</option>
+                                    <option value="pvte">pvte</option>
+                                    <option value="ppg">ppg</option>
+                                    <option value="mbk">mbk</option>
+                                    <option value="mpmat">mpmat</option>
+                                    <option value="mp">mp</option>
+                                    <option value="mpbi">mpbi</option>
+                                    <option value="mpfis">mpfis</option>
+                                    <option value="mpgv">mpgv</option>
                                 </select>
                             </div>
                         </div>
