@@ -8,7 +8,273 @@
                 <?php echo anchor(site_url('asistensi/tambah'), 'Tambah Data', 'class="btn btn-primary"'); ?>
 
                 <br /><br />
-                <table class="table" id="datatables">
+                <table class="table" id="datatables2">
+                    <thead>
+                        <tr>
+                            <th width="80px">No</th>
+                            <th>Nama</th>
+                            <th>Bidang</th>
+                            <th>Prodi</th>
+                            <th>Email</th>
+                            <th width="200px">Action</th>
+                        </tr>
+                    </thead>
+                    <!-- humas dan promosi -->
+                    <?php
+                    $no = 1;
+                    foreach ($data_asistensi as $ang) :
+                    ?>
+                        <?php
+                        if ($this->session->level == 'hdp' && $ang->bidang == 'Humas dan Promosi') {
+                        ?>
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php
+                        } elseif ($this->session->level == 'ia' && $ang->bidang == 'Implementasi AIK') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'kda' && $ang->bidang == 'Kemahasiswaan dan Alumni') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'kndi' && $ang->bidang == 'Kerjasama Nasional dan Internasional') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'ppdp' && $ang->bidang == 'Pengembangan Pendidikan dan Pembelajaran') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'ps' && $ang->bidang == 'Pengembangan SDM') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pkrpdp' && $ang->bidang == 'Percepatan kinerja riset, Pengabdian dan Publikasi') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'ta' && $ang->bidang == 'Tim Akreditasi') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'admin') { ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } ?>
+
+                    <?php endforeach; ?>
+                    <!-- humas dan promosi -->
+                    <tfoot>
+                        <tr>
+                            <th width="80px">No</th>
+                            <th>Nama</th>
+                            <th>Bidang</th>
+                            <th>Prodi</th>
+                            <th>Email</th>
+                            <th width="200px">Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- <table class="table" id="datatables">
                     <thead>
                         <tr>
                             <th width="80px">No</th>
@@ -20,7 +286,7 @@
                         </tr>
                     </thead>
 
-                </table>
+                </table> -->
 
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -102,6 +368,12 @@
                                 window.location.href = '<?= base_url('asistensi/hapus/') ?>' + n;
                             });
                     }
+                </script>
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#datatables2').DataTable();
+                    });
                 </script>
             </div>
         </div>

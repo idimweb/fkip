@@ -32,6 +32,19 @@ class Welcome extends CI_controller
 		$x['triwulan4'] = $this->Dasboard_model->triwulan4();
 		$this->template->load('template', 'dasboard', $x);
 	}
+
+	public function kalendar($tahun = NULL, $bulan = NULL)
+	{
+		$kalender = array(
+			'start_day' 		=> 'monday',
+			'show_next_prev'	=> TRUE,
+			'next_prev_url'		=> base_url() . "/welcome/kalendar"
+		);
+		$this->load->library('calendar', $kalender);
+		$data['kalender'] = $this->calendar->generate($tahun, $bulan);
+		$this->load->view('template', 'dasboard', $data);
+	}
+
 	function logout()
 	{
 

@@ -23,6 +23,7 @@ class Anggota extends CI_Controller
   public function index()
   {
     $x['judul'] = 'Data : Struktur Organisasi FKIP UAD';
+    $x['data_anggota'] = $this->db->get('anggota')->result();
     $this->template->load('template', 'anggota/anggota_list', $x);
   }
 

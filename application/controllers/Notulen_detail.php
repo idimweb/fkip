@@ -55,7 +55,7 @@ class Notulen_detail extends CI_Controller
     // $data['peserta'] = $this->db->get('peserta')->result();
     // $data['anggota'] = $this->db->get('anggota')->result();
     $data = array(
-      'judul' => 'Data NOTULEN_DETAIL',
+      'judul' => 'Semua Aktivitas',
       'notulen_detail' => $this->db->get('notulen_detail')->result(),
       'anggota' => $this->db->get('anggota')->result(),
       'asistensi' => $this->db->get('asistensi')->result(),

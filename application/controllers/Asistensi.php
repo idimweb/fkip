@@ -23,6 +23,7 @@ class Asistensi extends CI_Controller
   public function index()
   {
     $x['judul'] = 'Data : Asistensi';
+    $x['data_asistensi'] = $this->db->get('asistensi')->result();
     $this->template->load('template', 'asistensi/asistensi_list', $x);
   }
 

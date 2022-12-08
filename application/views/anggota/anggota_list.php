@@ -8,7 +8,506 @@
                 <?php echo anchor(site_url('anggota/tambah'), 'Tambah Data', 'class="btn btn-primary"'); ?>
 
                 <br /><br />
-                <table class="table" id="datatables">
+                <table class="table" id="datatables2">
+                    <thead>
+                        <tr>
+                            <th width="80px">No</th>
+                            <th>Nama</th>
+                            <th>jabatan</th>
+                            <th>Prodi</th>
+                            <th>Email</th>
+                            <th width="200px">Action</th>
+                        </tr>
+                    </thead>
+                    <!-- humas dan promosi -->
+                    <?php
+                    $no = 1;
+                    foreach ($data_anggota as $ang) :
+                    ?>
+                        <?php
+                        if ($this->session->level == 'bk' && $ang->prodi == 'BK') {
+                        ?>
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php
+                        } elseif ($this->session->level == 'mp' && $ang->prodi == 'MP') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'mpbi' && $ang->prodi == 'MPBI') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'mpfis' && $ang->prodi == 'MPFIS') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'mpgv' && $ang->prodi == 'MPGV') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'mpmat' && $ang->prodi == 'MPMAT') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pbi' && $ang->prodi == 'PBI') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pbio' && $ang->prodi == 'PBIO') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pbsi' && $ang->prodi == 'PBSI') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pfis' && $ang->prodi == 'PFIS') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pgpaud' && $ang->prodi == 'PGPAUD') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pgsd' && $ang->prodi == 'PGSD') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pmat' && $ang->prodi == 'PMAT') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'ppg' && $ang->prodi == 'PPG') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'ppkn' && $ang->prodi == 'PPKN') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pvte' && $ang->prodi == 'PVTE') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'pvto' && $ang->prodi == 'PVTO') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } elseif ($this->session->level == 'admin') { ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $ang->id_anggota ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
+                        <?php } ?>
+
+                    <?php endforeach; ?>
+                    <!-- humas dan promosi -->
+                    <tfoot>
+                        <tr>
+                            <th width="80px">No</th>
+                            <th>Nama</th>
+                            <th>jabatan</th>
+                            <th>Prodi</th>
+                            <th>Email</th>
+                            <th width="200px">Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- <table class="table" id="datatables">
                     <thead>
                         <tr>
                             <th width="80px">No</th>
@@ -19,7 +518,7 @@
                         </tr>
                     </thead>
 
-                </table>
+                </table> -->
 
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -99,6 +598,12 @@
                                 window.location.href = '<?= base_url('anggota/hapus/') ?>' + n;
                             });
                     }
+                </script>
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#datatables2').DataTable();
+                    });
                 </script>
             </div>
         </div>

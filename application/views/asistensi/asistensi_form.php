@@ -17,13 +17,69 @@
                             <div class="form-group">
                                 <label for="varchar" class='control-label col-md-3'><b>Bidang<?php echo form_error('bidang') ?></b></label>
                                 <div class='col-md-9'>
-                                    <input type="text" class="form-control" name="bidang" id="jabatan" placeholder="Bidang" value="<?php echo $bidang; ?>" />
+                                    <?php
+                                    if ($this->session->level == 'hdp') {
+                                    ?>
+                                        <input type="text" class="form-control" name="bidang" value="Humas dan Promosi" readonly />
+
+                                    <?php
+                                    } elseif ($this->session->level == 'ia') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Implementasi AIK" readonly />
+
+                                    <?php } elseif ($this->session->level == 'kda') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Kemahasiswaan dan Alumni" readonly />
+
+                                    <?php } elseif ($this->session->level == 'kndi') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Kerjasama Nasional dan Internasional" readonly />
+
+                                    <?php } elseif ($this->session->level == 'ppdp') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Pengembangan Pendidikan dan Pembelajaran" readonly />
+
+                                    <?php } elseif ($this->session->level == 'ps') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Pengembangan SDM" readonly />
+
+                                    <?php } elseif ($this->session->level == 'pkrpdp') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Percepatan kinerja riset, Pengabdian dan Publikasi" readonly />
+
+                                    <?php } elseif ($this->session->level == 'ta') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Tim Akreditasi" readonly />
+
+                                    <?php } elseif ($this->session->level == 'admin') { ?>
+
+                                        <label class="col-sm-2 control-label no-padding-right"> <?php echo form_error('bidang') ?></label>
+                                        <select class="form-control" name="bidang" required="">
+                                            <option value="Humas Dan Promosi">Humas Dan Promosi</option>
+                                            <option value="Implementasi AIK">Implementasi AIK</option>
+                                            <option value="Kemahasiswaan dan Alumni">Kemahasiswaan dan Alumni</option>
+                                            <option value="Kerjasama Nasional dan Internasional">Kerjasama Nasional dan Internasional</option>
+                                            <option value="Pengembangan Pendidikan dan Pembelajaran">Pengembangan Pendidikan dan Pembelajaran</option>
+                                            <option value="Pengembangan SDM">Pengembangan SDM </option>
+                                            <option value="Percepatan kinerja riset, Pengabdian dan Publikasi">Percepatan kinerja riset, Pengabdian dan Publikasi</option>
+                                            <option value="Tim Akreditasi">Tim Akreditasi</option>
+                                        </select>
+
+                                    <?php } ?>
+
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="varchar" class='control-label col-md-3'><b>No HP<?php echo form_error('prodi') ?></b></label>
+                                <label for="varchar" class='control-label col-md-3'><b>Prodi<?php echo form_error('prodi') ?></b></label>
                                 <div class='col-md-9'>
-                                    <input type="text" class="form-control" name="prodi" id="prodi" placeholder="No HP" value="<?php echo $prodi; ?>" />
+                                    <input type="text" class="form-control" name="prodi" id="prodi" placeholder="Prodi" value="<?php echo $prodi; ?>" />
                                 </div>
                             </div>
                             <div class="form-group">

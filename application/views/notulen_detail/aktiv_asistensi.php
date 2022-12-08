@@ -51,8 +51,8 @@
 							<td><?php echo $bidang; ?></td>
 						</tr>
 						<tr>
-							<td>No. HP</td>
-							<td><?php echo $nohp; ?></td>
+							<td>Prodi</td>
+							<td><?php echo $prodi; ?></td>
 						</tr>
 						<tr>
 							<td>Email</td>
