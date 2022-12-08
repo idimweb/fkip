@@ -18,7 +18,7 @@ class Notulen_detail extends CI_Controller
     parent::__construct();
     login_access();
     hak_akses();
-    $this->load->helper(array('url', 'html', 'form'));
+    $this->load->helper(array('url', 'html', 'form', 'security', 'uri'));
     $this->load->model('Notulen_detail_model');
     $this->load->model('Notulen_model');
     $this->load->model('Peserta_model');
@@ -98,6 +98,7 @@ class Notulen_detail extends CI_Controller
 
   public function aktiv_anggota($id)
   {
+    $id = decrypt_url($id);
     $row = $this->Anggota_model->get_by_id($id);
     if ($row) {
       $data = array(
@@ -118,6 +119,7 @@ class Notulen_detail extends CI_Controller
 
   public function aktiv_asistensi($id)
   {
+    $id = decrypt_url($id);
     $row = $this->Asistensi_model->get_by_id($id);
     if ($row) {
       $data = array(

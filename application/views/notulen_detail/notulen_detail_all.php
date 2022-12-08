@@ -228,8 +228,17 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
+              <!-- <td>
+
+                <?php
+                echo encrypt_url($ang->id_asistensi);
+                ?>
+              </td> -->
             </tr>
 
           <?php
@@ -254,7 +263,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -279,7 +291,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -304,7 +319,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -329,7 +347,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -354,7 +375,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -379,7 +403,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -404,7 +431,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -428,7 +458,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_asistensi/' . $ang->id_asistensi); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_asistensi);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -487,7 +520,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -513,7 +549,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -538,7 +577,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -563,7 +605,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -588,7 +633,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -613,7 +661,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -638,7 +689,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -663,7 +717,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -688,7 +745,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -713,7 +773,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -738,7 +801,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -763,7 +829,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -788,7 +857,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -813,7 +885,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -838,7 +913,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -863,7 +941,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -888,7 +969,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
@@ -912,7 +996,10 @@
                 <?= $ang->email ?>
               </td>
               <td>
-                <a href="<?php echo base_url('notulen_detail/aktiv_anggota/' . $ang->id_anggota); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                <?php
+                $text = encrypt_url($ang->id_anggota);
+                ?>
+                <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
               </td>
             </tr>
 
