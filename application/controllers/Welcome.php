@@ -7,7 +7,6 @@ class Welcome extends CI_controller
 	{
 		parent::__construct();
 		login_access();
-		$this->load->model('Bahan_model');
 		$this->load->model('Dasboard_model');
 	}
 	function index()
