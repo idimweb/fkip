@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 05:18 AM
+-- Generation Time: Dec 08, 2022 at 06:51 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -386,7 +386,7 @@ CREATE TABLE `login` (
   `nama` varchar(59) NOT NULL,
   `email` varchar(50) NOT NULL,
   `foto` varchar(50) NOT NULL,
-  `level` enum('user','admin','hdp','') NOT NULL,
+  `level` enum('user','admin','hdp','ia','kda','kndi','ppdp','ps','pkrpdp','ta','bk','pbi','pbsi','pmat','pfis','ppkn','pbio','pgsd','pgpaud','pvto','pvte','ppg','mbk','mpmat','mp','mpbi','mpfis','mpgv') NOT NULL,
   `active` enum('Y','N') NOT NULL,
   `date_create` date NOT NULL,
   `log` datetime DEFAULT NULL,
@@ -399,7 +399,32 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_user`, `username`, `password`, `nama`, `email`, `foto`, `level`, `active`, `date_create`, `log`, `id_divisi`) VALUES
 (3, 'admin', '202cb962ac59075b964b07152d234b70', 'Admin FKIP', 'admin@example.com', 'foto1662955020.jpg', 'admin', 'Y', '0000-00-00', '2022-09-12 05:57:00', '1'),
-(7, 'adminhdp', '202cb962ac59075b964b07152d234b70', 'Humas Dan Promosi', 'humasdanpromosi@admin.com', 'Tidak ada file', 'hdp', 'Y', '0000-00-00', NULL, '1');
+(7, 'adminhdp', '202cb962ac59075b964b07152d234b70', 'Humas Dan Promosi', 'humasdanpromosi@admin.com', 'Tidak ada file', 'hdp', 'Y', '0000-00-00', NULL, '1'),
+(8, 'adminia', '202cb962ac59075b964b07152d234b70', 'Admin Implementasi AIK', 'ia@admin.com', '', 'ia', 'Y', '0000-00-00', '2022-12-05 06:30:16', ''),
+(9, 'adminkda', '202cb962ac59075b964b07152d234b70', 'Admin Kemahasiswaan Dan Alumni', 'kda@admin.com', '', 'kda', 'Y', '0000-00-00', '2022-12-05 06:30:16', ''),
+(10, 'adminkndi', '202cb962ac59075b964b07152d234b70', 'Admin Kerjasama Nasional dan Internasional', 'kndi@admin.com', 'Tidak ada file', 'kndi', 'Y', '0000-00-00', NULL, '1'),
+(11, 'adminppdp', '202cb962ac59075b964b07152d234b70', 'Admin Pengembangan Pendidikan dan Pembelajaran', 'ppdp@admin.com', 'Tidak ada file', 'ppdp', 'Y', '0000-00-00', NULL, '1'),
+(12, 'adminps', '202cb962ac59075b964b07152d234b70', 'Admin Pengembangan SDM', 'ps@admin.com', 'Tidak ada file', 'ps', 'Y', '0000-00-00', NULL, '1'),
+(13, 'adminpkrpdp', '202cb962ac59075b964b07152d234b70', 'Admin Percepatan kinerja riset, Pengabdian dan Publikasi', 'pkrpdp@admin.com', 'Tidak ada file', 'pkrpdp', 'Y', '0000-00-00', NULL, '1'),
+(14, 'adminta', '202cb962ac59075b964b07152d234b70', 'Admin Tim Akreditasi', 'ta@admin.com', 'Tidak ada file', 'ta', 'Y', '0000-00-00', NULL, '1'),
+(15, 'adminbk', '202cb962ac59075b964b07152d234b70', 'Admin BK', 'bk@admin.com', 'Tidak ada file', 'bk', 'Y', '0000-00-00', NULL, '1'),
+(16, 'adminpbi', '202cb962ac59075b964b07152d234b70', 'Admin PBI', 'pbi@admin.com', 'Tidak ada file', 'pbi', 'Y', '0000-00-00', NULL, '1'),
+(17, 'adminpbsi', '202cb962ac59075b964b07152d234b70', 'Admin PBSI', 'pbsi@gmail.com', 'Tidak ada file', 'pbsi', 'Y', '0000-00-00', NULL, '1'),
+(18, 'adminpmat', '202cb962ac59075b964b07152d234b70', 'Admin PMAT', 'pmat@admin.com', 'Tidak ada file', 'pmat', 'Y', '0000-00-00', NULL, '1'),
+(19, 'adminpfis', '202cb962ac59075b964b07152d234b70', 'Admin PFIS', 'pfis@gmail.com', 'Tidak ada file', 'pfis', 'Y', '0000-00-00', NULL, '1'),
+(20, 'adminppkn', '202cb962ac59075b964b07152d234b70', 'Admin PPKN', 'ppkn@gmail.com', 'Tidak ada file', 'ppkn', 'Y', '0000-00-00', NULL, '1'),
+(21, 'adminpbio', '202cb962ac59075b964b07152d234b70', 'Admin PBIO', 'pbio@gmail.com', 'Tidak ada file', 'pbio', 'Y', '0000-00-00', NULL, '1'),
+(22, 'adminpgsd', '202cb962ac59075b964b07152d234b70', 'Admin PGSD', 'pgsd@gmail.com', 'Tidak ada file', 'pgsd', 'Y', '0000-00-00', NULL, '1'),
+(23, 'adminpgpaud', '202cb962ac59075b964b07152d234b70', 'Admin PGPAUD', 'pgpaud@gmail.com', 'Tidak ada file', 'pgpaud', 'Y', '0000-00-00', NULL, '1'),
+(24, 'adminpvto', '202cb962ac59075b964b07152d234b70', 'Admin PVTO', 'pvto@gmail.com', 'Tidak ada file', 'pvto', 'Y', '0000-00-00', NULL, '1'),
+(25, 'adminpvte', '202cb962ac59075b964b07152d234b70', 'Admin PVTE', 'pvte@gmail.com', 'Tidak ada file', 'pvte', 'Y', '0000-00-00', NULL, '1'),
+(26, 'adminppg', '202cb962ac59075b964b07152d234b70', 'Admin PPG', 'ppg@gmail.com', 'Tidak ada file', 'ppg', 'Y', '0000-00-00', NULL, '1'),
+(27, 'adminmbk', '202cb962ac59075b964b07152d234b70', 'Admin MBK/S2BK', 'mbk@gmail.com', 'Tidak ada file', 'mbk', 'Y', '0000-00-00', NULL, '1'),
+(28, 'adminmpmat', '202cb962ac59075b964b07152d234b70', 'Admin MPMAT', 'mpmat@gmail.com', 'Tidak ada file', 'mpmat', 'Y', '0000-00-00', NULL, '1'),
+(29, 'adminmp', '202cb962ac59075b964b07152d234b70', 'Admin MP', 'mp@gmail.com', 'Tidak ada file', 'mp', 'Y', '0000-00-00', NULL, '1'),
+(30, 'adminmpbi', '202cb962ac59075b964b07152d234b70', 'Admin MPBI', 'mpbi@gmail.com', 'Tidak ada file', 'mpbi', 'Y', '0000-00-00', NULL, '1'),
+(31, 'adminmpfis', '202cb962ac59075b964b07152d234b70', 'Admin MPFIS', 'mpfis@gmail.com', 'Tidak ada file', 'mpfis', 'Y', '0000-00-00', NULL, '1'),
+(32, 'adminmpgv', '202cb962ac59075b964b07152d234b70', 'Admin MPGV', 'mpgv@gmail.com', 'Tidak ada file', 'mpgv', 'Y', '0000-00-00', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -416,7 +441,7 @@ CREATE TABLE `menu` (
   `aktif` enum('Ya','Tidak') NOT NULL DEFAULT 'Ya',
   `urutan` int(3) NOT NULL,
   `position` enum('Bottom','Top','','') NOT NULL,
-  `level` varchar(50) NOT NULL
+  `level` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -426,17 +451,18 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `icon`, `link`, `aktif`, `urutan`, `position`, `level`) VALUES
 (18, 0, 'Divisi', 'icon-user fa-fw', 'Divisi', 'Ya', 11, 'Bottom', ''),
 (14, 0, 'Tambah Admin', 'icon-user fa-fw', 'Login', 'Ya', 10, 'Bottom', 'admin'),
-(15, 0, 'Daftar Kegiatan', 'icon-list  fa-fw', 'Notulen_detail', 'Ya', 2, 'Bottom', 'admin.user'),
+(15, 0, 'Daftar Kegiatan', 'icon-list  fa-fw', 'Notulen_detail', 'Ya', 2, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
 (13, 0, 'Program Studi & Tim Kerja', 'icon-menu  fa-fw', 'Notulen', 'Ya', 1, 'Bottom', 'admin'),
 (12, 0, 'Instansi', 'icon-user fa-fw', 'Instansi', 'Ya', 13, 'Bottom', ''),
-(22, 0, 'Anggota FKIP', 'icon-people  fa-fw', 'Anggota', 'Ya', 4, 'Bottom', 'admin'),
+(22, 0, 'Anggota Prodi', 'icon-people  fa-fw', 'Anggota', 'Ya', 4, 'Bottom', 'admin.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
 (23, 0, 'Buku Tamu', 'icon-close  fa-fw', 'Buku_tamu', 'Ya', 3, 'Bottom', ''),
-(24, 0, 'Tim Kerja', 'icon-people  fa-fw', 'Asistensi', 'Ya', 5, 'Bottom', 'admin.user'),
+(24, 0, 'Tim Kerja', 'icon-people  fa-fw', 'Asistensi', 'Ya', 5, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta'),
 (25, 0, 'Menu', 'icon-menu  fa-fw', 'Setting/Menu', 'Ya', 12, 'Bottom', 'admin'),
 (26, 0, 'Tamu', 'icon-user-following  fa-fw', 'import', 'Ya', 6, 'Bottom', ''),
 (27, 0, 'Absensi', 'icon-user fa-fw', 'Absensi', 'Ya', 9, 'Bottom', ''),
 (32, 0, 'Tamu/Peserta Lainya', 'icon-people  fa-fw', 'Lainya', 'Ya', 8, 'Bottom', ''),
-(33, 0, 'Staf Majelis', 'icon-people  fa-fw', 'staf', 'Ya', 7, 'Bottom', '');
+(33, 0, 'Staf Majelis', 'icon-people  fa-fw', 'staf', 'Ya', 7, 'Bottom', ''),
+(35, 0, 'Semua Aktivitas', 'icon-user fa-fw', 'Notulen_detail/lihat_semua', 'Ya', 1, 'Bottom', 'hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv');
 
 -- --------------------------------------------------------
 
@@ -522,8 +548,17 @@ CREATE TABLE `notulen_detail` (
 --
 
 INSERT INTO `notulen_detail` (`id_not_detail`, `id_notulen`, `issue`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `tempat`, `jenis_kegiatan`, `catatan`, `jumlah`, `status`, `date_created`) VALUES
-(263, 15, 'umum', '2021-09-20', '2021-09-20', '03:34', '15:34', 'Daring ', 'Workshop', 'tes1.pdf', 39, 'N', '2021-09-20'),
-(264, 14, 'Rapat PPKN', '2022-11-29', '2022-11-29', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 4, 'N', '2022-11-29');
+(266, 27, 'tes hdp', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 2, 'N', '2022-12-05'),
+(267, 28, 'tes ia', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-05'),
+(268, 29, 'tes kda', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-05'),
+(269, 30, 'tes kndi', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 5, 'N', '2022-12-05'),
+(270, 31, 'tes ppdp', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 5, 'N', '2022-12-05'),
+(271, 32, 'tes ps', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-05'),
+(272, 33, 'tes pkrpdp', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 5, 'N', '2022-12-05'),
+(273, 34, 'tes ta', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 9, 'N', '2022-12-05'),
+(275, 34, 'admin akre', '2022-12-06', '2022-12-06', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-06'),
+(276, 17, 'tes bk edit', '2022-12-06', '2022-12-06', '01:00', '01:00', 'Daring', 'Rapat', 'SU_Seleksi_Calon_Reviewer_Penelitian_Batch_1.pdf', 6, 'N', '2022-12-06'),
+(277, 27, 'tes humas dan promosi', '2022-12-07', '2022-12-07', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'Y', '2022-12-07');
 
 -- --------------------------------------------------------
 
@@ -546,22 +581,45 @@ CREATE TABLE `peserta` (
 --
 
 INSERT INTO `peserta` (`id_peserta`, `id_not_detail`, `id_anggota`, `id_asistensi`, `id_tamu`, `id_lainya`, `id_staf`) VALUES
-(440, 263, 1, 14, 722, 118, 204),
-(441, 263, 5, 15, 723, 119, 205),
-(442, 263, 6, 16, 724, 120, 206),
-(443, 263, 7, 17, 725, NULL, 207),
-(444, 263, 8, 18, NULL, NULL, 208),
-(445, 263, 9, 29, NULL, NULL, 220),
-(446, 263, 10, 30, NULL, NULL, 221),
-(447, 263, 30, 31, NULL, NULL, 222),
-(448, 263, 31, 32, NULL, NULL, 223),
-(449, 263, 32, 42, NULL, NULL, 224),
-(450, 263, NULL, 43, NULL, NULL, NULL),
-(451, 263, NULL, 44, NULL, NULL, NULL),
-(452, 264, 29, NULL, NULL, NULL, NULL),
-(453, 264, 30, NULL, NULL, NULL, NULL),
-(454, 264, 34, NULL, NULL, NULL, NULL),
-(455, 264, 35, NULL, NULL, NULL, NULL);
+(460, 266, NULL, 85, NULL, NULL, NULL),
+(461, 266, NULL, 87, NULL, NULL, NULL),
+(462, 267, NULL, 108, NULL, NULL, NULL),
+(463, 267, NULL, 109, NULL, NULL, NULL),
+(464, 267, NULL, 110, NULL, NULL, NULL),
+(465, 268, NULL, 116, NULL, NULL, NULL),
+(466, 268, NULL, 117, NULL, NULL, NULL),
+(467, 268, NULL, 118, NULL, NULL, NULL),
+(468, 269, 36, 129, NULL, NULL, NULL),
+(469, 269, 40, 130, NULL, NULL, NULL),
+(470, 269, NULL, 131, NULL, NULL, NULL),
+(471, 270, 40, 141, NULL, NULL, NULL),
+(472, 270, 41, 142, NULL, NULL, NULL),
+(473, 270, NULL, 143, NULL, NULL, NULL),
+(474, 271, 30, 154, NULL, NULL, NULL),
+(475, 271, NULL, 155, NULL, NULL, NULL),
+(476, 272, NULL, 165, NULL, NULL, NULL),
+(477, 272, NULL, 166, NULL, NULL, NULL),
+(478, 272, NULL, 167, NULL, NULL, NULL),
+(479, 272, NULL, 168, NULL, NULL, NULL),
+(480, 272, NULL, 169, NULL, NULL, NULL),
+(481, 273, 29, 182, NULL, NULL, NULL),
+(482, 273, 30, 184, NULL, NULL, NULL),
+(483, 273, 31, 185, NULL, NULL, NULL),
+(484, 273, NULL, 186, NULL, NULL, NULL),
+(485, 273, NULL, 187, NULL, NULL, NULL),
+(486, 273, NULL, 188, NULL, NULL, NULL),
+(487, 275, NULL, 199, NULL, NULL, NULL),
+(488, 275, NULL, 200, NULL, NULL, NULL),
+(489, 275, NULL, 201, NULL, NULL, NULL),
+(490, 276, 34, NULL, NULL, NULL, NULL),
+(491, 276, 35, NULL, NULL, NULL, NULL),
+(492, 276, 36, NULL, NULL, NULL, NULL),
+(493, 276, 68, NULL, NULL, NULL, NULL),
+(494, 276, 69, NULL, NULL, NULL, NULL),
+(495, 276, 70, NULL, NULL, NULL, NULL),
+(496, 277, NULL, 85, NULL, NULL, NULL),
+(497, 277, NULL, 87, NULL, NULL, NULL),
+(498, 277, NULL, 88, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -686,13 +744,13 @@ ALTER TABLE `staf`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `asistensi`
 --
 ALTER TABLE `asistensi`
-  MODIFY `id_asistensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
+  MODIFY `id_asistensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
 
 --
 -- AUTO_INCREMENT for table `buku_tamu`
@@ -722,13 +780,13 @@ ALTER TABLE `lainya`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_menu` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `notulen`
@@ -740,13 +798,13 @@ ALTER TABLE `notulen`
 -- AUTO_INCREMENT for table `notulen_detail`
 --
 ALTER TABLE `notulen_detail`
-  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
+  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
 
 --
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=456;
+  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=499;
 
 --
 -- AUTO_INCREMENT for table `staf`
