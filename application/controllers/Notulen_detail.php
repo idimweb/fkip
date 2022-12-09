@@ -37,7 +37,7 @@ class Notulen_detail extends CI_Controller
   {
     $x['judul'] = 'Detil Program/Kegiatan';
     $x['data_notulen'] = $this->Notulen_detail_model->list_data();
-    if ($this->session->level == 'admin') {
+    if ($this->session->level == 'admin' || 'user') {
       $this->template->load('template', 'notulen_detail/notulen_detail_list', $x);
     } else {
       $this->template->load('template', 'notulen_detail/notulen_detail_list_user', $x);
