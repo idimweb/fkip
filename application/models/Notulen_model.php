@@ -40,7 +40,7 @@ class Notulen_model extends CI_Model
     $this->datatables->join('login b', 'a.id_create = b.id_user', 'left');
     $this->datatables->add_column('nama_user', '$1', 'nama');
     if ($this->session->level == 'admin') :
-      $this->datatables->add_column('action', anchor(site_url('notulen/edit/' . encrypt_url('$1')), '<i class="fa fa-edit"></i> Ubah', 'class="btn btn-success btn-xs edit"') . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a>", 'id_notulen');
+      $this->datatables->add_column('action', anchor(site_url('notulen/edit/$1'), '<i class="fa fa-edit"></i> Ubah', 'class="btn btn-success btn-xs edit"') . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a>", 'id_notulen');
     else :
       $this->datatables->add_column('action', anchor(site_url('notulen/detail/$1'), '<i class="fa fa-book"></i>Read', 'class="btn btn-info btn-xs edit"'), 'id_notulen');
     endif;
