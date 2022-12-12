@@ -15,6 +15,7 @@ class Anggota extends CI_Controller
     parent::__construct();
     login_access();
     hak_akses();
+    $this->load->helper(array('url', 'html', 'form', 'security', 'uri'));
     $this->load->model('Anggota_model');
     $this->load->library('form_validation');
     $this->load->library('datatables');
@@ -121,6 +122,7 @@ class Anggota extends CI_Controller
 
   public function edit($id)
   {
+    $id = decrypt_url($id);
     $row = $this->Anggota_model->get_by_id($id);
 
     if ($row) {

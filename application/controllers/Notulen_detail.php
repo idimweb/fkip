@@ -37,7 +37,7 @@ class Notulen_detail extends CI_Controller
   {
     $x['judul'] = 'Detil Program/Kegiatan';
     $x['data_notulen'] = $this->Notulen_detail_model->list_data();
-    if ($this->session->level == 'admin' || 'user') {
+    if (($this->session->level == 'admin') || ($this->session->level == 'user')) {
       $this->template->load('template', 'notulen_detail/notulen_detail_list', $x);
     } else {
       $this->template->load('template', 'notulen_detail/notulen_detail_list_user', $x);
@@ -140,6 +140,7 @@ class Notulen_detail extends CI_Controller
 
   public function tampilDetail($id)
   {
+    // $id = decrypt_url($id);
     $data = array(
       'judul' => 'Detail : Kegiatan',
       'hasil' => $this->Notulen_detail_model->TampilPeserta($id),
@@ -184,7 +185,7 @@ class Notulen_detail extends CI_Controller
       'id_anggota' => $this->input->post('id_anggota', TRUE),
       'id_asistensi' => $this->input->post('id_asistensi', TRUE),
       'id_staf' => $this->input->post('id_staf', TRUE),
-      'tamu' => $this->input->post('tamu', TRUE),
+      // 'tamu' => $this->input->post('tamu', TRUE),
       'lainya' => $this->input->post('lainya', TRUE),
       'tempat' => $this->input->post('tempat', TRUE),
       'jenis_kegiatan' => $this->input->post('jenis_kegiatan', TRUE),
@@ -206,26 +207,26 @@ class Notulen_detail extends CI_Controller
       $this->tambah();
     } else {
 
-      $path = 'assets/uploads/';
-      require_once APPPATH . "/third_party/PHPExcel.php";
-      $config['upload_path'] = $path;
-      $config['allowed_types'] = 'xlsx|xls|csv';
-      $config['remove_spaces'] = TRUE;
-      $this->load->library('upload', $config);
-      $this->upload->initialize($config);
-      if (!$this->upload->do_upload('tamu')) {
-        $error = array('error' => $this->upload->display_errors());
-      } else {
-        $data = array('upload_data' => $this->upload->data());
-      }
-      if (empty($error)) {
-        if (!empty($data['upload_data']['file_name'])) {
-          $import_xls_file = $data['upload_data']['file_name'];
-        } else {
-          $import_xls_file = 0;
-        }
-        $inputFileName = $path . $import_xls_file;
-      }
+      // $path = 'assets/uploads/';
+      // require_once APPPATH . "/third_party/PHPExcel.php";
+      // $config['upload_path'] = $path;
+      // $config['allowed_types'] = 'xlsx|xls|csv';
+      // $config['remove_spaces'] = TRUE;
+      // $this->load->library('upload', $config);
+      // $this->upload->initialize($config);
+      // if (!$this->upload->do_upload('tamu')) {
+      //   $error = array('error' => $this->upload->display_errors());
+      // } else {
+      //   $data = array('upload_data' => $this->upload->data());
+      // }
+      // if (empty($error)) {
+      //   if (!empty($data['upload_data']['file_name'])) {
+      //     $import_xls_file = $data['upload_data']['file_name'];
+      //   } else {
+      //     $import_xls_file = 0;
+      //   }
+      //   $inputFileName = $path . $import_xls_file;
+      // }
 
       $checkbox = $_POST['id_anggota'];
       $checkbox2 = $_POST['id_asistensi'];
@@ -238,21 +239,21 @@ class Notulen_detail extends CI_Controller
       $c = count($tambahData);
       $e = count($checkbox3);
 
-      if ($import_xls_file == 0) {
-        $d = 1;
-      }
+      // if ($import_xls_file == 0) {
+      //   $d = 1;
+      // }
 
-      if ($inputFileName != NULL) {
-        $inputFileName = $path . $import_xls_file;
-        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-        $objPHPExcel = $objReader->load($inputFileName);
-        $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-        $d = count($allDataInSheet);
-      }
+      // if ($inputFileName != NULL) {
+      //   $inputFileName = $path . $import_xls_file;
+      //   $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+      //   $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+      //   $objPHPExcel = $objReader->load($inputFileName);
+      //   $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+      //   $d = count($allDataInSheet);
+      // }
 
-      $d = $d - 1;
-      $jlh = $a + $b + $c + $d + $e;
+      // $d = $d - 1;
+      $jlh = $a + $b + $c + $e;
 
       $path = 'assets/uploads/file';
       $config['upload_path'] = $path;
@@ -295,7 +296,7 @@ class Notulen_detail extends CI_Controller
       $b = count($checkbox2);
       $e = count($checkbox3);
       $c = count($tambahData);
-      $arrayRow = array($a, $b, $c, $d, $e);
+      $arrayRow = array($a, $b, $c, $e);
       $max = max($arrayRow);
 
       for ($i = 0; $i < $max; $i++) {
@@ -309,40 +310,40 @@ class Notulen_detail extends CI_Controller
           $id_lainya = NULL;
         }
 
-        if ($i < $d) {
-          $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-          $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-          $objPHPExcel = $objReader->load($inputFileName);
-          $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-          $flag = true;
-          $x = 0;
-          foreach ($allDataInSheet as $value) {
-            if ($flag) {
-              $flag = false;
-              continue;
-            }
-            $inserdata[$x]['first_name']    = $value['A'];
-            $inserdata[$x]['last_name']    = $value['B'];
-            $inserdata[$x]['email']        = $value['C'];
-            $inserdata[$x]['contact_no']   = $value['D'];
-            $x++;
-          }
-          $data3 = array(
-            'first_name'    => $inserdata[$i]['first_name'],
-            'last_name'    => $inserdata[$i]['last_name'],
-            'email'        => $inserdata[$i]['email'],
-            'contact_no'   => $inserdata[$i]['contact_no'],
-          );
-          $result = $this->Import_model->insert($data3);
-          $id_tamu = $this->db->insert_id();
-        } else {
-          $id_tamu = NULL;
-        }
+        // if ($i < $d) {
+        //   $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        //   $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        //   $objPHPExcel = $objReader->load($inputFileName);
+        //   $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+        //   $flag = true;
+        //   $x = 0;
+        //   foreach ($allDataInSheet as $value) {
+        //     if ($flag) {
+        //       $flag = false;
+        //       continue;
+        //     }
+        //     $inserdata[$x]['first_name']    = $value['A'];
+        //     $inserdata[$x]['last_name']    = $value['B'];
+        //     $inserdata[$x]['email']        = $value['C'];
+        //     $inserdata[$x]['contact_no']   = $value['D'];
+        //     $x++;
+        //   }
+        //   $data3 = array(
+        //     'first_name'    => $inserdata[$i]['first_name'],
+        //     'last_name'    => $inserdata[$i]['last_name'],
+        //     'email'        => $inserdata[$i]['email'],
+        //     'contact_no'   => $inserdata[$i]['contact_no'],
+        //   );
+        //   $result = $this->Import_model->insert($data3);
+        //   $id_tamu = $this->db->insert_id();
+        // } else {
+        //   $id_tamu = NULL;
+        // }
 
         $data2 = array(
           'id_not_detail' => $id_not_detail,
           'id_lainya' => $id_lainya,
-          'id_tamu' => $id_tamu,
+          // 'id_tamu' => $id_tamu,
           'id_anggota' => $checkbox[$i],
           'id_asistensi' => $checkbox2[$i],
           'id_staf' => $checkbox3[$i],
@@ -475,26 +476,26 @@ class Notulen_detail extends CI_Controller
 
   public function edit_data_peserta()
   {
-    $path = 'assets/uploads/';
-    require_once APPPATH . "/third_party/PHPExcel.php";
-    $config['upload_path'] = $path;
-    $config['allowed_types'] = 'xlsx|xls|csv';
-    $config['remove_spaces'] = TRUE;
-    $this->load->library('upload', $config);
-    $this->upload->initialize($config);
-    if (!$this->upload->do_upload('tamu')) {
-      $error = array('error' => $this->upload->display_errors());
-    } else {
-      $data = array('upload_data' => $this->upload->data());
-    }
-    if (empty($error)) {
-      if (!empty($data['upload_data']['file_name'])) {
-        $import_xls_file = $data['upload_data']['file_name'];
-      } else {
-        $import_xls_file = 0;
-      }
-      $inputFileName = $path . $import_xls_file;
-    }
+    // $path = 'assets/uploads/';
+    // require_once APPPATH . "/third_party/PHPExcel.php";
+    // $config['upload_path'] = $path;
+    // $config['allowed_types'] = 'xlsx|xls|csv';
+    // $config['remove_spaces'] = TRUE;
+    // $this->load->library('upload', $config);
+    // $this->upload->initialize($config);
+    // if (!$this->upload->do_upload('tamu')) {
+    //   $error = array('error' => $this->upload->display_errors());
+    // } else {
+    //   $data = array('upload_data' => $this->upload->data());
+    // }
+    // if (empty($error)) {
+    //   if (!empty($data['upload_data']['file_name'])) {
+    //     $import_xls_file = $data['upload_data']['file_name'];
+    //   } else {
+    //     $import_xls_file = 0;
+    //   }
+    //   $inputFileName = $path . $import_xls_file;
+    // }
     $checkbox = $_POST['id_anggota'];
     $checkbox2 = $_POST['id_asistensi'];
     $checkbox3 = $_POST['id_staf'];
@@ -506,21 +507,21 @@ class Notulen_detail extends CI_Controller
     $c = count($tambahData);
     $e = count($checkbox3);
 
-    if ($import_xls_file == 0) {
-      $d = 1;
-    }
+    // if ($import_xls_file == 0) {
+    //   $d = 1;
+    // }
 
-    if ($inputFileName != NULL) {
-      $inputFileName = $path . $import_xls_file;
-      $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-      $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-      $objPHPExcel = $objReader->load($inputFileName);
-      $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-      $d = count($allDataInSheet);
-    }
+    // if ($inputFileName != NULL) {
+    //   $inputFileName = $path . $import_xls_file;
+    //   $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+    //   $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+    //   $objPHPExcel = $objReader->load($inputFileName);
+    //   $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+    //   $d = count($allDataInSheet);
+    // }
 
-    $d = $d - 1;
-    $jlh = $a + $b + $c + $d + $e;
+    // $d = $d - 1;
+    $jlh = $a + $b + $c + $e;
 
 
     $checkbox = $_POST['id_anggota'];
@@ -544,7 +545,7 @@ class Notulen_detail extends CI_Controller
     $b = count($checkbox2);
     $e = count($checkbox3);
     $c = count($tambahData);
-    $arrayRow = array($a, $b, $c, $d, $e);
+    $arrayRow = array($a, $b, $c, $e);
     $max = max($arrayRow);
 
     for ($i = 0; $i < $max; $i++) {
@@ -558,40 +559,40 @@ class Notulen_detail extends CI_Controller
         $id_lainya = NULL;
       }
 
-      if ($i < $d) {
-        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-        $objPHPExcel = $objReader->load($inputFileName);
-        $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-        $flag = true;
-        $x = 0;
-        foreach ($allDataInSheet as $value) {
-          if ($flag) {
-            $flag = false;
-            continue;
-          }
-          $inserdata[$x]['first_name']    = $value['A'];
-          $inserdata[$x]['last_name']    = $value['B'];
-          $inserdata[$x]['email']        = $value['C'];
-          $inserdata[$x]['contact_no']   = $value['D'];
-          $x++;
-        }
-        $data3 = array(
-          'first_name'    => $inserdata[$i]['first_name'],
-          'last_name'    => $inserdata[$i]['last_name'],
-          'email'        => $inserdata[$i]['email'],
-          'contact_no'   => $inserdata[$i]['contact_no'],
-        );
-        $result = $this->Import_model->insert($data3);
-        $id_tamu = $this->db->insert_id();
-      } else {
-        $id_tamu = NULL;
-      }
+      // if ($i < $d) {
+      //   $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+      //   $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+      //   $objPHPExcel = $objReader->load($inputFileName);
+      //   $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+      //   $flag = true;
+      //   $x = 0;
+      //   foreach ($allDataInSheet as $value) {
+      //     if ($flag) {
+      //       $flag = false;
+      //       continue;
+      //     }
+      //     $inserdata[$x]['first_name']    = $value['A'];
+      //     $inserdata[$x]['last_name']    = $value['B'];
+      //     $inserdata[$x]['email']        = $value['C'];
+      //     $inserdata[$x]['contact_no']   = $value['D'];
+      //     $x++;
+      //   }
+      //   $data3 = array(
+      //     'first_name'    => $inserdata[$i]['first_name'],
+      //     'last_name'    => $inserdata[$i]['last_name'],
+      //     'email'        => $inserdata[$i]['email'],
+      //     'contact_no'   => $inserdata[$i]['contact_no'],
+      //   );
+      //   $result = $this->Import_model->insert($data3);
+      //   $id_tamu = $this->db->insert_id();
+      // } else {
+      //   $id_tamu = NULL;
+      // }
 
       $data2 = array(
         'id_not_detail' => $id_not_detail,
         'id_lainya' => $id_lainya,
-        'id_tamu' => $id_tamu,
+        // 'id_tamu' => $id_tamu,
         'id_anggota' => $checkbox[$i],
         'id_asistensi' => $checkbox2[$i],
         'id_staf' => $checkbox3[$i],

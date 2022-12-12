@@ -15,6 +15,7 @@ class Asistensi extends CI_Controller
     parent::__construct();
     login_access();
     hak_akses();
+    $this->load->helper(array('url', 'html', 'form', 'security', 'uri'));
     $this->load->model('Asistensi_model');
     $this->load->library('form_validation');
     $this->load->library('datatables');
@@ -93,6 +94,7 @@ class Asistensi extends CI_Controller
 
   public function edit($id)
   {
+    $id = decrypt_url($id);
     $row = $this->Asistensi_model->get_by_id($id);
 
     if ($row) {

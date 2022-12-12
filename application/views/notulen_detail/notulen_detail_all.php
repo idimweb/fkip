@@ -9,7 +9,7 @@
           <!-- <label for="varchar" class='control-label col-md-3'><b>Bulan</b></label> -->
           <div class='col-md-9'>
             <?php
-            if ($this->session->level == 'admin' || 'user') {
+            if (($this->session->level == 'admin') || ($this->session->level == 'user')) {
             ?>
 
               <table class="table">
@@ -438,7 +438,7 @@
               </td>
             </tr>
 
-          <?php } elseif ($this->session->level == 'admin' || 'user') { ?>
+          <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
 
             <tr>
               <td>
@@ -976,7 +976,7 @@
               </td>
             </tr>
 
-          <?php } elseif ($this->session->level == 'admin' || 'user') { ?>
+          <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
 
             <tr>
               <td>

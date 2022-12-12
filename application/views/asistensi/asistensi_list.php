@@ -45,7 +45,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -72,7 +75,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -98,7 +104,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -124,7 +133,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -150,7 +162,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -176,7 +191,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -202,7 +220,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -228,7 +249,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
@@ -253,7 +277,10 @@
                                     <?= $ang->email ?>
                                 </td>
                                 <td>
-                                    <a href="<?= base_url() ?>asistensi/edit/<?= $ang->id_asistensi ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
                                     <a href="<?= base_url() ?>asistensi/hapus/<?= $ang->id_asistensi ?>" class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>

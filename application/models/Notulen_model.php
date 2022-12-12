@@ -13,6 +13,7 @@ class Notulen_model extends CI_Model
   function __construct()
   {
     parent::__construct();
+    $this->load->helper(array('url', 'html', 'form', 'security', 'uri'));
   }
 
   // datatables
