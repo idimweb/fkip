@@ -184,7 +184,7 @@ class Notulen_detail extends CI_Controller
       'waktu_selesai' => $this->input->post('waktu_selesai', TRUE),
       'id_anggota' => $this->input->post('id_anggota', TRUE),
       'id_asistensi' => $this->input->post('id_asistensi', TRUE),
-      'id_staf' => $this->input->post('id_staf', TRUE),
+      // 'id_staf' => $this->input->post('id_staf', TRUE),
       // 'tamu' => $this->input->post('tamu', TRUE),
       'lainya' => $this->input->post('lainya', TRUE),
       'tempat' => $this->input->post('tempat', TRUE),
@@ -207,53 +207,18 @@ class Notulen_detail extends CI_Controller
       $this->tambah();
     } else {
 
-      // $path = 'assets/uploads/';
-      // require_once APPPATH . "/third_party/PHPExcel.php";
-      // $config['upload_path'] = $path;
-      // $config['allowed_types'] = 'xlsx|xls|csv';
-      // $config['remove_spaces'] = TRUE;
-      // $this->load->library('upload', $config);
-      // $this->upload->initialize($config);
-      // if (!$this->upload->do_upload('tamu')) {
-      //   $error = array('error' => $this->upload->display_errors());
-      // } else {
-      //   $data = array('upload_data' => $this->upload->data());
-      // }
-      // if (empty($error)) {
-      //   if (!empty($data['upload_data']['file_name'])) {
-      //     $import_xls_file = $data['upload_data']['file_name'];
-      //   } else {
-      //     $import_xls_file = 0;
-      //   }
-      //   $inputFileName = $path . $import_xls_file;
-      // }
-
       $checkbox = $_POST['id_anggota'];
       $checkbox2 = $_POST['id_asistensi'];
-      $checkbox3 = $_POST['id_staf'];
+      // $checkbox3 = $_POST['id_staf'];
       $tambahData = $_POST['nama_lainya'];
 
 
       $a = count($checkbox);
       $b = count($checkbox2);
       $c = count($tambahData);
-      $e = count($checkbox3);
+      // $e = count($checkbox3);
 
-      // if ($import_xls_file == 0) {
-      //   $d = 1;
-      // }
-
-      // if ($inputFileName != NULL) {
-      //   $inputFileName = $path . $import_xls_file;
-      //   $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-      //   $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-      //   $objPHPExcel = $objReader->load($inputFileName);
-      //   $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-      //   $d = count($allDataInSheet);
-      // }
-
-      // $d = $d - 1;
-      $jlh = $a + $b + $c + $e;
+      $jlh = $a + $b + $c;
 
       $path = 'assets/uploads/file';
       $config['upload_path'] = $path;
@@ -290,13 +255,13 @@ class Notulen_detail extends CI_Controller
       $id_not_detail = $this->db->insert_id();
       $checkbox = $_POST['id_anggota'];
       $checkbox2 = $_POST['id_asistensi'];
-      $checkbox3 = $_POST['id_staf'];
+      // $checkbox3 = $_POST['id_staf'];
       $tambahData = $_POST['nama_lainya'];
       $a = count($checkbox);
       $b = count($checkbox2);
-      $e = count($checkbox3);
+      // $e = count($checkbox3);
       $c = count($tambahData);
-      $arrayRow = array($a, $b, $c, $e);
+      $arrayRow = array($a, $b, $c);
       $max = max($arrayRow);
 
       for ($i = 0; $i < $max; $i++) {
@@ -310,49 +275,28 @@ class Notulen_detail extends CI_Controller
           $id_lainya = NULL;
         }
 
-        // if ($i < $d) {
-        //   $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-        //   $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-        //   $objPHPExcel = $objReader->load($inputFileName);
-        //   $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-        //   $flag = true;
-        //   $x = 0;
-        //   foreach ($allDataInSheet as $value) {
-        //     if ($flag) {
-        //       $flag = false;
-        //       continue;
-        //     }
-        //     $inserdata[$x]['first_name']    = $value['A'];
-        //     $inserdata[$x]['last_name']    = $value['B'];
-        //     $inserdata[$x]['email']        = $value['C'];
-        //     $inserdata[$x]['contact_no']   = $value['D'];
-        //     $x++;
-        //   }
-        //   $data3 = array(
-        //     'first_name'    => $inserdata[$i]['first_name'],
-        //     'last_name'    => $inserdata[$i]['last_name'],
-        //     'email'        => $inserdata[$i]['email'],
-        //     'contact_no'   => $inserdata[$i]['contact_no'],
-        //   );
-        //   $result = $this->Import_model->insert($data3);
-        //   $id_tamu = $this->db->insert_id();
-        // } else {
-        //   $id_tamu = NULL;
-        // }
-
         $data2 = array(
           'id_not_detail' => $id_not_detail,
           'id_lainya' => $id_lainya,
           // 'id_tamu' => $id_tamu,
           'id_anggota' => $checkbox[$i],
           'id_asistensi' => $checkbox2[$i],
-          'id_staf' => $checkbox3[$i],
+          // 'id_staf' => $checkbox3[$i],
         );
         $this->Peserta_model->insert($data2);
       }
     }
-    $this->session->set_flashdata('message', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Data Berhasil Di Tambahkan.</div>');
-    redirect(site_url('notulen_detail'));
+
+    //awal
+    if ($this->db->insert_id() > 0) {
+      $this->session->set_flashdata('message', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Data Berhasil Di Tambahkan.</div>');
+      redirect(site_url('notulen_detail'));
+    } else {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger fade-in"><i class="fa fa-check"></i>Data Gagal Di Tambahkan.</div>');
+      redirect(site_url('notulen_detail'));
+    }
+    //akhir
+
   }
 
   public function edit($id)
@@ -461,13 +405,13 @@ class Notulen_detail extends CI_Controller
       'action' => site_url('notulen_detail/edit_data_peserta'),
       'id_anggota' => $this->input->post('id_anggota', TRUE),
       'id_asistensi' => $this->input->post('id_asistensi', TRUE),
-      'id_staf' => $this->input->post('id_staf', TRUE),
-      'id_tamu' => $this->input->post('id_tamu', TRUE),
+      // 'id_staf' => $this->input->post('id_staf', TRUE),
+      // 'id_tamu' => $this->input->post('id_tamu', TRUE),
       'id_lainya' => $this->input->post('id_lainya', TRUE),
       'detail'  => $this->Notulen_detail_model->TampilPeserta($id),
       'anggota' => $this->db->get('anggota')->result(),
       'asistensi' => $this->db->get('asistensi')->result(),
-      'staf' => $this->db->get('staf')->result(),
+      // 'staf' => $this->db->get('staf')->result(),
       'notulen_detail' => $this->Notulen_detail_model->edit_data($where, 'notulen_detail')->result(),
     );
 
@@ -498,14 +442,14 @@ class Notulen_detail extends CI_Controller
     // }
     $checkbox = $_POST['id_anggota'];
     $checkbox2 = $_POST['id_asistensi'];
-    $checkbox3 = $_POST['id_staf'];
+    // $checkbox3 = $_POST['id_staf'];
     $tambahData = $_POST['nama_lainya'];
 
 
     $a = count($checkbox);
     $b = count($checkbox2);
     $c = count($tambahData);
-    $e = count($checkbox3);
+    // $e = count($checkbox3);
 
     // if ($import_xls_file == 0) {
     //   $d = 1;
@@ -521,7 +465,7 @@ class Notulen_detail extends CI_Controller
     // }
 
     // $d = $d - 1;
-    $jlh = $a + $b + $c + $e;
+    $jlh = $a + $b + $c;
 
 
     $checkbox = $_POST['id_anggota'];
@@ -539,13 +483,13 @@ class Notulen_detail extends CI_Controller
 
     $checkbox = $_POST['id_anggota'];
     $checkbox2 = $_POST['id_asistensi'];
-    $checkbox3 = $_POST['id_staf'];
+    // $checkbox3 = $_POST['id_staf'];
     $tambahData = $_POST['nama_lainya'];
     $a = count($checkbox);
     $b = count($checkbox2);
-    $e = count($checkbox3);
+    // $e = count($checkbox3);
     $c = count($tambahData);
-    $arrayRow = array($a, $b, $c, $e);
+    $arrayRow = array($a, $b, $c);
     $max = max($arrayRow);
 
     for ($i = 0; $i < $max; $i++) {
@@ -595,7 +539,7 @@ class Notulen_detail extends CI_Controller
         // 'id_tamu' => $id_tamu,
         'id_anggota' => $checkbox[$i],
         'id_asistensi' => $checkbox2[$i],
-        'id_staf' => $checkbox3[$i],
+        // 'id_staf' => $checkbox3[$i],
       );
       $this->Peserta_model->insert($data2);
     }

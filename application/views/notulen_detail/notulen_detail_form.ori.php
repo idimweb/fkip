@@ -183,409 +183,399 @@
                   <textarea class="form-control" name="issue" id="issue" placeholder="Program/Kegiatan"><?php echo $issue; ?></textarea>
                 </div>
               </div>
-
               <div class="form-group">
-                <?php
-                if (($this->session->level != 'hdp') && ($this->session->level != 'ia') && ($this->session->level != 'kda') && ($this->session->level != 'kndi') && ($this->session->level != 'ppdp') && ($this->session->level != 'ps') && ($this->session->level != 'pkrpdp') && ($this->session->level != 'ta')) {
-                ?>
-                  <label for="int" class='control-label col-md-3'><b>Anggota FKIP<?php echo form_error('id_anggota[]') ?></b></label>
-
-                  <div class='col-md-9'>
-                    <div class="modal-body">
-                      <table class="table" id="example">
-                        <thead>
-                          <tr>
-                            <th width="80px">No</th>
-                            <th>Peserta</th>
-                            <th>Jabatan</th>
-                            <th width="200px">Kehadiran</th>
-                          </tr>
-                        </thead>
+                <label for="int" class='control-label col-md-3'><b>Anggota FKIP<?php echo form_error('id_anggota[]') ?></b></label>
+                <div class='col-md-9'>
+                  <div class="modal-body">
+                    <table class="table" id="example">
+                      <thead>
+                        <tr>
+                          <th width="80px">No</th>
+                          <th>Peserta</th>
+                          <th>Jabatan</th>
+                          <th width="200px">Kehadiran</th>
+                        </tr>
+                      </thead>
+                      <?php
+                      $no = 1;
+                      foreach ($anggota as $ang) :
+                      ?>
                         <?php
-                        $no = 1;
-                        foreach ($anggota as $ang) :
+                        if ($this->session->level == 'bk' && $ang->prodi == 'BK') {
                         ?>
-                          <?php
-                          if ($this->session->level == 'bk' && $ang->prodi == 'BK') {
-                          ?>
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php
-                          } elseif ($this->session->level == 'mp' && $ang->prodi == 'MP') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'mpbi' && $ang->prodi == 'MPBI') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'mpfis' && $ang->prodi == 'MPFIS') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'mpgv' && $ang->prodi == 'MPGV') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'mpmat' && $ang->prodi == 'MPMAT') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pbi' && $ang->prodi == 'PBI') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pbio' && $ang->prodi == 'PBIO') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pbsi' && $ang->prodi == 'PBSI') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pfis' && $ang->prodi == 'PFIS') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pgpaud' && $ang->prodi == 'PGPAUD') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pgsd' && $ang->prodi == 'PGSD') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pmat' && $ang->prodi == 'PMAT') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'ppg' && $ang->prodi == 'PPG') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'ppkn' && $ang->prodi == 'PPKN') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pvte' && $ang->prodi == 'PVTE') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'pvto' && $ang->prodi == 'PVTO') {
-                          ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } elseif ($this->session->level == 'admin') { ?>
-
-                            <tr>
-                              <td>
-                                <?php echo $no++ ?>
-                              </td>
-
-                              <td>
-                                <?php echo $ang->nama ?>
-                              </td>
-                              <td>
-                                <?php echo $ang->jabatan ?>
-                              </td>
-
-                              <td>
-                                <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
-                              </td>
-                            </tr>
-
-                          <?php } ?>
-
-                        <?php endforeach; ?>
-                        <tfoot>
                           <tr>
-                            <th width="80px">No</th>
-                            <th>Peserta</th>
-                            <th>Jabatan</th>
-                            <th width="200px">Kehadiran</th>
-                          </tr>
-                        </tfoot>
-                      </table>
-                    </div>
-                  </div>
-              </div>
-            <?php }
-            ?>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
 
-            <?php
-            if (($this->session->level == 'user') || ($this->session->level == 'admin') || ($this->session->level == 'hdp') || ($this->session->level == 'ia') || ($this->session->level == 'kda') || ($this->session->level == 'kndi') || ($this->session->level == 'ppdp') || ($this->session->level == 'ps') || ($this->session->level == 'pkrpdp') || ($this->session->level == 'ta')) {
-            ?>
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php
+                        } elseif ($this->session->level == 'mp' && $ang->prodi == 'MP') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'mpbi' && $ang->prodi == 'MPBI') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'mpfis' && $ang->prodi == 'MPFIS') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'mpgv' && $ang->prodi == 'MPGV') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'mpmat' && $ang->prodi == 'MPMAT') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pbi' && $ang->prodi == 'PBI') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pbio' && $ang->prodi == 'PBIO') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pbsi' && $ang->prodi == 'PBSI') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pfis' && $ang->prodi == 'PFIS') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pgpaud' && $ang->prodi == 'PGPAUD') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pgsd' && $ang->prodi == 'PGSD') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pmat' && $ang->prodi == 'PMAT') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'ppg' && $ang->prodi == 'PPG') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'ppkn' && $ang->prodi == 'PPKN') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pvte' && $ang->prodi == 'PVTE') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'pvto' && $ang->prodi == 'PVTO') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } elseif ($this->session->level == 'admin') { ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
+                        <?php } ?>
+
+                      <?php endforeach; ?>
+                      <tfoot>
+                        <tr>
+                          <th width="80px">No</th>
+                          <th>Peserta</th>
+                          <th>Jabatan</th>
+                          <th width="200px">Kehadiran</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
               <div class="form-group">
                 <label for="int" class='control-label col-md-3'><b>Peserta Tim Kerja<?php echo form_error('id_asistensi[]') ?></b></label>
                 <div class='col-md-9'>
@@ -791,124 +781,114 @@
                   </div>
                 </div>
               </div>
-            <?php } ?>
 
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Peserta Lainya<?php echo form_error('nama_lainya[]') ?></b></label>
-              <div class='col-md-6'>
-                <table class="table">
-                  <tbody id="viewTable">
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Peserta Lainya<?php echo form_error('nama_lainya[]') ?></b></label>
+                <div class='col-md-6'>
+                  <table class="table">
+                    <tbody id="viewTable">
 
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
 
-                <br>
-                <hr>
-                <button id="openTable" type="button" class="btn btn-success" name="button"><b>Tambah Data</b> </button>
-                <button id="" type="button" class="hapusBaris btn btn-danger" name="button" onclick="ConfirmDelete()">Hapus Data </button>
+                  <br>
+                  <hr>
+                  <button id="openTable" type="button" class="btn btn-success" name="button"><b>Tambah Data</b> </button>
+                  <button id="" type="button" class="hapusBaris btn btn-danger" name="button" onclick="ConfirmDelete()">Hapus Data </button>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div id="result" style="display:none" class="text-danger">
-                <p>Harus ceklist dulu di kolom Hapus</p>
+              <div class="form-group">
+                <div id="result" style="display:none" class="text-danger">
+                  <p>Harus ceklist dulu di kolom Hapus</p>
+                </div>
               </div>
-            </div>
 
-            <!-- <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Tanggal Mulai<?php echo form_error('tanggal_mulai') ?></b></label>
-              <div class='col-md-3'>
-                <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Tanggal Mulai<?php echo form_error('tanggal_mulai') ?></b></label>
+                <div class='col-md-3'>
+                  <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
+                </div>
+                <label for="varchar" class='control-label col-md-3'><b> Sampai <?php echo form_error('tanggal_selesai') ?></b></label>
+                <div class='col-md-3'>
+                  <input type="date" class="form-control" name="tanggal_selesai" id="tanggal_selesai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
+                </div>
               </div>
-              <label for="varchar" class='control-label col-md-3'><b> Sampai <?php echo form_error('tanggal_selesai') ?></b></label>
-              <div class='col-md-3'>
-                <input type="date" class="form-control" name="tanggal_selesai" id="tanggal_selesai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
-              </div>
-            </div> -->
 
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Tanggal Mulai<?php echo form_error('tanggal_mulai') ?></b></label>
-              <div class='col-md-3'>
-                <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" onchange="updateEndDate()" />
+              <!-- watu -->
 
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Waktu Mulai<?php echo form_error('waktu_mulai') ?></b></label>
+                <div class='col-md-3'>
+                  <input type="time" class="form-control" name="waktu_mulai" id="waktu_mulai" placeholder="" value="<?= date("H:i", strtotime('waktu_mulai')); ?>" />
+                </div>
               </div>
-              <label for="varchar" class='control-label col-md-3'><b> Sampai <?php echo form_error('tanggal_selesai') ?></b></label>
-              <div class='col-md-3'>
-                <input type="date" class="form-control" name="tanggal_selesai" id="tanggal_selesai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Waktu Berakhir<?php echo form_error('waktu_selesai') ?></b></label>
+                <div class='col-md-3'>
+                  <input type="time" class="form-control" name="waktu_selesai" id="waktu_selesai" placeholder="" value="<?= date("H:i", strtotime('waktu_selesai')); ?>" />
+                </div>
               </div>
-            </div>
 
-            <!-- waktu -->
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Tempat<?php echo form_error('tempat') ?></b></label>
+                <div class='col-md-2'>
+                  <input type="radio" name="lokasi" onclick="lok()" value="Daring" checked> Daring<br>
+                </div>
+                <div class='col-md-2'>
+                  <input type="radio" name="lokasi" onclick="lok()" value="Majelis Dikti"> Luring<br>
+                </div>
+                <div class='col-md-2'>
+                  <input type="radio" name="lokasi" onclick="lok()" value="Isi nama tempat"> Daring dan Luring<br>
+                </div>
+                <div class='col-md-2'>
+                  <input type="text" class="form-control" name="tempat" id="tempat" value="Daring" placeholder="Tempat" />
+                </div>
+              </div>
 
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Waktu Mulai<?php echo form_error('waktu_mulai') ?></b></label>
-              <div class='col-md-3'>
-                <input type="time" class="form-control" name="waktu_mulai" id="waktu_mulai" placeholder="" value="<?= date("H:i", strtotime('waktu_mulai')); ?>" />
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Jenis Kegiatan<?php echo form_error('jenis_kegiatan') ?></b></label>
+                <div class='col-md-9'>
+                  <!-- <input type="text" class="form-control" name="remarks" id="remarks" placeholder="Remarks" value="<?php echo $remarks; ?>" /> -->
+                  <select class="form-control" name="jenis_kegiatan" id="jenis_kegiatan" required="">
+                    <option value="Rapat">Rapat</option>
+                    <option value="Pendampingan">Pendampingan</option>
+                    <option value="Pembinaan">Pembinaan</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Seminar">Seminar</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Pelatihan">Pelatihan</option>
+                    <option value="FGD">FGD</option>
+                    <option value="Kunjungan">Kunjungan</option>
+                    <option value="Tamu">Tamu</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Waktu Berakhir<?php echo form_error('waktu_selesai') ?></b></label>
-              <div class='col-md-3'>
-                <input type="time" class="form-control" name="waktu_selesai" id="waktu_selesai" placeholder="" value="<?= date("H:i", strtotime('waktu_selesai')); ?>" />
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Tempat<?php echo form_error('tempat') ?></b></label>
-              <div class='col-md-2'>
-                <input type="radio" name="lokasi" onclick="lok()" value="Daring" checked> Daring<br>
-              </div>
-              <div class='col-md-2'>
-                <input type="radio" name="lokasi" onclick="lok()" value="Dekanat"> Luring<br>
-              </div>
-              <div class='col-md-2'>
-                <input type="radio" name="lokasi" onclick="lok()" value="Isi nama tempat"> Daring dan Luring<br>
-              </div>
-              <div class='col-md-2'>
-                <input type="text" class="form-control" name="tempat" id="tempat" value="Daring" placeholder="Tempat" />
-              </div>
-            </div>
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Catatan<?php echo form_error('catatan') ?></b></label>
 
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Jenis Kegiatan<?php echo form_error('jenis_kegiatan') ?></b></label>
-              <div class='col-md-9'>
-                <!-- <input type="text" class="form-control" name="remarks" id="remarks" placeholder="Remarks" value="<?php echo $remarks; ?>" /> -->
-                <select class="form-control" name="jenis_kegiatan" id="jenis_kegiatan" required="">
-                  <option value="Rapat">Rapat</option>
-                  <option value="Pendampingan">Pendampingan</option>
-                  <option value="Pembinaan">Pembinaan</option>
-                  <option value="Webinar">Webinar</option>
-                  <option value="Seminar">Seminar</option>
-                  <option value="Workshop">Workshop</option>
-                  <option value="Pelatihan">Pelatihan</option>
-                  <option value="FGD">FGD</option>
-                  <option value="Kunjungan">Kunjungan</option>
-                  <option value="Tamu">Tamu</option>
-                </select>
+                <div class='col-md-9'>
+                  <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="" />
+                  <!-- <textarea class="form-control" rows="3" name="catatan" id="catatan" placeholder="Catatan"><?php echo $catatan; ?></textarea> -->
+                </div>
               </div>
-            </div>
+              <input type="hidden" name="id_not_detail" value="" />
 
-            <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Catatan<?php echo form_error('catatan') ?></b></label>
+              <div class='form-actions'>
+                <div class='row'>
+                  <div class='col-md-12'>
+                    <div class='row'>
+                      <div class='col-md-offset-3 col-md-9'>
+                        <input type="submit" class="btn btn-info" name="submit" value="Upload" />
+                        <!-- <button type="submit" class="btn btn-info" name="submit"><i class='fa fa-check'></i><?php echo $button ?></button> -->
+                        <a href="<?php echo site_url('notulen_detail') ?>" class="btn btn-default"><i class='fa fa-share'></i>Cancel</a>
 
-              <div class='col-md-9'>
-                <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="" />
-              </div>
-            </div>
-            <input type="hidden" name="id_not_detail" value="" />
 
-            <div class='form-actions'>
-              <div class='row'>
-                <div class='col-md-12'>
-                  <div class='row'>
-                    <div class='col-md-offset-3 col-md-9'>
-                      <input type="submit" class="btn btn-info" name="submit" value="Upload" />
-                      <!-- <button type="submit" class="btn btn-info" name="submit"><i class='fa fa-check'></i><?php echo $button ?></button> -->
-                      <a href="<?php echo site_url('notulen_detail') ?>" class="btn btn-default"><i class='fa fa-share'></i>Cancel</a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
           </form>
         </div>
       </div>
@@ -971,6 +951,46 @@
     </div>
   </div>
 </div>
+
+<!-- Peserta -->
+<!-- <div class="modal fade" id="modal_not2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="width: 80%" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table class="table" id="datatables2">
+          <thead>
+            <tr>
+              <th width="80px">No</th>
+              <th>Peserta</th>
+              <th>Jabatan</th>
+              <th width="200px">Kehadiran</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- asistensi -->
+<!-- <div class="modal fade" id="modal_not3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="width: 80%" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table class="table" id="datatables3">
+          <thead>
+            <tr>
+              <th width="80px">No</th>
+              <th>Peserta</th>
+              <th>Bidang</th>
+              <th width="200px">Kehadiran</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -1232,14 +1252,5 @@
       }
     }
     document.getElementById("tempat").value = txt;
-  }
-</script>
-
-<!-- js tanggal selesai mengikuti tanggal mulai -->
-
-<script>
-  function updateEndDate() {
-    var start = document.getElementById('tanggal_mulai').value;
-    document.getElementById('tanggal_selesai').value = start;
   }
 </script>
