@@ -116,8 +116,9 @@
 
                                     <?php } elseif ($this->session->level == 'admin') { ?>
 
-                                        <label class="col-sm-2 control-label no-padding-right"> <?php echo form_error('bidang') ?></label>
-                                        <select class="form-control" name="bidang" required="">
+                                        <label class="col-sm-2 control-label no-padding-right"> <?php echo form_error('prodi') ?></label>
+                                        <select class="form-control" name="prodi" required="">
+                                            <option value="DEKANAT">DEKANAT</option>
                                             <option value="BK">BK</option>
                                             <option value="PBI">PBI</option>
                                             <option value="PBSI">PBSI</option>

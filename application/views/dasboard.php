@@ -8,7 +8,7 @@
                  <small class="font-normal text-white m-t-5"><?= $this->config->item('deskripsi') ?></small>
              </div>
              <div class="task-add-btn">
-                 <a href="<?= base_url('Crud_create') ?>" class="btn btn-success">+</a>
+                 <a href="<?= base_url('notulen_detail/tambah') ?>" title="Tambah Kegiatan Detail" class="btn btn-success">+</a>
              </div>
          </div>
      </div>

@@ -195,6 +195,7 @@ class Notulen_detail extends CI_Controller
       'anggota' => $this->db->get('anggota')->result(),
       'asistensi' => $this->db->get('asistensi')->result(),
       'staf' => $this->db->get('staf')->result(),
+      'notulen' => $this->db->get('notulen')->result(),
     );
     $this->template->load('template', 'notulen_detail/notulen_detail_form', $data);
   }

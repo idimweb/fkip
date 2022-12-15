@@ -25,8 +25,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <!--    <label class="col-sm-2 control-label no-padding-right">Level <?php echo form_error('level') ?></label>
-                <input type="text" class="form-control" name="level" id="level" placeholder="Level" value="<?php echo $level; ?>" /> -->
                             <label class="col-sm-2 control-label no-padding-right">Level <?php echo form_error('level') ?></label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="level" required="">
