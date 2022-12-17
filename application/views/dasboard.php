@@ -366,12 +366,24 @@
              element: 'total',
              data: [
 
-                 <?php foreach ($total->result_array() as $agen_by) : ?> {
-                         bulan: '<?= $agen_by['tanggal_mulai'] ?>',
-                         peserta: <?= $agen_by['jumlah_peserta'] ?>,
-                         kegiatan: <?= $agen_by['jumlah_kegiatan'] ?>,
-                     },
-                 <?php endforeach; ?>
+                 <?php foreach ($total->result_array() as $agen_by) :
+                        if (($this->session->level == 'hdp') && ($agen_by['id_notulen'] == 27)) {
+                    ?> {
+                             bulan: '<?= $agen_by['tanggal_mulai'] ?>',
+                             peserta: <?= $agen_by['jumlah_peserta'] ?>,
+                             kegiatan: <?= $agen_by['jumlah_kegiatan'] ?>,
+                         },
+                     <?php
+                        } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) {
+                        ?> {
+                             bulan: '<?= $agen_by['tanggal_mulai'] ?>',
+                             peserta: <?= $agen_by['jumlah_peserta'] ?>,
+                             kegiatan: <?= $agen_by['jumlah_kegiatan'] ?>,
+                         },
+                 <?php
+                        }
+                    endforeach;
+                    ?>
 
              ],
              xkey: 'bulan',
