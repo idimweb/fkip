@@ -39,13 +39,26 @@ class Dasboard_model extends CI_model
 
     public function grafik_total()
     {
-        $this->db->select("*,MONTH(date_created) as bulan, YEAR(date_created) as tahun, 
+        $this->db->select("*,id_notulen,MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun, 
         SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_kegiatan");
         $this->db->from("notulen_detail");
         $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
-        $this->db->group_by("MONTH(date_created)");
+        $this->db->group_by("bulan");
+        // $this->db->group_by("MONTH(date_created)");
         return $this->db->get();
     }
+
+    public function tabel_total()
+    {
+        $this->db->select("*,MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun, 
+        SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_kegiatan");
+        $this->db->from("notulen_detail");
+        $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
+        $this->db->group_by("bulan");
+        $this->db->order_by("jumlah_kegiatan", "DESC");
+        return $this->db->get();
+    }
+
 
     public function grafik_umum()
     {
