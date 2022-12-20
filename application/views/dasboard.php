@@ -19,7 +19,7 @@
      <div class="row">
          <div class="col-md-6 col-sm-12 col-xs-12">
              <div class="white-box">
-                 <h3 class="box-title">Jumlah Peserta dan Kegiatan per Bulan </h3>
+                 <h3 class="box-title">Jumlah Seluruh Peserta dan Kegiatan di FKIP UAD </h3>
                  <ul class="list-inline text-right">
                      <li>
                          <h5><i class="fa fa-circle text-info m-r-5"></i>Jumlah Peserta</h5>
