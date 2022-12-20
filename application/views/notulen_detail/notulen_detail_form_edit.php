@@ -188,10 +188,22 @@
               </div>
 
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="varchar" class='control-label col-md-3'><b>Tanggal Mulai<?php echo form_error('tanggal_mulai') ?></b></label>
                 <div class='col-md-3'>
                   <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
+                </div>
+                <label for="varchar" class='control-label col-md-3'><b> Sampai <?php echo form_error('tanggal_selesai') ?></b></label>
+                <div class='col-md-3'>
+                  <input type="date" class="form-control" name="tanggal_selesai" id="tanggal_selesai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" />
+                </div>
+              </div> -->
+
+              <div class="form-group">
+                <label for="varchar" class='control-label col-md-3'><b>Tanggal Mulai<?php echo form_error('tanggal_mulai') ?></b></label>
+                <div class='col-md-3'>
+                  <input type="date" class="form-control" name="tanggal_mulai" id="tanggal_mulai" placeholder="Due Dete" value="<?php echo date("Y-m-d"); ?>" onchange="updateEndDate()" />
+
                 </div>
                 <label for="varchar" class='control-label col-md-3'><b> Sampai <?php echo form_error('tanggal_selesai') ?></b></label>
                 <div class='col-md-3'>
@@ -222,9 +234,9 @@
                                                                                     } ?>> Daring<br>
                 </div>
                 <div class='col-md-2'>
-                  <input type="radio" name="lokasi" onclick="lok()" value="Majelis Dikti" <?php if ($tempat == "Majelis Dikti") {
-                                                                                            echo "checked";
-                                                                                          } ?>> Luring<br>
+                  <input type="radio" name="lokasi" onclick="lok()" value="Dekanat" <?php if ($tempat == "Dekatan") {
+                                                                                      echo "checked";
+                                                                                    } ?>> Luring<br>
                 </div>
                 <div class='col-md-2'>
                   <input type="radio" name="lokasi" onclick="lok()" value="Isi nama tempat" <?php if ($tempat == "Isi nama tempat") {
@@ -610,5 +622,12 @@
       }
     }
     document.getElementById("tempat").value = txt;
+  }
+</script>
+
+<script>
+  function updateEndDate() {
+    var start = document.getElementById('tanggal_mulai').value;
+    document.getElementById('tanggal_selesai').value = start;
   }
 </script>

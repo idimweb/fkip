@@ -975,6 +975,14 @@
                 <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="" />
               </div>
             </div>
+
+            <div class="form-group">
+              <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b></label>
+
+              <div class='col-md-9'>
+                <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" />
+              </div>
+            </div>
             <input type="hidden" name="id_not_detail" value="" />
 
             <div class='form-actions'>
