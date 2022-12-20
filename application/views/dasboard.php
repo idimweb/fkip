@@ -36,316 +36,316 @@
                  <h3 class="box-title">Tabel Jumlah Kegiatan dan Peserta per Bulan </h3>
                  <table class="table">
                      <thead>
-                         <tr>
-                             <th>Bulan</th>
-                             <th>Tahun</th>
-                             <th>Jumlah Peserta</th>
-                             <th>Jumlah Kegiatan</th>
-                             <th>Prodi/Bidang</th>
-                         </tr>
+                         <?php
+                            if (($this->session->level != 'admin') && ($this->session->level != 'user')) {
+                            ?>
+                             <tr>
+                                 <th>Bulan</th>
+                                 <th>Tahun</th>
+                                 <th>Jumlah Peserta</th>
+                                 <th>Jumlah Kegiatan</th>
+                             </tr>
+                         <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
+                             <tr>
+                                 <th>Tahun</th>
+                                 <th>Jumlah Peserta</th>
+                                 <th>Jumlah Kegiatan</th>
+                                 <th>Prodi/Bidang</th>
+                                 <th>Lihat Peserta</th>
+                             </tr>
+                         <?php } ?>
                      </thead>
-                     <tbody>
-                         <?php foreach ($tabel_total->result_array() as $row) : ?>
-                             <?php
-                                if (($this->session->level == 'hdp') && ($row['agenda'] == 'Tim Kerja Humas dan Promosi')) {
-                                ?>
+
+                     <?php
+                        if (($this->session->level != 'admin') && ($this->session->level != 'user')) {
+                        ?>
+                         <tbody>
+                             <?php foreach ($tabel_total_per->result_array() as $row) : ?>
+                                 <?php
+                                    if (($this->session->level == 'hdp') && ($row['agenda'] == 'Tim Kerja Humas dan Promosi')) {
+                                    ?>
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+
+                                     </tr>
+
+                                 <?php
+                                    } elseif (($this->session->level == 'ia') && ($row['agenda'] == 'Tim Kerja Implementasi AIK')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'kda') && ($row['agenda'] == 'Tim Kerja Kemahasiswaan dan Alumni')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'kndi') && ($row['agenda'] == 'Tim Kerja Kerjasama Nasional dan Internasional')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'ppdp') && ($row['agenda'] == 'Tim Kerja Pengembangan Pendidikan dan Pembelajaran')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'ps') && ($row['agenda'] == 'Tim Kerja Pengembangan SDM')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pkrpdp') && ($row['agenda'] == 'Tim Kerja Percepatan kinerja riset, Pengabdian dan Publikasi')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'ta') && ($row['agenda'] == 'Tim Akreditasi')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pgpaud') && ($row['agenda'] == '(S1) Pendidikan Guru Pendidikan Anak Usia DIni')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pgsd') && ($row['agenda'] == '(S1) Pendidikan Guru Sekolah Dasar')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pbio') && ($row['agenda'] == '(S1) Pendidikan Biologi')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pfis') && ($row['agenda'] == '(S1) Pendidikan Fisika')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pmat') && ($row['agenda'] == '(S1) Pendidikan Matematika')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'ppkn') && ($row['agenda'] == '(S1) Pendidikan Pancasila dan Kewarganegaraan')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pbi') && ($row['agenda'] == '(S1) Pendidikan Bahasa Inggris')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pbsi') && ($row['agenda'] == '(S1) Pendidikan dan Sastra Indonesia')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'bk') && ($row['agenda'] == '(S1) Bimbingan Konseling')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pvto') && ($row['agenda'] == 'Pendidikan Vokasional Teknik Otomotif')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'pvte') && ($row['agenda'] == 'Pendidikan Vokasional Teknik Elektronika')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'ppg') && ($row['agenda'] == 'Program Profesi Guru')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'mpmat') && ($row['agenda'] == 'Magister Pendidikan Matematika')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'mpbi') && ($row['agenda'] == 'Magister Pendidikan Bahasa Inggris')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'mpfis') && ($row['agenda'] == 'Magister Pendidikan Fisika')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'mp') && ($row['agenda'] == 'Magister Manajemen Pendidikan')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'mpgv') && ($row['agenda'] == 'Magister Pendidikan Guru Vokasi')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'mbk') && ($row['agenda'] == 'Magister Bimbingan Konseling')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } ?>
+
+                             <?php endforeach; ?>
+                         </tbody>
+
+
+                     <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
+                         <tbody>
+                             <?php foreach ($tabel_total->result_array() as $row) : ?>
                                  <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
                                      <td><?php echo $row['tahun']; ?></td>
                                      <td><?php echo $row['jumlah_peserta']; ?></td>
                                      <td><?php echo $row['jumlah_kegiatan']; ?></td>
                                      <td><?php echo $row['agenda']; ?></td>
+                                     <td>
+                                         <a href="<?php echo site_url('welcome/peserta_bidang/' . $row['id_notulen']); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                                     </td>
                                  </tr>
+                             <?php endforeach; ?>
+                         </tbody>
+                     <?php } ?>
 
-                             <?php
-                                } elseif (($this->session->level == 'ia') && ($row['agenda'] == 'Tim Kerja Implementasi AIK')) {
-                                ?>
 
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'kda') && ($row['agenda'] == 'Tim Kerja Kemahasiswaan dan Alumni')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'kndi') && ($row['agenda'] == 'Tim Kerja Kerjasama Nasional dan Internasional')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'ppdp') && ($row['agenda'] == 'Tim Kerja Pengembangan Pendidikan dan Pembelajaran')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'ps') && ($row['agenda'] == 'Tim Kerja Pengembangan SDM')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pkrpdp') && ($row['agenda'] == 'Tim Kerja Percepatan kinerja riset, Pengabdian dan Publikasi')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'ta') && ($row['agenda'] == 'Tim Akreditasi')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pgpaud') && ($row['agenda'] == '(S1) Pendidikan Guru Pendidikan Anak Usia DIni')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pgsd') && ($row['agenda'] == '(S1) Pendidikan Guru Sekolah Dasar')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pbio') && ($row['agenda'] == '(S1) Pendidikan Biologi')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pfis') && ($row['agenda'] == '(S1) Pendidikan Fisika')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pmat') && ($row['agenda'] == '(S1) Pendidikan Matematika')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'ppkn') && ($row['agenda'] == '(S1) Pendidikan Pancasila dan Kewarganegaraan')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pbi') && ($row['agenda'] == '(S1) Pendidikan Bahasa Inggris')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pbsi') && ($row['agenda'] == '(S1) Pendidikan dan Sastra Indonesia')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'bk') && ($row['agenda'] == '(S1) Bimbingan Konseling')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pvto') && ($row['agenda'] == 'Pendidikan Vokasional Teknik Otomotif')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'pvte') && ($row['agenda'] == 'Pendidikan Vokasional Teknik Elektronika')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'ppg') && ($row['agenda'] == 'Program Profesi Guru')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'mpmat') && ($row['agenda'] == 'Magister Pendidikan Matematika')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'mpbi') && ($row['agenda'] == 'Magister Pendidikan Bahasa Inggris')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'mpfis') && ($row['agenda'] == 'Magister Pendidikan Fisika')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'mp') && ($row['agenda'] == 'Magister Manajemen Pendidikan')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'mpgv') && ($row['agenda'] == 'Magister Pendidikan Guru Vokasi')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'mbk') && ($row['agenda'] == 'Magister Bimbingan Konseling')) {
-                                ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-
-                             <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
-
-                                 <tr>
-                                     <td><?php echo $row['bulan']; ?></td>
-                                     <td><?php echo $row['tahun']; ?></td>
-                                     <td><?php echo $row['jumlah_peserta']; ?></td>
-                                     <td><?php echo $row['jumlah_kegiatan']; ?></td>
-                                     <td><?php echo $row['agenda']; ?></td>
-                                 </tr>
-                             <?php } ?>
-
-                         <?php endforeach; ?>
-                     </tbody>
                  </table>
              </div>
          </div>
@@ -367,7 +367,7 @@
              data: [
 
                  <?php foreach ($total->result_array() as $agen_by) :
-                        if (($this->session->level == 'hdp') && ($agen_by['id_notulen'] == 27)) {
+                        if (($this->session->level != 'admin') && ($this->session->level != 'user')) {
                     ?> {
                              bulan: '<?= $agen_by['tanggal_mulai'] ?>',
                              peserta: <?= $agen_by['jumlah_peserta'] ?>,

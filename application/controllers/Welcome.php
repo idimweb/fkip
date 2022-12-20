@@ -16,21 +16,17 @@ class Welcome extends CI_controller
 		$x['agenda_by_status'] = $this->Dasboard_model->grafik_by_agenda();
 		$x['total'] = $this->Dasboard_model->grafik_total();
 		$x['tabel_total'] = $this->Dasboard_model->tabel_total();
-		$x['umum'] = $this->Dasboard_model->grafik_umum();
-		$x['khusus'] = $this->Dasboard_model->grafik_khusus();
-		$x['bukutamu'] = $this->Dasboard_model->grafik_bukutamu();
-		$x['kerjasama'] = $this->Dasboard_model->grafik_kerjasama();
-		$x['ptki'] = $this->Dasboard_model->grafik_ptki();
-		$x['riset'] = $this->Dasboard_model->grafik_riset();
-		$x['akademik'] = $this->Dasboard_model->grafik_akademik();
-		$x['aik'] = $this->Dasboard_model->grafik_aik();
-		$x['litbang'] = $this->Dasboard_model->grafik_litbang();
-		// $x['triwulan'] = $this->Dasboard_model->triwulan();
-		$x['triwulan1'] = $this->Dasboard_model->triwulan1();
-		$x['triwulan2'] = $this->Dasboard_model->triwulan2();
-		$x['triwulan3'] = $this->Dasboard_model->triwulan3();
-		$x['triwulan4'] = $this->Dasboard_model->triwulan4();
+		$x['tabel_total_per'] = $this->Dasboard_model->tabel_total_per();
 		$this->template->load('template', 'dasboard', $x);
+	}
+
+	function peserta_bidang($id)
+	{
+
+		$x['judul'] = 'Halaman Jumlah Peserta Tim Kerja.';
+		$x['bidang'] = $this->Dasboard_model->aktiv_per_bidang($id);
+		$x['prodi'] = $this->Dasboard_model->aktiv_per_prodi($id);
+		$this->template->load('template', 'lihat_bidang', $x);
 	}
 
 	public function kalendar($tahun = NULL, $bulan = NULL)

@@ -55,6 +55,46 @@ class Dasboard_model extends CI_model
         $this->db->from("notulen_detail");
         $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
         $this->db->group_by("notulen_detail.id_notulen");
+        // $this->db->group_by("MONTH(date_created)");
+        $this->db->order_by("jumlah_kegiatan", "DESC");
+        $this->db->order_by("jumlah_peserta", "DESC");
+        return $this->db->get();
+    }
+
+    public function aktiv_per_bidang($id)
+    {
+        $this->db->select('n.agenda as nama_agenda, p.id_asistensi, a.nama_asistensi, COUNT(p.id_asistensi) as jumlah');
+        $this->db->from('peserta p');
+        $this->db->join('notulen_detail nd', 'p.id_not_detail = nd.id_not_detail');
+        $this->db->join('notulen n', 'n.id_notulen = nd.id_notulen');
+        $this->db->join('asistensi a', 'p.id_asistensi = a.id_asistensi');
+        $this->db->where('nd.id_notulen', $id);
+        $this->db->group_by('p.id_asistensi, a.nama_asistensi');
+        $this->db->order_by('jumlah', 'DESC');
+        return $this->db->get();
+    }
+
+    public function aktiv_per_prodi($id)
+    {
+        $this->db->select('n.agenda as nama_agenda, p.id_anggota, a.nama, COUNT(p.id_anggota) as jumlah');
+        $this->db->from('peserta p');
+        $this->db->join('notulen_detail nd', 'p.id_not_detail = nd.id_not_detail');
+        $this->db->join('notulen n', 'n.id_notulen = nd.id_notulen');
+        $this->db->join('anggota a', 'p.id_anggota = a.id_anggota');
+        $this->db->where('nd.id_notulen', $id);
+        $this->db->group_by('p.id_anggota, a.nama');
+        $this->db->order_by('jumlah', 'DESC');
+        return $this->db->get();
+    }
+
+    public function tabel_total_per()
+    {
+        $this->db->select("*, MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun,
+        SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_kegiatan");
+        $this->db->from("notulen_detail");
+        $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
+        $this->db->group_by("bulan, notulen_detail.id_notulen"); // tambahkan klausa ini untuk menggroup data berdasarkan bulan dan id_notulen
+        $this->db->order_by("bulan", "ASC"); // tambahkan klausa ini untuk mengurutkan hasil query berdasarkan bulan
         // $this->db->order_by("jumlah_kegiatan", "DESC");
         return $this->db->get();
     }

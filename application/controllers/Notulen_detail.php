@@ -184,8 +184,6 @@ class Notulen_detail extends CI_Controller
       'waktu_selesai' => $this->input->post('waktu_selesai', TRUE),
       'id_anggota' => $this->input->post('id_anggota', TRUE),
       'id_asistensi' => $this->input->post('id_asistensi', TRUE),
-      // 'id_staf' => $this->input->post('id_staf', TRUE),
-      // 'tamu' => $this->input->post('tamu', TRUE),
       'lainya' => $this->input->post('lainya', TRUE),
       'tempat' => $this->input->post('tempat', TRUE),
       'jenis_kegiatan' => $this->input->post('jenis_kegiatan', TRUE),
@@ -210,14 +208,12 @@ class Notulen_detail extends CI_Controller
 
       $checkbox = $_POST['id_anggota'];
       $checkbox2 = $_POST['id_asistensi'];
-      // $checkbox3 = $_POST['id_staf'];
       $tambahData = $_POST['nama_lainya'];
 
 
       $a = count($checkbox);
       $b = count($checkbox2);
       $c = count($tambahData);
-      // $e = count($checkbox3);
 
       $jlh = $a + $b + $c;
 
@@ -256,11 +252,9 @@ class Notulen_detail extends CI_Controller
       $id_not_detail = $this->db->insert_id();
       $checkbox = $_POST['id_anggota'];
       $checkbox2 = $_POST['id_asistensi'];
-      // $checkbox3 = $_POST['id_staf'];
       $tambahData = $_POST['nama_lainya'];
       $a = count($checkbox);
       $b = count($checkbox2);
-      // $e = count($checkbox3);
       $c = count($tambahData);
       $arrayRow = array($a, $b, $c);
       $max = max($arrayRow);
@@ -279,10 +273,8 @@ class Notulen_detail extends CI_Controller
         $data2 = array(
           'id_not_detail' => $id_not_detail,
           'id_lainya' => $id_lainya,
-          // 'id_tamu' => $id_tamu,
           'id_anggota' => $checkbox[$i],
           'id_asistensi' => $checkbox2[$i],
-          // 'id_staf' => $checkbox3[$i],
         );
         $this->Peserta_model->insert($data2);
       }
