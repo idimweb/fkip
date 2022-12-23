@@ -280,14 +280,14 @@
                 </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b></label>
 
                 <div class='col-md-9'>
                   <img src="<?= base_url('assets/uploads/file/' . $foto)  ?>" width="200" />
                   <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" />
                 </div>
-              </div>
+              </div> -->
               <input type="hidden" name="id_not_detail" value="<?php echo $id_not_detail; ?>" />
 
               <div class='form-actions'>

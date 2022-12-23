@@ -62,19 +62,21 @@
             <td><a href=" <?= base_url('assets/uploads/file/' . $nama_file)  ?>" class="text-right btn btn-success" target="_blank">Klik Untuk Download <?php echo $nama_file; ?></a></td>
           </tr>
           <tr>
+
+            <td><a href="<?php echo base_url('notulen_detail/edit/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Detail</a></td>
+
+          </tr>
+          <tr>
             <td>Foto</td>
             <td><img src="<?= base_url('assets/uploads/file/' . $foto)  ?>" width="200" /></td>
+            <td><a href="<?php echo base_url('notulen_detail/edit_foto/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Foto</a></td>
           </tr>
 
           <tr>
             <td>Jumlah Peserta</td>
             <td><?php echo $hasil[0]->jumlah; ?></td>
           </tr>
-          <tr>
 
-            <td><a href="<?php echo base_url('notulen_detail/edit/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Detail</a></td>
-
-          </tr>
           <tr>
             <th>Daftar Hadir</th>
           </tr>

@@ -409,6 +409,60 @@ class Notulen_detail extends CI_Controller
     }
   }
 
+  // edit foto
+
+  public function edit_foto($id)
+  {
+    $row = $this->Notulen_detail_model->get_by_id($id);
+
+    if ($row) {
+      $data = array(
+        'judul' => 'Foto',
+        'button' => 'Update',
+        'action' => site_url('notulen_detail/edit_data_foto'),
+        'id_not_detail' => set_value('id_not_detail', $row->id_not_detail),
+        'foto' => set_value('foto', $row->foto),
+      );
+      $this->template->load('template', 'notulen_detail/notulen_detail_form_edit_foto', $data);
+    } else {
+      $this->session->set_flashdata('message', '<div class="alert alert-info fade-in">Data Tidak Di Temukan.</div>');
+      redirect(site_url('notulen_detail'));
+    }
+  }
+
+  public function edit_data_foto()
+  {
+
+    $path = 'assets/uploads/file';
+    $config['upload_path'] = $path;
+    $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar';
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);
+    if (!$this->upload->do_upload('foto')) {
+      $error = array('error' => $this->upload->display_errors());
+    } else {
+      $data = array('upload_data' => $this->upload->data());
+    }
+    if (!$this->upload->data('file_name')) {
+      redirect(site_url('notulen_detail'));
+    } else {
+      $foto = $this->upload->data('file_name');
+      $qdata = $this->db->get_where('notulen_detail', array('id_not_detail' => $this->input->post('id_not_detail')));
+      $cek_id = $qdata->row_array();
+      unlink('assets/uploads/file/' . $cek_id['foto']);
+    }
+
+    $data = array(
+      'id_not_detail' => set_value('id_not_detail'),
+      'foto' => $foto,
+    );
+
+    $this->Notulen_detail_model->update($this->input->post('id_not_detail', TRUE), $data);
+    $this->session->set_flashdata('message', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Edit Data Berhasil.</div>');
+    redirect(site_url('notulen_detail'));
+  }
+  //end edit foto
+
   public function edit_peserta($id)
   {
     $where = array('id_not_detail' => $id);
