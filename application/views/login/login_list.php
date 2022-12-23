@@ -10,20 +10,51 @@
                 <?php echo anchor(site_url('login/word'), '<i class=\'fa fa-file-word-o\'></i>Word', 'class="btn btn-danger"'); ?>
 
                 <br /><br />
-                <table class="table" id="datatables">
+                <table class="table" id="datatables2">
                     <thead>
                         <tr>
                             <th width="80px">No</th>
                             <th>Username</th>
                             <th>Nama</th>
                             <th>Email</th>
-                            <th>Foto</th>
                             <th>Level</th>
-                            <th>Nama Divisi</th>
-                            <th>Date Create</th>
                             <th width="200px">Action</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($data_login as $ang) :
+                        ?>
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->username ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <?= $ang->level ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $text = encrypt_url($ang->id_user);
+                                    ?>
+                                    <a href="<?= base_url() ?>login/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-xs edit" onclick='javasciprt: return hapus(<?= $ang->id_user ?>)'>Hapus</a>
+                                </td>
+                            </tr>
+
+
+                        <?php endforeach; ?>
+                    </tbody>
 
                 </table>
 
@@ -133,6 +164,11 @@
                                 });
                             });
                     }
+                </script>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#datatables2').DataTable();
+                    });
                 </script>
             </div>
         </div>

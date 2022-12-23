@@ -24,7 +24,7 @@ class Login_model extends CI_Model
         //add this line for join
         $this->datatables->join('divisi b', 'b.id_divisi=a.id_divisi', 'left');
         $this->datatables->add_column('foto_user', '<img src="' . base_url('assets/uploads/file/$1') . '" style="with:100px;height:100px">', 'foto');
-        $this->datatables->add_column('action', anchor(site_url('login/edit/' . urlencode('$1')), '<i class="fa fa-edit"></i> Ubah', 'class="btn btn-success btn-xs edit"') . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a>", 'id_user');
+        $this->datatables->add_column('action', anchor(site_url('login/edit/$1'), '<i class="fa fa-edit"></i> Ubah', 'class="btn btn-success btn-xs edit"') . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a>", 'id_user');
         return $this->datatables->generate();
     }
 

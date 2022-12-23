@@ -20,7 +20,7 @@ class Login extends CI_Controller
   public function index()
   {
     $x['judul'] = 'Hak akses dan login';
-    $x['login'] = $this->Login_model->json();
+    $x['data_login'] = $this->db->get('login')->result();
     $this->template->load('template', 'login/login_list', $x);
   }
 
@@ -114,7 +114,7 @@ class Login extends CI_Controller
 
   public function edit($id)
   {
-    $id = urldecode($id);
+    $id = decrypt_url($id);
     $row = $this->Login_model->get_by_id($id);
 
     if ($row) {
