@@ -8,6 +8,7 @@ class Welcome extends CI_controller
 		parent::__construct();
 		login_access();
 		$this->load->model('Dasboard_model');
+		$this->load->helper(array('url', 'html', 'form', 'security', 'uri'));
 	}
 	function index()
 	{
@@ -22,6 +23,7 @@ class Welcome extends CI_controller
 
 	function peserta_bidang($id)
 	{
+		$id = decrypt_url($id);
 
 		$x['judul'] = 'Halaman Jumlah Peserta Tim Kerja.';
 		$x['bidang'] = $this->Dasboard_model->aktiv_per_bidang($id);

@@ -11,6 +11,7 @@ class Login extends CI_Controller
     parent::__construct();
     login_access();
     hak_akses();
+    $this->load->helper(array('url', 'html', 'form', 'security', 'uri'));
     $this->load->model('Login_model');
     $this->load->library('form_validation');
     $this->load->library('datatables');
@@ -19,6 +20,7 @@ class Login extends CI_Controller
   public function index()
   {
     $x['judul'] = 'Hak akses dan login';
+    $x['login'] = $this->Login_model->json();
     $this->template->load('template', 'login/login_list', $x);
   }
 
@@ -112,6 +114,7 @@ class Login extends CI_Controller
 
   public function edit($id)
   {
+    $id = urldecode($id);
     $row = $this->Login_model->get_by_id($id);
 
     if ($row) {

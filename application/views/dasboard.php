@@ -338,7 +338,7 @@
                                      <td><?php echo $row['jumlah_kegiatan']; ?></td>
                                      <td><?php echo $row['agenda']; ?></td>
                                      <td>
-                                         <a href="<?php echo site_url('welcome/peserta_bidang/' . $row['id_notulen']); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                                         <a href="<?php echo site_url('welcome/peserta_bidang/' . encrypt_url($row['id_notulen'])); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
                                      </td>
                                  </tr>
                              <?php endforeach; ?>

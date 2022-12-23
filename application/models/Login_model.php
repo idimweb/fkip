@@ -16,14 +16,15 @@ class Login_model extends CI_Model
     }
 
     // datatables
-    function json() {
+    function json()
+    {
         $this->datatables->select('a.id_user,a.username,a.password,a.nama,a.email,a.foto,a.level,a.active,a.date_create,a.id_divisi, b.id_divisi, b.nama_divsi');
         $this->datatables->from('login a');
-  //      $this->datatables->
+        //      $this->datatables->
         //add this line for join
-        $this->datatables->join('divisi b', 'b.id_divisi=a.id_divisi','left');
-        $this->datatables->add_column('foto_user','<img src="'.base_url('assets/uploads/file/$1').'" style="with:100px;height:100px">','foto');
-        $this->datatables->add_column('action', anchor(site_url('login/detail/$1'),'<i class="fa fa-book"></i>Baca','class="btn btn-info btn-xs edit"')."  ".anchor(site_url('login/edit/$1'),'<i class="fa fa-edit"></i> Ubah','class="btn btn-success btn-xs edit"')."<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a>", 'id_user');
+        $this->datatables->join('divisi b', 'b.id_divisi=a.id_divisi', 'left');
+        $this->datatables->add_column('foto_user', '<img src="' . base_url('assets/uploads/file/$1') . '" style="with:100px;height:100px">', 'foto');
+        $this->datatables->add_column('action', anchor(site_url('login/edit/' . urlencode('$1')), '<i class="fa fa-edit"></i> Ubah', 'class="btn btn-success btn-xs edit"') . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a>", 'id_user');
         return $this->datatables->generate();
     }
 
@@ -42,33 +43,35 @@ class Login_model extends CI_Model
     }
 
     // get total rows
-    function total_rows($q = NULL) {
+    function total_rows($q = NULL)
+    {
         $this->db->like('id_user', $q);
-	$this->db->or_like('username', $q);
-	$this->db->or_like('password', $q);
-	$this->db->or_like('nama', $q);
-	$this->db->or_like('email', $q);
-	$this->db->or_like('foto', $q);
-	$this->db->or_like('level', $q);
-	$this->db->or_like('active', $q);
-	$this->db->or_like('date_create', $q);
-	$this->db->from($this->table);
+        $this->db->or_like('username', $q);
+        $this->db->or_like('password', $q);
+        $this->db->or_like('nama', $q);
+        $this->db->or_like('email', $q);
+        $this->db->or_like('foto', $q);
+        $this->db->or_like('level', $q);
+        $this->db->or_like('active', $q);
+        $this->db->or_like('date_create', $q);
+        $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
-    function get_limit_data($limit, $start = 0, $q = NULL) {
+    function get_limit_data($limit, $start = 0, $q = NULL)
+    {
         $this->db->order_by($this->id, $this->order);
         $this->db->like('id_user', $q);
-	$this->db->or_like('username', $q);
-	$this->db->or_like('password', $q);
-	$this->db->or_like('nama', $q);
-	$this->db->or_like('email', $q);
-	$this->db->or_like('foto', $q);
-	$this->db->or_like('level', $q);
-	$this->db->or_like('active', $q);
-	$this->db->or_like('date_create', $q);
-	$this->db->limit($limit, $start);
+        $this->db->or_like('username', $q);
+        $this->db->or_like('password', $q);
+        $this->db->or_like('nama', $q);
+        $this->db->or_like('email', $q);
+        $this->db->or_like('foto', $q);
+        $this->db->or_like('level', $q);
+        $this->db->or_like('active', $q);
+        $this->db->or_like('date_create', $q);
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
 
@@ -91,5 +94,4 @@ class Login_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
     }
-
 }
