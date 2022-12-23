@@ -131,6 +131,7 @@ class Notulen_detail_model extends CI_Model
   function TampilPeserta($id)
   {
     $this->db->order_by('peserta.id_not_detail', 'DESC');
+    $this->db->select('*');
     return $this->db->from('peserta')
       ->join('notulen_detail', 'peserta.id_not_detail=notulen_detail.id_not_detail')
       ->join('anggota', 'peserta.id_anggota=anggota.id_anggota', 'left')

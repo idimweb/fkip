@@ -188,6 +188,7 @@ class Notulen_detail extends CI_Controller
       'tempat' => $this->input->post('tempat', TRUE),
       'jenis_kegiatan' => $this->input->post('jenis_kegiatan', TRUE),
       'catatan' => $this->input->post('catatan', TRUE),
+      'foto' => $this->input->post('foto', TRUE),
       'status' => 'N',
       'date_created' => date('Y-m-d'),
       'anggota' => $this->db->get('anggota')->result(),
@@ -233,6 +234,26 @@ class Notulen_detail extends CI_Controller
         $catatan = $this->upload->data('file_name');
       }
 
+      //upload gambar
+
+      $path = 'assets/uploads/file';
+      $config['upload_path'] = $path;
+      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar';
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+      if (!$this->upload->do_upload('foto')) {
+        $error = array('error' => $this->upload->display_errors());
+      } else {
+        $data = array('upload_data' => $this->upload->data());
+      }
+      if (!$this->upload->data('file_name')) {
+        $foto = 'Tidak ada file';
+      } else {
+        $foto = $this->upload->data('file_name');
+      }
+
+      //end upload gambar
+
       $data = array(
         'id_notulen' => $this->input->post('id_notulen', TRUE),
         'issue' => $this->input->post('issue', TRUE),
@@ -243,6 +264,7 @@ class Notulen_detail extends CI_Controller
         'tempat' => $this->input->post('tempat', TRUE),
         'jenis_kegiatan' => $this->input->post('jenis_kegiatan', TRUE),
         'catatan' => $catatan,
+        'foto' => $foto,
         'jumlah' => $jlh,
         'status' => 'N',
         'date_created' => date('Y-m-d'),
@@ -311,6 +333,7 @@ class Notulen_detail extends CI_Controller
         'tempat' => set_value('tempat', $row->tempat),
         'jenis_kegiatan' => set_value('jenis_kegiatan', $row->jenis_kegiatan),
         'catatan' => set_value('catatan', $row->catatan),
+        'foto' => set_value('foto', $row->foto),
         'date_created' => date('Y-m-d'),
         'status' => 'N',
 
@@ -364,6 +387,7 @@ class Notulen_detail extends CI_Controller
         $cek_id = $qdata->row_array();
         unlink('assets/uploads/file/' . $cek_id['catatan']);
       }
+
       $data = array(
         'id_not_detail' => set_value('id_not_detail'),
         'id_notulen' => $this->input->post('id_notulen', TRUE),

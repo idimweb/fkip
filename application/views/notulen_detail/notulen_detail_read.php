@@ -19,6 +19,7 @@
             $status = $a->status;
             $tempat = $a->tempat;
             $nama_file = $a->catatan;
+            $foto = $a->foto;
           }
           ?>
           <tr>
@@ -60,6 +61,11 @@
             <td>Catatan</td>
             <td><a href=" <?= base_url('assets/uploads/file/' . $nama_file)  ?>" class="text-right btn btn-success" target="_blank">Klik Untuk Download <?php echo $nama_file; ?></a></td>
           </tr>
+          <tr>
+            <td>Foto</td>
+            <td><img src="<?= base_url('assets/uploads/file/' . $foto)  ?>" width="200" /></td>
+          </tr>
+
           <tr>
             <td>Jumlah Peserta</td>
             <td><?php echo $hasil[0]->jumlah; ?></td>
