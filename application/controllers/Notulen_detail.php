@@ -145,8 +145,39 @@ class Notulen_detail extends CI_Controller
       'judul' => 'Detail : Kegiatan',
       'hasil' => $this->Notulen_detail_model->TampilPeserta($id),
     );
-    $this->template->load('template', 'notulen_detail/notulen_detail_read', $data);
+    if (count($data['hasil']) == 0) {
+      redirect(site_url('notulen_detail/edit_peserta_null/' . $id));
+    } else {
+      $this->template->load('template', 'notulen_detail/notulen_detail_read', $data);
+    }
   }
+
+  public function edit_peserta_null($id)
+  {
+    $where = array('id_not_detail' => $id);
+    $data['notulen_detail'] = $this->Notulen_detail_model->edit_data($where, 'notulen_detail')->result();
+
+    // $data['peserta'] = $this->db->get('peserta')->result();
+    // $data['anggota'] = $this->db->get('anggota')->result();
+    $data = array(
+      'judul' => 'Data NOTULEN_DETAIL Peserta',
+      'button' => 'Update',
+      'action' => site_url('notulen_detail/edit_data_peserta'),
+      'id_anggota' => $this->input->post('id_anggota', TRUE),
+      'id_asistensi' => $this->input->post('id_asistensi', TRUE),
+      // 'id_staf' => $this->input->post('id_staf', TRUE),
+      // 'id_tamu' => $this->input->post('id_tamu', TRUE),
+      'id_lainya' => $this->input->post('id_lainya', TRUE),
+      'detail'  => $this->Notulen_detail_model->TampilPeserta($id),
+      'anggota' => $this->db->get('anggota')->result(),
+      'asistensi' => $this->db->get('asistensi')->result(),
+      // 'staf' => $this->db->get('staf')->result(),
+      'notulen_detail' => $this->Notulen_detail_model->edit_data($where, 'notulen_detail')->result(),
+    );
+
+    $this->template->load('template', 'notulen_detail/notulen_detail_form_pesertanull', $data);
+  }
+
 
 
   public function detail_anggota($id)
