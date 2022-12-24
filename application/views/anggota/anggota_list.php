@@ -49,7 +49,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -79,7 +79,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -108,7 +108,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -137,7 +137,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -166,7 +166,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -195,7 +195,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -224,7 +224,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -253,7 +253,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -282,7 +282,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -311,7 +311,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -340,7 +340,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -369,7 +369,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -398,7 +398,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -427,7 +427,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -456,7 +456,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -485,7 +485,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -514,7 +514,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 
@@ -542,7 +542,7 @@
                                     $text = encrypt_url($ang->id_anggota);
                                     ?>
                                     <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
-                                    <a href="<?= base_url() ?>anggota/hapus/<?= $ang->id_anggota ?>" class="btn btn-danger btn-xs edit">Hapus</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
                                 </td>
                             </tr>
 

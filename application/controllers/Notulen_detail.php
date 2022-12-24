@@ -28,6 +28,7 @@ class Notulen_detail extends CI_Controller
     $this->load->model('Import_model', 'import');
     $this->load->model('Import_model');
     $this->load->model('Lainya_model');
+    $this->load->model('Dasboard_model');
     $this->load->library('form_validation');
     $this->load->library('datatables');
     $this->load->library('encrypt');
@@ -61,10 +62,7 @@ class Notulen_detail extends CI_Controller
       'asistensi' => $this->db->get('asistensi')->result(),
       'bulan_tahun' => $this->Notulen_detail_model->tampil_bulan_tahun(),
       'jumlah_peserta' => $this->Notulen_detail_model->tampil_jumlah_peserta(),
-      'triwulan1' => $this->Notulen_detail_model->triwulan1(),
-      'triwulan2' => $this->Notulen_detail_model->triwulan2(),
-      'triwulan3' => $this->Notulen_detail_model->triwulan3(),
-      'triwulan4' => $this->Notulen_detail_model->triwulan4(),
+      // 'bidang' => $this->Dasboard_model->aktiv_per_bidang(),
     );
 
     $this->template->load('template', 'notulen_detail/notulen_detail_all', $data);
@@ -72,6 +70,7 @@ class Notulen_detail extends CI_Controller
 
   public function detail($id)
   {
+    $id = decrypt_url($id);
     $row = $this->Notulen_detail_model->get_by_id($id);
     if ($row) {
       $data = array(

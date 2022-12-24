@@ -128,6 +128,23 @@
               }
             }
             ?>
+
+            <th>
+              LAINYA
+            </th>
+            <?php
+            foreach ($hasil as $item1) {
+              if ($item1->nama_lainya != NULL) {
+                # code...
+            ?>
+                <tr>
+                  <td><?php echo $item1->nama_lainya; ?></td>
+                </tr>
+
+            <?php
+              }
+            }
+            ?>
           </tbody>
           <tr>
 

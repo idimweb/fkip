@@ -1,0 +1,5 @@
+{
+"require": {
+"php-encryption/crypto": "^2.0"
+}
+}

@@ -18,6 +18,8 @@
                         <th>
                           Anggota Prodi
                         </th>
+                      </tr>
+                      <tr>
                         <?php
                         foreach ($detail as $item1) {
                           if ($item1->nama != NULL) {
@@ -34,6 +36,8 @@
                       <th>
                         Tim Kerja
                       </th>
+                    </tr>
+                    <tr>
                       <?php
                       foreach ($detail as $item1) {
                         if ($item1->nama_asistensi != NULL) {
@@ -49,25 +53,27 @@
                     <th>
                       Tamu/Lainya
                     </th>
-                    <?php
-                    $no = 0;
-                    foreach ($detail as $item1) {
-                      if ($item1->nama_lainya != NULL) {
-                        # code...
-                    ?>
+                  </tr>
+                  <?php
+                  $no = 0;
+                  foreach ($detail as $item1) {
+                    if ($item1->nama_lainya != NULL) {
+                      # code...
+                  ?>
+                      <tr>
                         <td><?php echo $item1->nama_lainya; ?></td>
                       <?php
-                      } ?>
-                  </tr>
-                <?php }
-                ?>
-                <tr>
-                  <td>Jumlah Peserta</td>
-                </tr>
-                <tr>
-                  <td><?php echo $detail[0]->jumlah; ?></td>
-                </tr>
-                </tbody>
+                    } ?>
+                      </tr>
+                    <?php }
+                    ?>
+                    <tr>
+                      <td>Jumlah Peserta</td>
+                    </tr>
+                    <tr>
+                      <td><?php echo $detail[0]->jumlah; ?></td>
+                    </tr>
+                    </tbody>
                     </table>
                   </div>
                 </div>
