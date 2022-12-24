@@ -70,7 +70,7 @@ class Notulen_detail extends CI_Controller
 
   public function detail($id)
   {
-    $id = decrypt_url($id);
+    // $id = decrypt_url($id);
     $row = $this->Notulen_detail_model->get_by_id($id);
     if ($row) {
       $data = array(
@@ -140,6 +140,7 @@ class Notulen_detail extends CI_Controller
   public function tampilDetail($id)
   {
     // $id = decrypt_url($id);
+    // $id = base64_decode($this->uri->segment(3));
     $data = array(
       'judul' => 'Detail : Kegiatan',
       'hasil' => $this->Notulen_detail_model->TampilPeserta($id),

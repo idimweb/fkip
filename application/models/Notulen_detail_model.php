@@ -197,7 +197,7 @@ class Notulen_detail_model extends CI_Model
       }
       $this->datatables->where('a.id_notulen', $id);
 
-      $this->datatables->add_column('action', anchor(site_url('notulen_detail/tampilDetail/$1'), '<i class="fa fa-book"></i>Baca', 'class="btn btn-info btn-xs edit"') . "  " . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a> <a href='#' class='btn btn-warning btn-xs delete' onclick='javasciprt: return set_close($1)'><i class='fa fa-check'></i> Selesai </a>", encrypt_url('id_not_detail'));
+      $this->datatables->add_column('action', anchor(site_url('notulen_detail/tampilDetail/$1'), '<i class="fa fa-book"></i>Baca', 'class="btn btn-info btn-xs edit"') . "  " . "<a href='#' class='btn btn-danger btn-xs delete' onclick='javasciprt: return hapus($1)'><i class='fa fa-trash'></i> Hapus</a> <a href='#' class='btn btn-warning btn-xs delete' onclick='javasciprt: return set_close($1)'><i class='fa fa-check'></i> Selesai </a>", 'id_not_detail');
 
       return $this->datatables->generate();
     }
