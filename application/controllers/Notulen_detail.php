@@ -347,6 +347,8 @@ class Notulen_detail extends CI_Controller
 
   public function edit($id)
   {
+    $id = decrypt_url($id);
+
     $row = $this->Notulen_detail_model->get_by_id($id);
 
     if ($row) {
@@ -444,6 +446,8 @@ class Notulen_detail extends CI_Controller
 
   public function edit_foto($id)
   {
+    $id = decrypt_url($id);
+
     $row = $this->Notulen_detail_model->get_by_id($id);
 
     if ($row) {
@@ -496,6 +500,8 @@ class Notulen_detail extends CI_Controller
 
   public function edit_peserta($id)
   {
+    $id = decrypt_url($id);
+
     $where = array('id_not_detail' => $id);
     $data['notulen_detail'] = $this->Notulen_detail_model->edit_data($where, 'notulen_detail')->result();
 
@@ -982,6 +988,8 @@ class Notulen_detail extends CI_Controller
 
   public function hapus_peserta($id)
   {
+    $id = decrypt_url($id);
+
     $where = array('id_not_detail' => $id);
     $data['notulen_detail'] = $this->Notulen_detail_model->edit_data($where, 'notulen_detail')->result();
 

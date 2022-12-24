@@ -63,13 +63,13 @@
           </tr>
           <tr>
 
-            <td><a href="<?php echo base_url('notulen_detail/edit/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Detail</a></td>
+            <td><a href="<?php echo base_url('notulen_detail/edit/' . encrypt_url($a->id_not_detail)); ?>" class="btn btn-info">Edit Detail</a></td>
 
           </tr>
           <tr>
             <td>Foto</td>
             <td><img src="<?= base_url('assets/uploads/file/' . $foto)  ?>" width="200" /></td>
-            <td><a href="<?php echo base_url('notulen_detail/edit_foto/' . $a->id_not_detail); ?>" class="btn btn-info">Edit Foto</a></td>
+            <td><a href="<?php echo base_url('notulen_detail/edit_foto/' . encrypt_url($a->id_not_detail)); ?>" class="btn btn-info">Edit Foto</a></td>
           </tr>
 
           <tr>
@@ -84,12 +84,12 @@
 
             <td>
 
-              <a href="<?php echo base_url('notulen_detail/edit_peserta/' . $a->id_not_detail); ?>" class="btn btn-info">Tambah Peserta</a>
+              <a href="<?php echo base_url('notulen_detail/edit_peserta/' . encrypt_url($a->id_not_detail)); ?>" class="btn btn-info">Tambah Peserta</a>
 
             </td>
             <td>
 
-              <a href="<?php echo base_url('notulen_detail/hapus_peserta/' . $a->id_not_detail); ?>" class="btn btn-danger">Hapus Peserta</a>
+              <a href="<?php echo base_url('notulen_detail/hapus_peserta/' . encrypt_url($a->id_not_detail)); ?>" class="btn btn-danger">Hapus Peserta</a>
 
             </td>
             <td><a href="<?php echo site_url('notulen_detail') ?>" class="btn btn-default"><i class='fa fa-home'></i>Back To Home</a></td>
