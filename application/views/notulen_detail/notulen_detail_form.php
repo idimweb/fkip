@@ -168,7 +168,7 @@
                     <input type="text" class="form-control" value="Magister Bimbingan Konseling" readonly />
                     <input type="hidden" name="id_notulen" value="26">
 
-                  <?php } elseif ($this->session->level == 'admin') { ?>
+                  <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
 
 
                     <input type="text" class="form-control" id="id_notulen" placeholder="Cari Data Bidang..." />
@@ -612,7 +612,7 @@
                                 </td>
                               </tr>
 
-                            <?php } elseif ($this->session->level == 'admin') { ?>
+                            <?php } elseif (($this->session->level == 'admin') ||  ($this->session->level == 'user')) { ?>
 
                               <tr>
                                 <td>
@@ -839,7 +839,7 @@
                               </td>
                             </tr>
 
-                          <?php } elseif ($this->session->level == 'admin') { ?>
+                          <?php } elseif (($this->session->level == 'admin') ||  ($this->session->level == 'user')) { ?>
                             <tr>
                               <td>
                                 <?php echo $no++ ?>

@@ -21,7 +21,7 @@
                     <th width="80px">No</th>
                     <th>Bulan</th>
                     <th>Anggota FKIP</th>
-                    <!-- <th>Asistensi</th> -->
+                    <th>Asistensi</th>
                     <th>Lainya</th>
                     <th>Tahun</th>
                   </tr>
@@ -63,7 +63,7 @@
                       ?>
                       <td><?php echo $data->bulan; ?></td>
                       <td><?php echo $data->anggota; ?></td>
-                      <!-- <td><?php echo $data->asistensi; ?></td> -->
+                      <td><?php echo $data->asistensi; ?></td>
                       <td><?php echo $data->lainya; ?></td>
                       <td><?php echo $data->tahun; ?></td>
                     </tr>

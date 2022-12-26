@@ -61,10 +61,10 @@ class Notulen_detail_model extends CI_Model
 
   public function tampil_bulan_tahun()
   {
-    $this->db->select("MONTH(date_created) as bulan, YEAR(date_created) as tahun, 
+    $this->db->select("MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun, 
     SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_bulanan");
     // $this->db->from("notulen_detail");
-    $this->db->group_by("MONTH(date_created)");
+    $this->db->group_by("MONTH(tanggal_mulai)");
     return $this->db->get($this->table)->result();
     // return $this->db->get();
   }
@@ -115,17 +115,14 @@ class Notulen_detail_model extends CI_Model
 
   public function tampil_jumlah_peserta()
   {
-    // $this->db->query('SELECT MONTH(date_created) AS bulan, COUNT(id_anggota) AS anggota, COUNT(id_asistensi) AS asistensi, COUNT(id_staf) AS staf, COUNT(id_tamu) AS tamu, COUNT(id_lainya) AS lainya FROM notulen_detail LEFT JOIN peserta ON notulen_detail.id_not_detail=peserta.id_not_detail GROUP BY MONTH(date_created)');
-    $this->db->select("MONTH(date_created) AS bulan, YEAR(date_created) as tahun,
-    COUNT(id_anggota) AS anggota, 
-    COUNT(id_asistensi) AS asistensi, 
-    COUNT(id_staf) AS staf, 
-    COUNT(id_tamu) AS tamu, 
-    COUNT(id_lainya) AS lainya");
-    // $this->db->from('notulen_detail');
-    $this->db->join('peserta', 'notulen_detail.id_not_detail=peserta.id_not_detail', 'left');
-    $this->db->group_by("MONTH(date_created)");
-    return $this->db->get($this->table)->result();
+    $this->db->select("*,MONTH(nd.tanggal_mulai) AS bulan, YEAR(nd.tanggal_mulai) as tahun,
+    COUNT(p.id_anggota) AS anggota, 
+    COUNT(p.id_asistensi) AS asistensi, 
+    COUNT(p.id_lainya) AS lainya");
+    $this->db->from('notulen_detail nd');
+    $this->db->join('peserta p', 'nd.id_not_detail=p.id_not_detail', 'left');
+    $this->db->group_by("MONTH(nd.tanggal_mulai)");
+    return $this->db->get()->result();
   }
 
   function TampilPeserta($id)
