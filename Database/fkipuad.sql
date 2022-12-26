@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2022 at 02:20 AM
+-- Generation Time: Dec 26, 2022 at 02:36 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -498,14 +498,15 @@ CREATE TABLE `notulen_detail` (
 INSERT INTO `notulen_detail` (`id_not_detail`, `id_notulen`, `issue`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `tempat`, `jenis_kegiatan`, `catatan`, `foto`, `jumlah`, `status`, `date_created`) VALUES
 (309, 27, 'nov', '2022-11-24', '2022-11-24', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 1, 'N', '2022-12-24'),
 (310, 27, 'des', '2022-11-24', '2022-11-24', '01:00', '01:00', 'Daring', 'Rapat', NULL, '12.jpg', 9, 'N', '2022-12-24'),
-(315, 17, 'tes 1', '2022-11-30', '2022-11-30', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 2, 'N', '2022-12-24'),
+(315, 17, 'tes 1', '2022-12-26', '2022-12-26', '01:00', '01:00', 'Daring', 'Rapat', '20220200004_Hurin_Azzahro2.pdf', '13.jpg', 2, 'N', '2022-12-26'),
 (316, 17, 'tes', '2022-12-19', '2022-12-19', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 3, 'N', '2022-12-19'),
 (317, 26, 'admin mbk', '2022-12-19', '2022-12-19', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 4, 'N', '2022-12-19'),
 (318, 32, 'tes admin ps', '2022-12-19', '2022-12-19', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 4, 'N', '2022-12-19'),
 (319, 17, 'tess dashboard admin bertambah', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Daring', 'Rapat', '20220200004_Hurin_Azzahro1.pdf', NULL, 5, 'N', '2022-12-23'),
 (326, 27, 'tes edit', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Daring', 'Pendampingan', 'Tugas_Individu_Looping1.pdf', '2.jpg', 4, 'N', '2022-12-23'),
 (330, 27, 'tes lagi 2', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Daring', 'Rapat', 'pasbiasa-min.jpg', 'pasbiasa-min1.jpg', 2, 'N', '2022-12-23'),
-(331, 27, 'tes tanpa peserta', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Dekanat ', 'Rapat', 'Tidak ada file', 'pasbiasa-min2.jpg', 10, 'N', '2022-12-23');
+(331, 27, 'tes tanpa peserta', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Dekanat ', 'Rapat', 'Tidak ada file', 'pasbiasa-min2.jpg', 10, 'N', '2022-12-23'),
+(332, 27, 'tes', '2022-12-26', '2022-12-26', '01:00', '01:00', 'Daring', 'Rapat', 'TUGAS_ALOGARITMA__(1).pdf', '1.jpg', 3, 'N', '2022-12-26');
 
 -- --------------------------------------------------------
 
@@ -566,7 +567,10 @@ INSERT INTO `peserta` (`id_peserta`, `id_not_detail`, `id_anggota`, `id_asistens
 (620, 310, NULL, 92, NULL, 129, NULL),
 (621, 310, NULL, 93, NULL, 130, NULL),
 (622, 310, NULL, 94, NULL, NULL, NULL),
-(623, 310, NULL, 95, NULL, NULL, NULL);
+(623, 310, NULL, 95, NULL, NULL, NULL),
+(624, 332, NULL, 85, NULL, NULL, NULL),
+(625, 332, NULL, 87, NULL, NULL, NULL),
+(626, 332, NULL, 88, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -745,13 +749,13 @@ ALTER TABLE `notulen`
 -- AUTO_INCREMENT for table `notulen_detail`
 --
 ALTER TABLE `notulen_detail`
-  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=332;
+  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=333;
 
 --
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=624;
+  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=627;
 
 --
 -- AUTO_INCREMENT for table `staf`
