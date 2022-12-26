@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2022 at 06:51 AM
+-- Generation Time: Dec 26, 2022 at 02:20 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fkip`
+-- Database: `fkipuad`
 --
 
 -- --------------------------------------------------------
@@ -76,9 +76,16 @@ INSERT INTO `anggota` (`id_anggota`, `nama`, `jabatan`, `prodi`, `email`) VALUES
 (65, 'Okimustava, M.Pd.Si', 'Sekretaris Program Studi MPFIS', 'MPFIS', ''),
 (66, 'Dr. Tri Kuat', 'Ketua Program MPGV', 'MPGV', ''),
 (67, 'Muhammad Sayuti, M.Pd., M.Ed., Ph.D.', 'Sekertaris Program Studi MPGV', 'MPGV', ''),
-(68, 'Dr. Ani Susanti, M.Pd.B.I.', 'Wakil Dekan Bidang SDM, Kehartabendaan dan Administrasi Umum', '', ''),
-(69, 'Dr. Suyatno, M.Pd.I', 'Wakil Dekan Bidang AIK, Kemahasiswaan dan Akademik', '', ''),
-(70, 'Muhammad Sayuti, M.Pd., M.Ed., Ph.D.', 'Dekan FKIP', '', '');
+(68, 'Dr. Ani Susanti, M.Pd.B.I.', 'Wakil Dekan Bidang SDM, Kehartabendaan dan Administrasi Umum', 'DEKANAT', '0'),
+(69, 'Dr. Suyatno, M.Pd.I', 'Wakil Dekan Bidang AIK, Kemahasiswaan dan Akademik', 'DEKANAT', '0'),
+(70, 'Muhammad Sayuti, M.Pd., M.Ed., Ph.D.', 'Dekan FKIP', 'DEKANAT', '0'),
+(73, 'Mas Yuwanto', 'Tendik', 'DEKANAT', ''),
+(74, 'Mas Adam', 'Tendik', 'DEKANAT', ''),
+(75, 'Mas Qisan', 'Tendik', 'DEKANAT', ''),
+(76, 'Mbak Nurma', 'Tendik', 'DEKANAT', ''),
+(77, 'Dani', 'Tendik', 'DEKANAT', ''),
+(78, 'Efa', 'Tendik', 'DEKANAT', ''),
+(79, 'Retno', 'Tendik', 'DEKANAT', '');
 
 -- --------------------------------------------------------
 
@@ -223,18 +230,6 @@ CREATE TABLE `buku_tamu` (
   `tanggal` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `buku_tamu`
---
-
-INSERT INTO `buku_tamu` (`id_buku_tamu`, `penerima`, `keperluan`, `nama_peserta`, `instansi_peserta`, `no_hp_peserta`, `jabatan_peserta`, `tanggal`) VALUES
-(11, 'admin', 'tamu', 'wicak', 'uad', '08523456789', 'dosen', '2021-06-28'),
-(12, 'admin', 'tamu', 'wicak', 'uad', '08123456789', 'dosen', '2021-06-28'),
-(13, 'admin', 'kunjungan', 'saleh', 'uad', '08523456789', 'dosen', '2021-07-05'),
-(15, 'staf', 'Bertamu', 'wicak', 'uad', '08523456789', 'dosen', '2021-06-30'),
-(16, 'staf', 'Bertamu', 'saleh', 'uad', '08523456789', 'dosen', '2021-06-30'),
-(17, 'staf', 'Bertamu', 'joko', 'uad', '08523456789', 'dosen', '2021-06-30');
-
 -- --------------------------------------------------------
 
 --
@@ -268,36 +263,6 @@ CREATE TABLE `import` (
   `email` varchar(255) NOT NULL COMMENT 'Email Address',
   `contact_no` varchar(50) NOT NULL COMMENT 'Contact No'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='datatable demo table';
-
---
--- Dumping data for table `import`
---
-
-INSERT INTO `import` (`id`, `first_name`, `last_name`, `email`, `contact_no`) VALUES
-(702, 'wicak', 'usm', 'wicak@sibermu.ac.id', '8508631633'),
-(703, 'joko', 'usm', 'joko@sibermu.ac.id', '9848187252'),
-(704, 'idin', 'usm', 'idin@sibermu.ac.id', '7895468956'),
-(705, 'andi', 'usm', 'andi@sibermu.ac.id', '8904899878'),
-(706, 'wicak', 'usm', 'wicak@sibermu.ac.id', '8508631633'),
-(707, 'joko', 'usm', 'joko@sibermu.ac.id', '9848187252'),
-(708, 'idin', 'usm', 'idin@sibermu.ac.id', '7895468956'),
-(709, 'andi', 'usm', 'andi@sibermu.ac.id', '8904899878'),
-(710, 'wicak', 'usm', 'wicak@sibermu.ac.id', '8508631633'),
-(711, 'joko', 'usm', 'joko@sibermu.ac.id', '9848187252'),
-(712, 'idin', 'usm', 'idin@sibermu.ac.id', '7895468956'),
-(713, 'andi', 'usm', 'andi@sibermu.ac.id', '8904899878'),
-(714, 'wicak', 'usm', 'wicak@sibermu.ac.id', '8508631633'),
-(715, 'joko', 'usm', 'joko@sibermu.ac.id', '9848187252'),
-(716, 'idin', 'usm', 'idin@sibermu.ac.id', '7895468956'),
-(717, 'andi', 'usm', 'andi@sibermu.ac.id', '8904899878'),
-(718, 'wicak', 'usm', 'wicak@sibermu.ac.id', '8508631633'),
-(719, 'joko', 'usm', 'joko@sibermu.ac.id', '9848187252'),
-(720, 'idin', 'usm', 'idin@sibermu.ac.id', '7895468956'),
-(721, 'andi', 'usm', 'andi@sibermu.ac.id', '8904899878'),
-(722, 'wicak', 'usm', 'wicak@sibermu.ac.id', '8508631633'),
-(723, 'joko', 'usm', 'joko@sibermu.ac.id', '9848187252'),
-(724, 'idin', 'usm', 'idin@sibermu.ac.id', '7895468956'),
-(725, 'andi', 'usm', 'andi@sibermu.ac.id', '8904899878');
 
 -- --------------------------------------------------------
 
@@ -342,36 +307,16 @@ CREATE TABLE `lainya` (
 --
 
 INSERT INTO `lainya` (`id_lainya`, `nama_lainya`) VALUES
-(91, 'idim'),
-(92, 'idim'),
-(93, 'joko'),
-(94, 'wicak'),
-(95, 'idim'),
-(96, 'joko'),
-(97, 'joko'),
-(98, 'joko'),
-(99, 'wicak'),
-(100, 'joko'),
-(101, 'joko'),
-(102, 'Stter'),
-(103, 'joko'),
-(104, 'joko'),
-(105, 'joko'),
-(106, 'joko'),
-(107, 'idim'),
-(108, 'joko'),
-(109, 'joko'),
-(110, 'joko'),
-(111, 'joko'),
-(112, 'idim'),
-(113, 'wicak'),
-(114, 'joko'),
-(115, 'wicak'),
-(116, 'idim'),
-(117, 'joko'),
-(118, 'joko'),
-(119, 'idim'),
-(120, 'wicak');
+(121, 'henry'),
+(122, 'lagi'),
+(123, 'hallo'),
+(124, 'hallo2'),
+(125, 'idim'),
+(126, 'wicak'),
+(127, 'tes 1'),
+(128, 'idim'),
+(129, 'wicak'),
+(130, 'tes 1');
 
 -- --------------------------------------------------------
 
@@ -399,7 +344,7 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_user`, `username`, `password`, `nama`, `email`, `foto`, `level`, `active`, `date_create`, `log`, `id_divisi`) VALUES
 (3, 'admin', '202cb962ac59075b964b07152d234b70', 'Admin FKIP', 'admin@example.com', 'foto1662955020.jpg', 'admin', 'Y', '0000-00-00', '2022-09-12 05:57:00', '1'),
-(7, 'adminhdp', '202cb962ac59075b964b07152d234b70', 'Humas Dan Promosi', 'humasdanpromosi@admin.com', 'Tidak ada file', 'hdp', 'Y', '0000-00-00', NULL, '1'),
+(7, 'adminhdp', '202cb962ac59075b964b07152d234b70', 'Humas Dan Promosi', 'humasdanpromosi@admin.com', 'foto1671858494.jpg', 'hdp', 'Y', '0000-00-00', '2022-12-24 06:08:14', '1'),
 (8, 'adminia', '202cb962ac59075b964b07152d234b70', 'Admin Implementasi AIK', 'ia@admin.com', '', 'ia', 'Y', '0000-00-00', '2022-12-05 06:30:16', ''),
 (9, 'adminkda', '202cb962ac59075b964b07152d234b70', 'Admin Kemahasiswaan Dan Alumni', 'kda@admin.com', '', 'kda', 'Y', '0000-00-00', '2022-12-05 06:30:16', ''),
 (10, 'adminkndi', '202cb962ac59075b964b07152d234b70', 'Admin Kerjasama Nasional dan Internasional', 'kndi@admin.com', 'Tidak ada file', 'kndi', 'Y', '0000-00-00', NULL, '1'),
@@ -424,7 +369,8 @@ INSERT INTO `login` (`id_user`, `username`, `password`, `nama`, `email`, `foto`,
 (29, 'adminmp', '202cb962ac59075b964b07152d234b70', 'Admin MP', 'mp@gmail.com', 'Tidak ada file', 'mp', 'Y', '0000-00-00', NULL, '1'),
 (30, 'adminmpbi', '202cb962ac59075b964b07152d234b70', 'Admin MPBI', 'mpbi@gmail.com', 'Tidak ada file', 'mpbi', 'Y', '0000-00-00', NULL, '1'),
 (31, 'adminmpfis', '202cb962ac59075b964b07152d234b70', 'Admin MPFIS', 'mpfis@gmail.com', 'Tidak ada file', 'mpfis', 'Y', '0000-00-00', NULL, '1'),
-(32, 'adminmpgv', '202cb962ac59075b964b07152d234b70', 'Admin MPGV', 'mpgv@gmail.com', 'Tidak ada file', 'mpgv', 'Y', '0000-00-00', NULL, '1');
+(32, 'adminmpgv', '202cb962ac59075b964b07152d234b70', 'Admin MPGV', 'mpgv@gmail.com', 'Tidak ada file', 'mpgv', 'Y', '0000-00-00', NULL, '1'),
+(33, 'dekan', '202cb962ac59075b964b07152d234b70', 'Dekan FKIP UAD', 'dekanfkipuad@gmail.com', 'Tidak ada file', 'user', 'Y', '0000-00-00', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -452,9 +398,9 @@ INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `icon`, `link`, `aktif`
 (18, 0, 'Divisi', 'icon-user fa-fw', 'Divisi', 'Ya', 11, 'Bottom', ''),
 (14, 0, 'Tambah Admin', 'icon-user fa-fw', 'Login', 'Ya', 10, 'Bottom', 'admin'),
 (15, 0, 'Daftar Kegiatan', 'icon-list  fa-fw', 'Notulen_detail', 'Ya', 2, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
-(13, 0, 'Program Studi & Tim Kerja', 'icon-menu  fa-fw', 'Notulen', 'Ya', 1, 'Bottom', 'admin'),
+(13, 0, 'Program Studi & Tim Kerja', 'icon-menu  fa-fw', 'Notulen', 'Ya', 1, 'Bottom', ''),
 (12, 0, 'Instansi', 'icon-user fa-fw', 'Instansi', 'Ya', 13, 'Bottom', ''),
-(22, 0, 'Anggota Prodi', 'icon-people  fa-fw', 'Anggota', 'Ya', 4, 'Bottom', 'admin.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
+(22, 0, 'Anggota Prodi', 'icon-people  fa-fw', 'Anggota', 'Ya', 4, 'Bottom', 'admin.user.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
 (23, 0, 'Buku Tamu', 'icon-close  fa-fw', 'Buku_tamu', 'Ya', 3, 'Bottom', ''),
 (24, 0, 'Tim Kerja', 'icon-people  fa-fw', 'Asistensi', 'Ya', 5, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta'),
 (25, 0, 'Menu', 'icon-menu  fa-fw', 'Setting/Menu', 'Ya', 12, 'Bottom', 'admin'),
@@ -462,7 +408,7 @@ INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `icon`, `link`, `aktif`
 (27, 0, 'Absensi', 'icon-user fa-fw', 'Absensi', 'Ya', 9, 'Bottom', ''),
 (32, 0, 'Tamu/Peserta Lainya', 'icon-people  fa-fw', 'Lainya', 'Ya', 8, 'Bottom', ''),
 (33, 0, 'Staf Majelis', 'icon-people  fa-fw', 'staf', 'Ya', 7, 'Bottom', ''),
-(35, 0, 'Semua Aktivitas', 'icon-user fa-fw', 'Notulen_detail/lihat_semua', 'Ya', 1, 'Bottom', 'hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv');
+(35, 0, 'Semua Aktivitas', 'icon-list  fa-fw', 'Notulen_detail/lihat_semua', 'Ya', 1, 'Bottom', 'user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv');
 
 -- --------------------------------------------------------
 
@@ -519,7 +465,8 @@ INSERT INTO `notulen` (`id_notulen`, `agenda`, `id_create`, `start_time`, `end_t
 (31, 'Tim Kerja Pengembangan Pendidikan dan Pembelajaran', 3, '12:35', '12:35', 'Dikti', 'a', '2022-11-26', 'absensi_1669440929.pdf', 'absensi_16694409291.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '25'),
 (32, 'Tim Kerja Pengembangan SDM', 3, '12:43', '12:43', 'Dikti', 'a', '2022-11-26', 'absensi_1669441440.pdf', 'absensi_16694414401.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '26'),
 (33, 'Tim Kerja Percepatan kinerja riset, Pengabdian dan Publikasi', 3, '12:45', '12:45', 'Dikti', 'a', '2022-11-26', 'absensi_1669441521.pdf', 'absensi_16694415211.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '27'),
-(34, 'Tim Akreditasi', 3, '12:47', '12:48', 'Dikti', 'a', '2022-11-26', 'absensi_1669441698.pdf', 'absensi_16694416981.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '28');
+(34, 'Tim Akreditasi', 3, '12:47', '12:48', 'Dikti', 'a', '2022-11-26', 'absensi_1669441698.pdf', 'absensi_16694416981.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '28'),
+(37, 'Dekanat', 3, '', '', '', '', NULL, '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -531,13 +478,14 @@ CREATE TABLE `notulen_detail` (
   `id_not_detail` int(15) NOT NULL,
   `id_notulen` int(15) NOT NULL,
   `issue` text NOT NULL,
-  `tanggal_mulai` varchar(50) NOT NULL,
+  `tanggal_mulai` date NOT NULL,
   `tanggal_selesai` varchar(50) NOT NULL,
   `waktu_mulai` varchar(50) DEFAULT NULL,
   `waktu_selesai` varchar(50) DEFAULT NULL,
   `tempat` varchar(50) NOT NULL,
   `jenis_kegiatan` varchar(50) NOT NULL,
   `catatan` text DEFAULT NULL,
+  `foto` text DEFAULT NULL,
   `jumlah` int(20) DEFAULT NULL,
   `status` varchar(50) NOT NULL,
   `date_created` date NOT NULL
@@ -547,18 +495,17 @@ CREATE TABLE `notulen_detail` (
 -- Dumping data for table `notulen_detail`
 --
 
-INSERT INTO `notulen_detail` (`id_not_detail`, `id_notulen`, `issue`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `tempat`, `jenis_kegiatan`, `catatan`, `jumlah`, `status`, `date_created`) VALUES
-(266, 27, 'tes hdp', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 2, 'N', '2022-12-05'),
-(267, 28, 'tes ia', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-05'),
-(268, 29, 'tes kda', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-05'),
-(269, 30, 'tes kndi', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 5, 'N', '2022-12-05'),
-(270, 31, 'tes ppdp', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 5, 'N', '2022-12-05'),
-(271, 32, 'tes ps', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-05'),
-(272, 33, 'tes pkrpdp', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 5, 'N', '2022-12-05'),
-(273, 34, 'tes ta', '2022-12-05', '2022-12-05', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 9, 'N', '2022-12-05'),
-(275, 34, 'admin akre', '2022-12-06', '2022-12-06', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'N', '2022-12-06'),
-(276, 17, 'tes bk edit', '2022-12-06', '2022-12-06', '01:00', '01:00', 'Daring', 'Rapat', 'SU_Seleksi_Calon_Reviewer_Penelitian_Batch_1.pdf', 6, 'N', '2022-12-06'),
-(277, 27, 'tes humas dan promosi', '2022-12-07', '2022-12-07', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 3, 'Y', '2022-12-07');
+INSERT INTO `notulen_detail` (`id_not_detail`, `id_notulen`, `issue`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `tempat`, `jenis_kegiatan`, `catatan`, `foto`, `jumlah`, `status`, `date_created`) VALUES
+(309, 27, 'nov', '2022-11-24', '2022-11-24', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 1, 'N', '2022-12-24'),
+(310, 27, 'des', '2022-11-24', '2022-11-24', '01:00', '01:00', 'Daring', 'Rapat', NULL, '12.jpg', 9, 'N', '2022-12-24'),
+(315, 17, 'tes 1', '2022-11-30', '2022-11-30', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 2, 'N', '2022-12-24'),
+(316, 17, 'tes', '2022-12-19', '2022-12-19', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 3, 'N', '2022-12-19'),
+(317, 26, 'admin mbk', '2022-12-19', '2022-12-19', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 4, 'N', '2022-12-19'),
+(318, 32, 'tes admin ps', '2022-12-19', '2022-12-19', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', NULL, 4, 'N', '2022-12-19'),
+(319, 17, 'tess dashboard admin bertambah', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Daring', 'Rapat', '20220200004_Hurin_Azzahro1.pdf', NULL, 5, 'N', '2022-12-23'),
+(326, 27, 'tes edit', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Daring', 'Pendampingan', 'Tugas_Individu_Looping1.pdf', '2.jpg', 4, 'N', '2022-12-23'),
+(330, 27, 'tes lagi 2', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Daring', 'Rapat', 'pasbiasa-min.jpg', 'pasbiasa-min1.jpg', 2, 'N', '2022-12-23'),
+(331, 27, 'tes tanpa peserta', '2022-12-23', '2022-12-23', '01:00', '01:00', 'Dekanat ', 'Rapat', 'Tidak ada file', 'pasbiasa-min2.jpg', 10, 'N', '2022-12-23');
 
 -- --------------------------------------------------------
 
@@ -581,45 +528,45 @@ CREATE TABLE `peserta` (
 --
 
 INSERT INTO `peserta` (`id_peserta`, `id_not_detail`, `id_anggota`, `id_asistensi`, `id_tamu`, `id_lainya`, `id_staf`) VALUES
-(460, 266, NULL, 85, NULL, NULL, NULL),
-(461, 266, NULL, 87, NULL, NULL, NULL),
-(462, 267, NULL, 108, NULL, NULL, NULL),
-(463, 267, NULL, 109, NULL, NULL, NULL),
-(464, 267, NULL, 110, NULL, NULL, NULL),
-(465, 268, NULL, 116, NULL, NULL, NULL),
-(466, 268, NULL, 117, NULL, NULL, NULL),
-(467, 268, NULL, 118, NULL, NULL, NULL),
-(468, 269, 36, 129, NULL, NULL, NULL),
-(469, 269, 40, 130, NULL, NULL, NULL),
-(470, 269, NULL, 131, NULL, NULL, NULL),
-(471, 270, 40, 141, NULL, NULL, NULL),
-(472, 270, 41, 142, NULL, NULL, NULL),
-(473, 270, NULL, 143, NULL, NULL, NULL),
-(474, 271, 30, 154, NULL, NULL, NULL),
-(475, 271, NULL, 155, NULL, NULL, NULL),
-(476, 272, NULL, 165, NULL, NULL, NULL),
-(477, 272, NULL, 166, NULL, NULL, NULL),
-(478, 272, NULL, 167, NULL, NULL, NULL),
-(479, 272, NULL, 168, NULL, NULL, NULL),
-(480, 272, NULL, 169, NULL, NULL, NULL),
-(481, 273, 29, 182, NULL, NULL, NULL),
-(482, 273, 30, 184, NULL, NULL, NULL),
-(483, 273, 31, 185, NULL, NULL, NULL),
-(484, 273, NULL, 186, NULL, NULL, NULL),
-(485, 273, NULL, 187, NULL, NULL, NULL),
-(486, 273, NULL, 188, NULL, NULL, NULL),
-(487, 275, NULL, 199, NULL, NULL, NULL),
-(488, 275, NULL, 200, NULL, NULL, NULL),
-(489, 275, NULL, 201, NULL, NULL, NULL),
-(490, 276, 34, NULL, NULL, NULL, NULL),
-(491, 276, 35, NULL, NULL, NULL, NULL),
-(492, 276, 36, NULL, NULL, NULL, NULL),
-(493, 276, 68, NULL, NULL, NULL, NULL),
-(494, 276, 69, NULL, NULL, NULL, NULL),
-(495, 276, 70, NULL, NULL, NULL, NULL),
-(496, 277, NULL, 85, NULL, NULL, NULL),
-(497, 277, NULL, 87, NULL, NULL, NULL),
-(498, 277, NULL, 88, NULL, NULL, NULL);
+(549, 309, NULL, 85, NULL, NULL, NULL),
+(550, 310, NULL, 91, NULL, NULL, NULL),
+(556, 312, 34, NULL, NULL, NULL, NULL),
+(557, 312, 35, NULL, NULL, NULL, NULL),
+(558, 313, 34, NULL, NULL, NULL, NULL),
+(559, 314, 34, NULL, NULL, NULL, NULL),
+(560, 314, 35, NULL, NULL, NULL, NULL),
+(561, 315, 35, NULL, NULL, NULL, NULL),
+(562, 315, 36, NULL, NULL, NULL, NULL),
+(563, 316, 34, NULL, NULL, NULL, NULL),
+(564, 316, 35, NULL, NULL, NULL, NULL),
+(565, 316, 36, NULL, NULL, NULL, NULL),
+(566, 317, 29, NULL, NULL, NULL, NULL),
+(567, 317, 30, NULL, NULL, NULL, NULL),
+(568, 317, 31, NULL, NULL, NULL, NULL),
+(569, 317, 32, NULL, NULL, NULL, NULL),
+(570, 318, 30, 154, NULL, NULL, NULL),
+(571, 318, 31, 155, NULL, NULL, NULL),
+(572, 319, 34, NULL, NULL, 123, NULL),
+(573, 319, 35, NULL, NULL, 124, NULL),
+(574, 319, 36, NULL, NULL, NULL, NULL),
+(606, 326, NULL, 85, NULL, NULL, NULL),
+(607, 326, NULL, 87, NULL, NULL, NULL),
+(608, 326, NULL, 88, NULL, NULL, NULL),
+(609, 326, NULL, 89, NULL, NULL, NULL),
+(610, 330, NULL, 85, NULL, NULL, NULL),
+(611, 330, NULL, 87, NULL, NULL, NULL),
+(612, 331, NULL, 85, NULL, NULL, NULL),
+(613, 331, NULL, 87, NULL, NULL, NULL),
+(614, 331, NULL, 88, NULL, NULL, NULL),
+(615, 331, NULL, 89, NULL, NULL, NULL),
+(616, 331, NULL, 93, NULL, 125, NULL),
+(617, 331, NULL, 94, NULL, 126, NULL),
+(618, 331, NULL, 95, NULL, 127, NULL),
+(619, 310, NULL, 91, NULL, 128, NULL),
+(620, 310, NULL, 92, NULL, 129, NULL),
+(621, 310, NULL, 93, NULL, 130, NULL),
+(622, 310, NULL, 94, NULL, NULL, NULL),
+(623, 310, NULL, 95, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -744,13 +691,13 @@ ALTER TABLE `staf`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `asistensi`
 --
 ALTER TABLE `asistensi`
-  MODIFY `id_asistensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
+  MODIFY `id_asistensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
 -- AUTO_INCREMENT for table `buku_tamu`
@@ -774,13 +721,13 @@ ALTER TABLE `import`
 -- AUTO_INCREMENT for table `lainya`
 --
 ALTER TABLE `lainya`
-  MODIFY `id_lainya` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id_lainya` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -792,19 +739,19 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `notulen`
 --
 ALTER TABLE `notulen`
-  MODIFY `id_notulen` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_notulen` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `notulen_detail`
 --
 ALTER TABLE `notulen_detail`
-  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
+  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=332;
 
 --
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=499;
+  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=624;
 
 --
 -- AUTO_INCREMENT for table `staf`
