@@ -281,7 +281,7 @@
                     <a href="<?= base_url('assets/uploads/file/' . $catatan) ?>" class="btn btn-info btn-xs" style='color:#fff'>Lampiran File</a>
                     <hr />
                   <?php endif; ?>
-                  <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="<?php echo $catatan; ?>" />
+                  <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="<?php echo $catatan; ?>" accept="application/pdf" />
                   <!-- <textarea class="form-control" rows="3" name="catatan" id="catatan" placeholder="Catatan"><?php echo $catatan; ?></textarea> -->
                 </div>
               </div>

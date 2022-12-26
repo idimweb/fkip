@@ -20,7 +20,7 @@
 
                 <div class='col-md-9'>
                   <img src="<?= base_url('assets/uploads/file/' . $foto)  ?>" width="200" />
-                  <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" />
+                  <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" accept="image/jpeg,image/png" />
                 </div>
               </div>
               <input type="hidden" name="id_not_detail" value="<?php echo $id_not_detail; ?>" />

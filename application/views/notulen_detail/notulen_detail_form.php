@@ -978,7 +978,7 @@
               </label>
 
               <div class='col-md-9'>
-                <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="" />
+                <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="" accept="application/pdf" />
               </div>
             </div>
 
@@ -992,7 +992,7 @@
               </label>
 
               <div class='col-md-9'>
-                <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" />
+                <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" accept="image/jpeg,image/png" />
               </div>
             </div>
             <input type="hidden" name="id_not_detail" value="" />
