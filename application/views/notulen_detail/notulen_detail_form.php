@@ -969,7 +969,13 @@
             </div>
 
             <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Catatan<?php echo form_error('catatan') ?></b></label>
+              <label for="varchar" class='control-label col-md-3'><b>Catatan<?php echo form_error('catatan') ?></b>
+                <span>
+                  <h5>
+                    <font color="red">*File pdf (Maksimal Ukuran 5 MB)</font>
+                  </h5>
+                </span>
+              </label>
 
               <div class='col-md-9'>
                 <input type="file" class="form-control" name="catatan" id="catatan" placeholder="" value="" />
@@ -977,7 +983,13 @@
             </div>
 
             <div class="form-group">
-              <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b></label>
+              <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b>
+                <span>
+                  <h5>
+                    <font color="red">*File jpg/png (Maksimal Ukuran 5 MB)</font>
+                  </h5>
+                </span>
+              </label>
 
               <div class='col-md-9'>
                 <input type="file" class="form-control" name="foto" id="foto" placeholder="" value="" />

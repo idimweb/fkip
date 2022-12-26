@@ -10,7 +10,13 @@
               <br /><br /><br /><br />
 
               <div class="form-group">
-                <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b></label>
+                <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b>
+                  <span>
+                    <h5>
+                      <font color="red">*File jpg/png (Maksimal Ukuran 5 MB)</font>
+                    </h5>
+                  </span>
+                </label>
 
                 <div class='col-md-9'>
                   <img src="<?= base_url('assets/uploads/file/' . $foto)  ?>" width="200" />

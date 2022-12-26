@@ -269,7 +269,13 @@
               </div>
 
               <div class="form-group">
-                <label for="varchar" class='control-label col-md-3'><b>Catatan<?php echo form_error('catatan') ?></b></label>
+                <label for="varchar" class='control-label col-md-3'><b>Catatan<?php echo form_error('catatan') ?></b>
+                  <span>
+                    <h5>
+                      <font color="red">*File jpg/png (Maksimal Ukuran 5 MB)</font>
+                    </h5>
+                  </span>
+                </label>
                 <div class='col-md-9'>
                   <?php if ($this->uri->segment(2) == 'edit') : ?>
                     <a href="<?= base_url('assets/uploads/file/' . $catatan) ?>" class="btn btn-info btn-xs" style='color:#fff'>Lampiran File</a>
