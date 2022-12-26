@@ -257,7 +257,7 @@
                                 </td>
                             </tr>
 
-                        <?php } elseif ($this->session->level == 'admin') { ?>
+                        <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
 
                             <tr>
                                 <td>
