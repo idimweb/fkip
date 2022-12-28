@@ -251,7 +251,7 @@ class Notulen_detail extends CI_Controller
 
       $path = 'assets/uploads/file';
       $config['upload_path'] = $path;
-      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar';
+      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar|jpeg|JPG|JPEG|PNG';
       $this->load->library('upload', $config);
       $this->upload->initialize($config);
       if (!$this->upload->do_upload('catatan')) {
@@ -269,7 +269,7 @@ class Notulen_detail extends CI_Controller
 
       $path = 'assets/uploads/file';
       $config['upload_path'] = $path;
-      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar';
+      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar|jpeg|JPG|JPEG|PNG';
       $this->load->library('upload', $config);
       $this->upload->initialize($config);
       if (!$this->upload->do_upload('foto')) {
@@ -387,7 +387,7 @@ class Notulen_detail extends CI_Controller
     } else {
       $path = 'assets/uploads/file';
       $config['upload_path'] = $path;
-      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar';
+      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar|jpeg|JPG|JPEG|PNG';
       $this->load->library('upload', $config);
       $this->upload->initialize($config);
       if (!$this->upload->do_upload('catatan')) {
@@ -470,7 +470,7 @@ class Notulen_detail extends CI_Controller
 
     $path = 'assets/uploads/file';
     $config['upload_path'] = $path;
-    $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar';
+    $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar|jpeg|JPG|JPEG|PNG';
     $this->load->library('upload', $config);
     $this->upload->initialize($config);
     if (!$this->upload->do_upload('foto')) {

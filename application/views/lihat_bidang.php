@@ -22,10 +22,12 @@
               } ?>
 
 
+
+
               <?php
               if (isset($id) == NULL) {
               ?>
-                <table class="table">
+                <table id="table-to-print" class="table">
                   <thead>
                     <tr>
                       <th colspan="5">Jumlah Peserta</th>
@@ -51,11 +53,47 @@
                     <?php $no++;
                     } ?>
                   </tbody>
+
+                  <style>
+                    /* Menyembunyikan elemen yang tidak ingin dicetak */
+                    @media print {
+                      .no-print {
+                        display: none;
+                      }
+                    }
+                  </style>
+
+                  <!-- Tombol cetak -->
+                  <button id="print-button" class="btn btn-primary no-print">Cetak</button>
+
+                  <!-- JavaScript untuk mencetak tabel -->
+                  <script>
+                    document.getElementById("print-button").addEventListener("click", function() {
+                      // Menyimpan elemen tabel ke dalam variabel
+                      var table = document.getElementById("table-to-print");
+
+                      // Menyimpan konten tabel ke dalam variabel
+                      var data = table.outerHTML;
+
+                      // Membukatabel dalam jendela baru dengan menggunakan window.open()
+                      var newWindow = window.open();
+
+                      // Menambahkan tabel ke dalam jendela baru
+                      newWindow.document.write(data);
+
+                      // Mencetak jendela baru yang telah dibuka
+                      newWindow.print();
+                    });
+                  </script>
                 </table>
+
+
+
+
 
               <?php
               } else { ?>
-                <table class="table">
+                <table id="table-to-print" class="table">
                   <thead>
                     <tr>
                       <th colspan="5">Jumlah Peserta</th>
@@ -81,6 +119,37 @@
                     <?php $no++;
                     } ?>
                   </tbody>
+                  <style>
+                    /* Menyembunyikan elemen yang tidak ingin dicetak */
+                    @media print {
+                      .no-print {
+                        display: none;
+                      }
+                    }
+                  </style>
+
+                  <!-- Tombol cetak -->
+                  <button id="print-button" class="btn btn-primary no-print">Cetak</button>
+
+                  <!-- JavaScript untuk mencetak tabel -->
+                  <script>
+                    document.getElementById("print-button").addEventListener("click", function() {
+                      // Menyimpan elemen tabel ke dalam variabel
+                      var table = document.getElementById("table-to-print");
+
+                      // Menyimpan konten tabel ke dalam variabel
+                      var data = table.outerHTML;
+
+                      // Membukatabel dalam jendela baru dengan menggunakan window.open()
+                      var newWindow = window.open();
+
+                      // Menambahkan tabel ke dalam jendela baru
+                      newWindow.document.write(data);
+
+                      // Mencetak jendela baru yang telah dibuka
+                      newWindow.print();
+                    });
+                  </script>
                 </table>
               <?php } ?>
 

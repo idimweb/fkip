@@ -19,6 +19,7 @@ class Notulen_detail_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->from('notulen');
+    $this->db->order_by("agenda", "ASC");
     return $this->db->get();
   }
 

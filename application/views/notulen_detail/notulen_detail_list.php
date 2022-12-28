@@ -10,10 +10,10 @@
         <a href="<?= base_url('notulen_detail/lihat_semua') ?>" class="btn btn-info"><i></i> Semua Kegiatan</a>
         <hr />
         <div class="form-group">
-          <label for="varchar" class='control-label col-md-3'><b>Program/Kegiatan</b></label>
+          <label for="varchar" class='control-label col-md-3'><b>Prodi/Tim Kerja</b></label>
           <div class='col-md-9'>
             <select name="id_notulen" class="form-control" id="id_notulen">
-              <option value="">Pilih Program Studi</option>
+              <option value="">Pilih Program Studi/Tim Kerja</option>
               <?php foreach ($data_notulen->result_array() as $not) : ?>
                 <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
               <?php endforeach; ?>
