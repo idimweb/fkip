@@ -188,7 +188,7 @@
       <?php } ?>
       <br>
       <?php
-      if (($this->session->level == 'user') || ($this->session->level == 'admin') || ($this->session->level == 'hdp') || ($this->session->level == 'ia') || ($this->session->level == 'kda') || ($this->session->level == 'kndi') || ($this->session->level == 'ppdp') || ($this->session->level == 'ps') || ($this->session->level == 'pkrpdp') || ($this->session->level == 'ta')) {
+      if (($this->session->level == 'user') || ($this->session->level == 'admin') || ($this->session->level == 'hdp') || ($this->session->level == 'ia') || ($this->session->level == 'kda') || ($this->session->level == 'kndi') || ($this->session->level == 'ppdp') || ($this->session->level == 'ps') || ($this->session->level == 'pkrpdp') || ($this->session->level == 'ta') || ($this->session->level == 'riset')) {
       ?>
         <br>
         <h3>Data Tim Kerja</h3>
@@ -413,6 +413,34 @@
               </tr>
 
             <?php } elseif ($this->session->level == 'ta' && $ang->bidang == 'Tim Akreditasi') {
+            ?>
+
+              <tr>
+                <td>
+                  <?php echo $no++ ?>
+                </td>
+
+                <td>
+                  <?php echo $ang->nama_asistensi ?>
+                </td>
+                <td>
+                  <?php echo $ang->bidang ?>
+                </td>
+                <td>
+                  <?= $ang->prodi ?>
+                </td>
+                <td>
+                  <?= $ang->email ?>
+                </td>
+                <td>
+                  <?php
+                  $text = encrypt_url($ang->id_asistensi);
+                  ?>
+                  <a href="<?php echo site_url('notulen_detail/aktiv_asistensi/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                </td>
+              </tr>
+
+            <?php } elseif ($this->session->level == 'riset' && $ang->bidang == 'Tim Riset Memahami Karakteristik Mahasiswa FKIP') {
             ?>
 
               <tr>

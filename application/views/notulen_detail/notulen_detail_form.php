@@ -60,6 +60,12 @@
                     <input type="text" class="form-control" value="Tim Akreditasi" readonly />
                     <input type="hidden" name="id_notulen" value="34">
 
+                  <?php } elseif ($this->session->level == 'riset') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Tim Riset Memahami Karakteristik Mahasiswa FKIP" readonly />
+                    <input type="hidden" name="id_notulen" value="38">
+
                   <?php } elseif ($this->session->level == 'pgpaud') {
                   ?>
 
@@ -187,7 +193,7 @@
 
               <div class="form-group">
                 <?php
-                if (($this->session->level != 'hdp') && ($this->session->level != 'ia') && ($this->session->level != 'kda') && ($this->session->level != 'kndi') && ($this->session->level != 'ppdp') && ($this->session->level != 'ps') && ($this->session->level != 'pkrpdp') && ($this->session->level != 'ta')) {
+                if (($this->session->level != 'hdp') && ($this->session->level != 'ia') && ($this->session->level != 'kda') && ($this->session->level != 'kndi') && ($this->session->level != 'ppdp') && ($this->session->level != 'ps') && ($this->session->level != 'pkrpdp') && ($this->session->level != 'ta') && ($this->session->level != 'riset')) {
                 ?>
                   <label for="int" class='control-label col-md-3'><b>Anggota FKIP<?php echo form_error('id_anggota[]') ?></b></label>
 
@@ -654,7 +660,7 @@
             ?>
 
             <?php
-            if (($this->session->level == 'user') || ($this->session->level == 'admin') || ($this->session->level == 'hdp') || ($this->session->level == 'ia') || ($this->session->level == 'kda') || ($this->session->level == 'kndi') || ($this->session->level == 'ppdp') || ($this->session->level == 'ps') || ($this->session->level == 'pkrpdp') || ($this->session->level == 'ta')) {
+            if (($this->session->level == 'user') || ($this->session->level == 'admin') || ($this->session->level == 'hdp') || ($this->session->level == 'ia') || ($this->session->level == 'kda') || ($this->session->level == 'kndi') || ($this->session->level == 'ppdp') || ($this->session->level == 'ps') || ($this->session->level == 'pkrpdp') || ($this->session->level == 'ta') || ($this->session->level == 'riset')) {
             ?>
               <div class="form-group">
                 <label for="int" class='control-label col-md-3'><b>Peserta Tim Kerja<?php echo form_error('id_asistensi[]') ?></b></label>
@@ -821,6 +827,25 @@
                             </tr>
 
                           <?php } elseif ($this->session->level == 'ta' && $ang->bidang == 'Tim Akreditasi') {
+                          ?>
+
+                            <tr>
+                              <td>
+                                <?php echo $no++ ?>
+                              </td>
+
+                              <td>
+                                <?php echo $ang->nama_asistensi ?>
+                              </td>
+                              <td>
+                                <?php echo $ang->bidang ?>
+                              </td>
+                              <td>
+                                <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                              </td>
+                            </tr>
+
+                          <?php } elseif ($this->session->level == 'riset' && $ang->bidang == 'Tim Riset Memahami Karakteristik Mahasiswa FKIP') {
                           ?>
 
                             <tr>

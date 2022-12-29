@@ -58,6 +58,11 @@
 
                                         <input type="text" class="form-control" name="bidang" value="Tim Akreditasi" readonly />
 
+                                    <?php } elseif ($this->session->level == 'riset') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="bidang" value="Tim Riset Memahami Karakteristik Mahasiswa FKIP" readonly />
+
                                     <?php } elseif ($this->session->level == 'admin') { ?>
 
                                         <label class="col-sm-2 control-label no-padding-right"> <?php echo form_error('bidang') ?></label>
@@ -70,6 +75,7 @@
                                             <option value="Pengembangan SDM">Pengembangan SDM </option>
                                             <option value="Percepatan kinerja riset, Pengabdian dan Publikasi">Percepatan kinerja riset, Pengabdian dan Publikasi</option>
                                             <option value="Tim Akreditasi">Tim Akreditasi</option>
+                                            <option value="Tim Riset Memahami Karakteristik Mahasiswa FKIP">Tim Riset Memahami Karakteristik Mahasiswa FKIP</option>
                                         </select>
 
                                     <?php } ?>

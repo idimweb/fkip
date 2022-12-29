@@ -257,6 +257,35 @@
                                 </td>
                             </tr>
 
+                        <?php } elseif ($this->session->level == 'riset' && $ang->bidang == 'Tim Riset Memahami Karakteristik Mahasiswa FKIP') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama_asistensi ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->bidang ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $text = encrypt_url($ang->id_asistensi);
+                                    ?>
+                                    <a href="<?= base_url() ?>asistensi/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_asistensi ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
                         <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
 
                             <tr>

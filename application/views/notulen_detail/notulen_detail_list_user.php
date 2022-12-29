@@ -47,6 +47,10 @@
                 ?>
                   <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
                 <?php
+                } elseif ($not['id_notulen'] == 38 && $this->session->level == 'riset') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
                 } elseif ($not['id_notulen'] == 9 && $this->session->level == 'pgpaud') {
                 ?>
                   <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>

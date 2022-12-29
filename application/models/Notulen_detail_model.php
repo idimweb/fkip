@@ -289,6 +289,7 @@ class Notulen_detail_model extends CI_Model
     $qdata = $this->db->get_where('notulen_detail', array('id_not_detail' => $this->input->post('id_not_detail')));
     $cek_id = $qdata->row_array();
     unlink('assets/uploads/file/' . $cek_id['catatan']);
+    unlink('assets/uploads/file/' . $cek_id['foto']);
     $this->db->where($this->id, $id);
     $this->db->delete($tables);
     // $this->db->where('notulen_detail.id_not_detail=peserta.id_not_detail');

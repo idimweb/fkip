@@ -143,6 +143,16 @@
                                          <td><?php echo $row['jumlah_kegiatan']; ?></td>
                                      </tr>
 
+                                 <?php } elseif (($this->session->level == 'riset') && ($row['agenda'] == 'Tim Riset Memahami Karakteristik Mahasiswa FKIP')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
                                  <?php } elseif (($this->session->level == 'pgpaud') && ($row['agenda'] == '(S1) Pendidikan Guru Pendidikan Anak Usia DIni')) {
                                     ?>
 

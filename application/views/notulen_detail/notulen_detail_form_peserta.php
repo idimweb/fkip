@@ -643,6 +643,25 @@
                             </td>
                           </tr>
 
+                        <?php } elseif ($this->session->level == 'riset' && $ang->bidang == 'Tim Riset Memahami Karakteristik Mahasiswa FKIP') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama_asistensi ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->bidang ?>
+                            </td>
+                            <td>
+                              <input type='checkbox' id='id_asistensi' name='id_asistensi[]' value='<?php echo $ang->id_asistensi ?>' />
+                            </td>
+                          </tr>
+
                         <?php } elseif (($this->session->level == 'admin') || ($this->session->level == 'user')) { ?>
 
                           <tr>

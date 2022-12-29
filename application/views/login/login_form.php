@@ -38,6 +38,7 @@
                                     <option value="ps">Pengembangan SDM </option>
                                     <option value="pkrpdp">Percepatan kinerja riset, Pengabdian dan Publikasi</option>
                                     <option value="ta">Tim Akreditasi</option>
+                                    <option value="riset">Tim Riset Memahami Karakteristik Mahasiswa FKIP</option>
                                     <option value="bk">bk</option>
                                     <option value="pbi">pbi</option>
                                     <option value="pbsi">pbsi</option>
