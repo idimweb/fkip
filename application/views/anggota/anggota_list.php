@@ -170,6 +170,35 @@
                                 </td>
                             </tr>
 
+                        <?php } elseif ($this->session->level == 'mbk' && $ang->prodi == 'MBK') {
+                        ?>
+
+                            <tr>
+                                <td>
+                                    <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                    <?= $ang->prodi ?>
+                                </td>
+                                <td>
+                                    <?= $ang->email ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $text = encrypt_url($ang->id_anggota);
+                                    ?>
+                                    <a href="<?= base_url() ?>anggota/edit/<?= $text ?>" class="btn btn-success btn-xs edit">Edit</a>
+                                    <a href="#" onclick='javasciprt: return hapus(<?= $ang->id_anggota ?>)' class="btn btn-danger btn-xs edit">Hapus</a>
+                                </td>
+                            </tr>
+
                         <?php } elseif ($this->session->level == 'mpmat' && $ang->prodi == 'MPMAT') {
                         ?>
 

@@ -345,6 +345,45 @@ class Notulen_detail extends CI_Controller
 
   }
 
+  private function upload_foto()
+  {
+    // Load library and model
+    $this->load->library('upload');
+    $this->load->model('file_model');
+
+    // Set file upload configuration
+    $config['upload_path'] = 'assets/uploads/foto/';
+    $config['allowed_types'] = 'jpg|jpeg|png|gif';
+    $config['max_size'] = 1024; // in kilobytes
+    $config['max_width'] = 1024; // in pixels
+    $config['max_height'] = 768; // in pixels
+
+    // Set custom file name
+    $config['file_name'] = 'foto_' . uniqid();
+
+    // Load and initialize upload library
+    $this->upload->initialize($config);
+    // Try to upload file
+    if ($this->upload->do_upload('foto')) {
+      // Get uploaded file data
+      $file_data = $this->upload->data();
+
+      // Insert file data to the database
+      $insert = $this->file_model->insert(array(
+        'file_name' => $file_data['file_name'],
+        'uploaded_on' => date('Y-m-d H:i:s')
+      ));
+
+      // Return file upload status
+      return array('status' => TRUE, 'file_name' => $file_data['file_name']);
+    }
+    // If file upload fails
+    else {
+      // Return file upload status
+      return array('status' => FALSE, 'error' => $this->upload->display_errors());
+    }
+  }
+
   public function edit($id)
   {
     $id = decrypt_url($id);
