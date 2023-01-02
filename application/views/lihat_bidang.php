@@ -64,7 +64,7 @@
                   </style>
 
                   <!-- Tombol cetak -->
-                  <button id="print-button" class="btn btn-primary no-print">Cetak</button>
+                  <button id="print-button" class="btn btn-primary no-print">Cetak Peserta</button>
 
                   <!-- JavaScript untuk mencetak tabel -->
                   <script>
