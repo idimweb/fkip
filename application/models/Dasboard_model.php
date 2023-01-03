@@ -39,7 +39,7 @@ class Dasboard_model extends CI_model
 
     public function grafik_total()
     {
-        $this->db->select("*,notulen.id_notulen,MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun, 
+        $this->db->select("*,notulen.id_notulen,MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun,
         SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_kegiatan");
         $this->db->from("notulen_detail");
         $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
@@ -48,14 +48,26 @@ class Dasboard_model extends CI_model
         return $this->db->get();
     }
 
+    public function grafik_total_per()
+    {
+        $this->db->select("*, MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun,
+        SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_kegiatan");
+        $this->db->from("notulen_detail");
+        $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
+        $this->db->group_by("bulan, notulen_detail.id_notulen"); // tambahkan klausa ini untuk menggroup data berdasarkan bulan dan id_notulen
+        $this->db->order_by("bulan", "ASC"); // tambahkan klausa ini untuk mengurutkan hasil query berdasarkan bulan
+        // $this->db->order_by("jumlah_kegiatan", "DESC");
+        return $this->db->get();
+    }
+
     public function tabel_total()
     {
-        $this->db->select("*,MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun, 
+        $this->db->select("*,MONTH(tanggal_mulai) as bulan, YEAR(tanggal_mulai) as tahun,
         SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_kegiatan");
         $this->db->from("notulen_detail");
         $this->db->join("notulen", "notulen.id_notulen=notulen_detail.id_notulen");
         $this->db->group_by("notulen_detail.id_notulen");
-        // $this->db->group_by("MONTH(date_created)");
+        $this->db->group_by("YEAR(tanggal_mulai)");
         $this->db->order_by("jumlah_kegiatan", "DESC");
         $this->db->order_by("jumlah_peserta", "DESC");
         return $this->db->get();
@@ -251,7 +263,7 @@ class Dasboard_model extends CI_model
 
 
     // tampil jumlah kegiatan perbulan berdasarkan bidang
-    // SELECT *, MONTH(date_created), SUM(jumlah) 
-    // FROM notulen_detail LEFT JOIN notulen ON notulen.id_notulen=notulen_detail.id_notulen WHERE agenda='umum' 
+    // SELECT *, MONTH(date_created), SUM(jumlah)
+    // FROM notulen_detail LEFT JOIN notulen ON notulen.id_notulen=notulen_detail.id_notulen WHERE agenda='umum'
     // GROUP BY MONTH(date_created);
 }

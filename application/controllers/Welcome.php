@@ -16,6 +16,7 @@ class Welcome extends CI_controller
 		$x['judul'] = 'Halaman Administrasi Situs.';
 		$x['agenda_by_status'] = $this->Dasboard_model->grafik_by_agenda();
 		$x['total'] = $this->Dasboard_model->grafik_total();
+		$x['total_per'] = $this->Dasboard_model->grafik_total_per();
 		$x['tabel_total'] = $this->Dasboard_model->tabel_total();
 		$x['tabel_total_per'] = $this->Dasboard_model->tabel_total_per();
 		$this->template->load('template', 'dasboard', $x);
