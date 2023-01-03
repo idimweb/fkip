@@ -6,19 +6,21 @@ class Import extends CI_Controller {
     public function __construct() {
         parent::__construct();
         // load model
-        login_access();
-        hak_akses();
+        // login_access();
+        // hak_akses();
         // $this->load->model('Lainya_model');
         $this->load->library('form_validation');
         $this->load->library('datatables');
         $this->load->model('Import_model', 'import');
         $this->load->model('Import_model');
+        $this->load->model('Anggota_model');
         $this->load->helper(array('url','html','form'));
 
     }
 
     public function index() {
       $x['judul'] = 'Data : import';
+      $x['data_anggota'] = $this->db->get('anggota')->result();
       $this->template->load('template','import/import',$x);
     }
 
@@ -48,7 +50,7 @@ class Import extends CI_Controller {
 
       if ($this->input->post('submit')) {
 
-                $path = 'assets/uploads/';
+                $path = 'assets/uploads/excel/';
                 require_once APPPATH . "/third_party/PHPExcel.php";
                 $config['upload_path'] = $path;
                 $config['allowed_types'] = 'xlsx|xls|csv';
@@ -80,16 +82,17 @@ class Import extends CI_Controller {
                         $flag =false;
                         continue;
                       }
-                      $inserdata[$i]['first_name'] = $value['A'];
-                      $inserdata[$i]['last_name'] = $value['B'];
-                      $inserdata[$i]['email'] = $value['C'];
-                      $inserdata[$i]['contact_no'] = $value['D'];
+                      $inserdata[$i]['nama'] = $value['A'];
+                      $inserdata[$i]['jabatan'] = $value['B'];
+                      $inserdata[$i]['prodi'] = $value['C'];
+                      $inserdata[$i]['email'] = $value['D'];
                       $i++;
                     }
-                    $result = $this->Import_model->insertori($inserdata);
+                    $result = $this->Anggota_model->insertori($inserdata);
                     if($result){
                       echo "Imported successfully";
-                    }else{
+                      unlink($import_xls_file);
+      }else{
                       echo "ERROR !";
                     }
 
@@ -99,12 +102,15 @@ class Import extends CI_Controller {
                 }
               }else{
                   echo $error['error'];
+                  $this->session->set_flashdata('message', '<div class="alert alert-danger fade-in"><i class="fa fa-check"></i>Data Belum Di Tambahkan.</div>');
+                redirect(site_url('anggota'));
                 }
-
+                
 
         }
         $this->session->set_flashdata('message', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Data Berhasil Di Tambahkan.</div>');
-        redirect(site_url('import'));
+        
+        redirect(site_url('anggota'));
         // $this->load->view('import');
     }
 

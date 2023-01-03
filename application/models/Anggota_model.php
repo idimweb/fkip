@@ -121,4 +121,10 @@ class Anggota_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
     }
+
+    // insert data dari excel
+    function insertori($data)
+    {
+        $this->db->insert_batch('anggota', $data);
+    }
 }

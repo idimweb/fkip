@@ -1,4 +1,34 @@
 <div class='row'>
+<div class='col-md-12'>
+    <div class='panel panel-info'>
+        <div class='panel-heading'><?= ucfirst($judul) ?></div>
+        <div class='panel-wrapper collapse in' aria-expanded='true'>
+            <div class='panel-body'>
+              <form action="<?php echo base_url();?>import/add" method="post" enctype="multipart/form-data" class='form-horizontal form-bordered'>
+                    <div class='form-body'>
+                     ** ) Harap Isikan data prodi yang sesuai contoh : <b>BK, MBK, PBI, MPBI</b>.
+                     <p>
+Berikut template untuk import excel
+
+                     </p>
+                     <a href="<?= base_url('assets/uploads/excel/Template.xlsx') ?>" class="btn btn-info btn-xs" style='color:#fff'>Klik Untuk Download Template</a>
+                     <br /><br /><br /><br />
+                     <div class="form-group">
+                         <label for="varchar" class='control-label col-md-3'><b>Upload excel file :</b></label>
+                           <div class='col-md-9'>
+                             <input type="file" name="uploadFile" value="" /><br><br>
+                             <input type="submit" name="submit" value="Upload" />
+                           </div>
+                     </div>
+                    </div>
+             </form>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+
+<div class='row'>
     <div class='col-sm-12'>
         <div class="session_flasdata"> <?= $this->session->userdata('message') ?></div>
         <div class='white-box'>
