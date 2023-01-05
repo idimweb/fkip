@@ -19,6 +19,7 @@
             $status = $a->status;
             $tempat = $a->tempat;
             $nama_file = $a->catatan;
+            $nama_undangan = $a->undangan;
             $foto = $a->foto;
           }
           ?>
@@ -65,6 +66,12 @@
 
             <td><a href="<?php echo base_url('notulen_detail/edit/' . encrypt_url($a->id_not_detail)); ?>" class="btn btn-info">Edit Detail</a></td>
 
+          </tr>
+
+          <tr>
+            <td>Undangan</td>
+            <td><a href=" <?= base_url('assets/uploads/file/' . $nama_undangan)  ?>" class="text-right btn btn-success" target="_blank">Klik Untuk Download <?php echo $nama_undangan; ?></a></td>
+            <td><a href="<?php echo base_url('notulen_detail/edit_undangan/' . encrypt_url($a->id_not_detail)); ?>" class="btn btn-info">Edit undangan</a></td>
           </tr>
           <tr>
             <td>Foto</td>

@@ -1031,6 +1031,20 @@
             </div>
 
             <div class="form-group">
+              <label for="varchar" class='control-label col-md-3'><b>Undangan<?php echo form_error('undangan') ?></b>
+                <span>
+                  <h5>
+                    <font color="red">*File pdf (Maksimal Ukuran 5 MB)</font>
+                  </h5>
+                </span>
+              </label>
+
+              <div class='col-md-9'>
+                <input type="file" class="form-control" name="undangan" id="undangan" placeholder="" value="" accept="application/pdf" />
+              </div>
+            </div>
+
+            <div class="form-group">
               <label for="varchar" class='control-label col-md-3'><b>Foto<?php echo form_error('foto') ?></b>
                 <span>
                   <h5>

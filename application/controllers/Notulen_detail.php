@@ -219,6 +219,7 @@ class Notulen_detail extends CI_Controller
       'tempat' => $this->input->post('tempat', TRUE),
       'jenis_kegiatan' => $this->input->post('jenis_kegiatan', TRUE),
       'catatan' => $this->input->post('catatan', TRUE),
+      'undangan' => $this->input->post('undangan', TRUE),
       'foto' => $this->input->post('foto', TRUE),
       'status' => 'N',
       'date_created' => date('Y-m-d'),
@@ -265,6 +266,25 @@ class Notulen_detail extends CI_Controller
         $catatan = $this->upload->data('file_name');
       }
 
+      //upload undangan
+
+      $path = 'assets/uploads/file';
+      $config['upload_path'] = $path;
+      $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar|jpeg|JPG|JPEG|PNG';
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+      if (!$this->upload->do_upload('undangan')) {
+        $error = array('error' => $this->upload->display_errors());
+      } else {
+        $data = array('upload_data' => $this->upload->data());
+      }
+      if (!$this->upload->data('file_name')) {
+        $undangan = 'Tidak ada file';
+      } else {
+        $undangan = $this->upload->data('file_name');
+      }
+      //akhir upload undangan
+
       //upload gambar
 
       $path = 'assets/uploads/file';
@@ -295,6 +315,7 @@ class Notulen_detail extends CI_Controller
         'tempat' => $this->input->post('tempat', TRUE),
         'jenis_kegiatan' => $this->input->post('jenis_kegiatan', TRUE),
         'catatan' => $catatan,
+        'undangan' => $undangan,
         'foto' => $foto,
         'jumlah' => $jlh,
         'status' => 'N',
@@ -536,6 +557,62 @@ class Notulen_detail extends CI_Controller
     redirect(site_url('notulen_detail'));
   }
   //end edit foto
+
+   // edit undangan
+
+   public function edit_undangan($id)
+   {
+     $id = decrypt_url($id);
+ 
+     $row = $this->Notulen_detail_model->get_by_id($id);
+ 
+     if ($row) {
+       $data = array(
+         'judul' => 'undangan',
+         'button' => 'Update',
+         'action' => site_url('notulen_detail/edit_data_undangan'),
+         'id_not_detail' => set_value('id_not_detail', $row->id_not_detail),
+         'undangan' => set_value('undangan', $row->undangan),
+       );
+       $this->template->load('template', 'notulen_detail/notulen_detail_form_edit_undangan', $data);
+     } else {
+       $this->session->set_flashdata('message', '<div class="alert alert-info fade-in">Data Tidak Di Temukan.</div>');
+       redirect(site_url('notulen_detail'));
+     }
+   }
+ 
+   public function edit_data_undangan()
+   {
+ 
+     $path = 'assets/uploads/file';
+     $config['upload_path'] = $path;
+     $config['allowed_types'] = 'png|jpg|bmp|pdf|zip|rar|jpeg|JPG|JPEG|PNG';
+     $this->load->library('upload', $config);
+     $this->upload->initialize($config);
+     if (!$this->upload->do_upload('undangan')) {
+       $error = array('error' => $this->upload->display_errors());
+     } else {
+       $data = array('upload_data' => $this->upload->data());
+     }
+     if (!$this->upload->data('file_name')) {
+       redirect(site_url('notulen_detail'));
+     } else {
+       $undangan = $this->upload->data('file_name');
+       $qdata = $this->db->get_where('notulen_detail', array('id_not_detail' => $this->input->post('id_not_detail')));
+       $cek_id = $qdata->row_array();
+       unlink('assets/uploads/file/' . $cek_id['undangan']);
+     }
+ 
+     $data = array(
+       'id_not_detail' => set_value('id_not_detail'),
+       'undangan' => $undangan,
+     );
+ 
+     $this->Notulen_detail_model->update($this->input->post('id_not_detail', TRUE), $data);
+     $this->session->set_flashdata('message', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Edit Data Berhasil.</div>');
+     redirect(site_url('notulen_detail'));
+   }
+   //end edit undangan
 
   public function edit_peserta($id)
   {
