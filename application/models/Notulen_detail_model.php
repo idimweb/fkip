@@ -66,6 +66,8 @@ class Notulen_detail_model extends CI_Model
     SUM(jumlah) as jumlah_peserta, COUNT(*) as jumlah_bulanan");
     // $this->db->from("notulen_detail");
     $this->db->group_by("MONTH(tanggal_mulai)");
+    $this->db->order_by("tahun", "ACS");
+    $this->db->order_by("bulan", "ACS");
     return $this->db->get($this->table)->result();
     // return $this->db->get();
   }
@@ -123,6 +125,8 @@ class Notulen_detail_model extends CI_Model
     $this->db->from('notulen_detail nd');
     $this->db->join('peserta p', 'nd.id_not_detail=p.id_not_detail', 'left');
     $this->db->group_by("MONTH(nd.tanggal_mulai)");
+    $this->db->order_by("tahun", "ACS");
+    $this->db->order_by("bulan", "ACS");
     return $this->db->get()->result();
   }
 

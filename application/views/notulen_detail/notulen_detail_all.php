@@ -21,7 +21,7 @@
                     <th width="80px">No</th>
                     <th>Bulan</th>
                     <th>Anggota FKIP</th>
-                    <th>Asistensi</th>
+                    <th>Tim Kerja</th>
                     <th>Lainya</th>
                     <th>Tahun</th>
                   </tr>
