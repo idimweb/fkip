@@ -28,12 +28,12 @@ class Asistensi_model extends CI_Model
 
     public function aktiv_asistensi($id)
     {
-        $this->db->select("*,asistensi.nama_asistensi, MONTH(notulen_detail.date_created) as bulan, COUNT(peserta.id_asistensi) as jumlah");
+        $this->db->select("*,asistensi.nama_asistensi, MONTH(notulen_detail.tanggal_mulai) as bulan, COUNT(peserta.id_asistensi) as jumlah");
         $this->db->from('peserta');
         $this->db->join('asistensi', 'asistensi.id_asistensi=peserta.id_asistensi');
         $this->db->join('notulen_detail', 'notulen_detail.id_not_detail=peserta.id_not_detail');
         $this->db->where('peserta.id_asistensi', $id);
-        $this->db->group_by("MONTH(date_created)");
+        $this->db->group_by("bulan");
         return $this->db->get();
     }
 

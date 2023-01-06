@@ -82,7 +82,7 @@
 			data: [
 
 				<?php foreach ($hasil->result_array() as $dataqr) : ?> {
-						bulan: '<?= $dataqr['date_created'] ?>',
+						bulan: '<?= $dataqr['tanggal_mulai'] ?>',
 						jumlah: <?= $dataqr['jumlah'] ?>,
 					},
 				<?php endforeach; ?>

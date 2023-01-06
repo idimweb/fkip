@@ -32,12 +32,12 @@ class Anggota_model extends CI_Model
     // lihat aktivitas berdasarkan id anggota
     public function aktiv_anggota($id)
     {
-        $this->db->select("*,anggota.nama, MONTH(notulen_detail.date_created) as bulan, COUNT(peserta.id_anggota) as jumlah");
+        $this->db->select("*,anggota.nama, MONTH(notulen_detail.tanggal_mulai) as bulan, COUNT(peserta.id_anggota) as jumlah");
         $this->db->from('peserta');
         $this->db->join('anggota', 'anggota.id_anggota=peserta.id_anggota');
         $this->db->join('notulen_detail', 'notulen_detail.id_not_detail=peserta.id_not_detail');
         $this->db->where('peserta.id_anggota', $id);
-        $this->db->group_by("MONTH(date_created)");
+        $this->db->group_by("bulan");
         return $this->db->get();
     }
     // SELECT anggota.nama, MONTH(notulen_detail.date_created), COUNT(peserta.id_anggota)
