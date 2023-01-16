@@ -18,7 +18,13 @@
                     <input type="hidden" name="id_notulen" value="27">
 
                   <?php
-                  } elseif ($this->session->level == 'ia') {
+                  } elseif ($this->session->level == 'lab') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Laboratorium" readonly />
+                    <input type="hidden" name="id_notulen" value="39">
+
+                  <?php } elseif ($this->session->level == 'ia') {
                   ?>
 
                     <input type="text" class="form-control" value="Tim Kerja Implementasi AIK" readonly />
@@ -251,6 +257,29 @@
 
                             <?php
                             } elseif ($this->session->level == 'mp' && $ang->prodi == 'MP') {
+                            ?>
+
+                              <tr>
+                                <td>
+                                  <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                  <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                  <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                  <?php echo $ang->prodi ?>
+                                </td>
+
+                                <td>
+                                  <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                                </td>
+                              </tr>
+
+                            <?php } elseif ($this->session->level == 'lab' && $ang->prodi == 'Laboratorium') {
                             ?>
 
                               <tr>
@@ -1288,7 +1317,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('#example').DataTable({
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Show All"]],
+      "lengthMenu": [
+        [10, 25, 50, -1],
+        [10, 25, 50, "Show All"]
+      ],
       "pageLength": 100
     });
   });
@@ -1297,7 +1329,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('#example2').DataTable({
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Show All"]],
+      "lengthMenu": [
+        [10, 25, 50, -1],
+        [10, 25, 50, "Show All"]
+      ],
       "pageLength": 100
     });
   });

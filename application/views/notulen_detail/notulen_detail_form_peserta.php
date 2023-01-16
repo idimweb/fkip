@@ -137,6 +137,26 @@
                             </td>
                           </tr>
 
+                        <?php } elseif ($this->session->level == 'lab' && $ang->prodi == 'Laboratorium') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
                         <?php } elseif ($this->session->level == 'mpbi' && $ang->prodi == 'MPBI') {
                         ?>
 

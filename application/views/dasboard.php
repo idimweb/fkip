@@ -153,6 +153,16 @@
                                          <td><?php echo $row['jumlah_kegiatan']; ?></td>
                                      </tr>
 
+                                 <?php } elseif (($this->session->level == 'lab') && ($row['agenda'] == 'Laboratorium')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
                                  <?php } elseif (($this->session->level == 'pgpaud') && ($row['agenda'] == '(S1) Pendidikan Guru Pendidikan Anak Usia DIni')) {
                                     ?>
 
@@ -440,6 +450,13 @@
                              },
 
                          <?php } elseif (($this->session->level == 'riset') && ($row['agenda'] == 'Tim Riset Memahami Karakteristik Mahasiswa FKIP')) {
+                            ?> {
+                                 bulan: '<?= $row['tanggal_mulai'] ?>',
+                                 peserta: <?= $row['jumlah_peserta'] ?>,
+                                 kegiatan: <?= $row['jumlah_kegiatan'] ?>,
+                             },
+
+                         <?php } elseif (($this->session->level == 'lab') && ($row['agenda'] == 'Laboratorium')) {
                             ?> {
                                  bulan: '<?= $row['tanggal_mulai'] ?>',
                                  peserta: <?= $row['jumlah_peserta'] ?>,

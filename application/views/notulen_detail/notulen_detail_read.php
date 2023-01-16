@@ -101,61 +101,61 @@
             </td>
             <td><a href="<?php echo site_url('notulen_detail') ?>" class="btn btn-default"><i class='fa fa-home'></i>Back To Home</a></td>
           </tr>
-          <th>
-            Anggota FKIP UAD
-          </th>
-          <th></th>
-          <tbody>
-            <?php
-            foreach ($hasil as $item1) {
-              if ($item1->nama != NULL) {
-                # code...
-            ?>
-                <tr>
-                  <td><?php echo $item1->nama; ?></td>
-                </tr>
+          <thead>
+            <th>
+              Anggota FKIP UAD
+            </th>
+          </thead>
+          <?php
+          foreach ($hasil as $item1) {
+            if ($item1->nama != NULL) {
+              # code...
+          ?>
+              <tr>
+                <td><?php echo $item1->nama; ?></td>
+              </tr>
 
-            <?php
-              }
+          <?php
             }
-            ?>
+          }
+          ?>
+          <thead>
             <th>
               TIM KERJA
             </th>
-            <?php
-            foreach ($hasil as $item1) {
-              if ($item1->nama_asistensi != NULL) {
-                # code...
-            ?>
-                <tr>
-                  <td><?php echo $item1->nama_asistensi; ?></td>
-                </tr>
+          </thead>
+          <?php
+          foreach ($hasil as $item1) {
+            if ($item1->nama_asistensi != NULL) {
+              # code...
+          ?>
+              <tr>
+                <td><?php echo $item1->nama_asistensi; ?></td>
+              </tr>
 
-            <?php
-              }
+          <?php
             }
-            ?>
+          }
+          ?>
 
+          <thead>
             <th>
               LAINYA
             </th>
-            <?php
-            foreach ($hasil as $item1) {
-              if ($item1->nama_lainya != NULL) {
-                # code...
-            ?>
-                <tr>
-                  <td><?php echo $item1->nama_lainya; ?></td>
-                </tr>
+          </thead>
+          <?php
+          foreach ($hasil as $item1) {
+            if ($item1->nama_lainya != NULL) {
+              # code...
+          ?>
+              <tr>
+                <td><?php echo $item1->nama_lainya; ?></td>
+              </tr>
 
-            <?php
-              }
+          <?php
             }
-            ?>
-          </tbody>
-          <tr>
-
-          </tr>
+          }
+          ?>
         </table>
       </div>
     </div>

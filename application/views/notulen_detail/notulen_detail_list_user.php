@@ -123,6 +123,10 @@
                 ?>
                   <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
                 <?php
+                } elseif ($not['id_notulen'] == 39 && $this->session->level == 'lab') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
                 }
                 ?>
               <?php endforeach; ?>

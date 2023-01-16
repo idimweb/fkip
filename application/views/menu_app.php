@@ -135,7 +135,7 @@ echo $this->session->flashdata('pesan');
                 <h4>Level Akses</h4>
                 <br />
                 <?php
-                $level = ['admin', 'user', 'hdp', 'ia', 'kda', 'kndi', 'ppdp', 'ps', 'pkrpdp', 'ta', 'riset', 'bk', 'pbi', 'pbsi', 'pmat', 'pfis', 'ppkn', 'pbio', 'pgsd', 'pgpaud', 'pvto', 'pvte', 'ppg', 'mbk', 'mpmat', 'mp', 'mpbi', 'mpfis', 'mpgv'];
+                $level = ['admin', 'user', 'lab', 'hdp', 'ia', 'kda', 'kndi', 'ppdp', 'ps', 'pkrpdp', 'ta', 'riset', 'bk', 'pbi', 'pbsi', 'pmat', 'pfis', 'ppkn', 'pbio', 'pgsd', 'pgpaud', 'pvto', 'pvte', 'ppg', 'mbk', 'mpmat', 'mp', 'mpbi', 'mpfis', 'mpgv'];
                 foreach ($level as $s) :
                 ?>
                   <div class="form-group">

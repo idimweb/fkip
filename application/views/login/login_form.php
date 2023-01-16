@@ -57,6 +57,7 @@
                                     <option value="mpbi">mpbi</option>
                                     <option value="mpfis">mpfis</option>
                                     <option value="mpgv">mpgv</option>
+                                    <option value="lab">lab</option>
                                 </select>
                             </div>
                         </div>

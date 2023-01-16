@@ -592,6 +592,34 @@
                 </td>
               </tr>
 
+            <?php } elseif ($this->session->level == 'lab' && $ang->prodi == 'Laboratorium') {
+            ?>
+
+              <tr>
+                <td>
+                  <?php echo $no++ ?>
+                </td>
+
+                <td>
+                  <?php echo $ang->nama ?>
+                </td>
+                <td>
+                  <?php echo $ang->jabatan ?>
+                </td>
+                <td>
+                  <?= $ang->prodi ?>
+                </td>
+                <td>
+                  <?= $ang->email ?>
+                </td>
+                <td>
+                  <?php
+                  $text = encrypt_url($ang->id_anggota);
+                  ?>
+                  <a href="<?php echo site_url('notulen_detail/aktiv_anggota/' . $text); ?>" target="_blank" class="btn btn-info"><i class="fa fa-bar-chart"></i> Lihat Aktivitas</a>
+                </td>
+              </tr>
+
             <?php } elseif ($this->session->level == 'mpbi' && $ang->prodi == 'MPBI') {
             ?>
 
