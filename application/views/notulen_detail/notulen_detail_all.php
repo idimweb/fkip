@@ -12,7 +12,7 @@
             if (($this->session->level == 'admin') || ($this->session->level == 'user')) {
             ?>
 
-              <table class="table">
+              <table class="table" id="datatables">
                 <thead>
                   <tr>
                     <th colspan="5">Jumlah Peserta Rapat FKIP</th>
@@ -72,12 +72,20 @@
 
                   <?php $no++;
                   } ?>
+                <tfoot>
+                  <th width="80px">No</th>
+                  <th>Bulan</th>
+                  <th>Anggota FKIP</th>
+                  <th>Tim Kerja</th>
+                  <th>Lainya</th>
+                  <th>Tahun</th>
+                </tfoot>
               </table>
 
-              <table class="table">
+              <table class="table" id="datatables2">
                 <thead>
                   <tr>
-                    <th colspan="5">Jumlah Total</th>
+                    <th colspan="5">Jumlah Total Peserta</th>
                   </tr>
                   <tr>
                     <th width="80px">No</th>
@@ -134,14 +142,24 @@
 
                   <?php $no++;
                   } ?>
+                <tfoot>
+                  <th width="80px">No</th>
+                  <th>Bulan</th>
+                  <th>Jumlah Kegiatan/Agenda</th>
+                  <th>Total Peserta</th>
+                  <th>Tahun</th>
+                </tfoot>
               </table>
 
               <hr />
           </div>
         </div>
 
-        <table class="table" id="datatables">
+        <table class="table" id="datatables3">
           <thead>
+            <tr>
+              <th colspan="5">Daftar Seluruh Kegiatan</th>
+            </tr>
             <tr>
               <th width="80px">No</th>
               <th>Nama Program/Kegiatan</th>
@@ -1098,6 +1116,12 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
+      $('#datatables2').DataTable();
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
       $('#angg').DataTable();
     });
   </script>
@@ -1105,5 +1129,11 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#asis').DataTable();
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#datatables3').DataTable();
     });
   </script>
