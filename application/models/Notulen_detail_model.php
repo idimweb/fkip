@@ -125,8 +125,8 @@ class Notulen_detail_model extends CI_Model
     $this->db->from('notulen_detail nd');
     $this->db->join('peserta p', 'nd.id_not_detail=p.id_not_detail', 'left');
     $this->db->group_by("MONTH(nd.tanggal_mulai)");
-    $this->db->order_by("tahun", "ACS");
-    $this->db->order_by("bulan", "ACS");
+    $this->db->order_by("tahun", "DESC");
+    $this->db->order_by("bulan", "DESC");
     return $this->db->get()->result();
   }
 
