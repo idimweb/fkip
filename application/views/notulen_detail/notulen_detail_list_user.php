@@ -127,6 +127,10 @@
                 ?>
                   <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
                 <?php
+                } elseif ($not['id_notulen'] == 40 && $this->session->level == 'Senat') {
+                ?>
+                  <option value="<?= $not['id_notulen'] ?>"><?= $not['agenda'] ?></option>
+                <?php
                 }
                 ?>
               <?php endforeach; ?>

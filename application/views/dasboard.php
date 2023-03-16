@@ -333,6 +333,36 @@
                                          <td><?php echo $row['jumlah_kegiatan']; ?></td>
                                      </tr>
 
+                                 <?php } elseif (($this->session->level == 'Senat') && ($row['agenda'] == 'Senat')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'lab') && ($row['agenda'] == 'Laboratorium')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
+                                 <?php } elseif (($this->session->level == 'Senat') && ($row['agenda'] == 'Senat')) {
+                                    ?>
+
+                                     <tr>
+                                         <td><?php echo $row['bulan']; ?></td>
+                                         <td><?php echo $row['tahun']; ?></td>
+                                         <td><?php echo $row['jumlah_peserta']; ?></td>
+                                         <td><?php echo $row['jumlah_kegiatan']; ?></td>
+                                     </tr>
+
                                  <?php } elseif (($this->session->level == 'mbk') && ($row['agenda'] == 'Magister Bimbingan Konseling')) {
                                     ?>
 

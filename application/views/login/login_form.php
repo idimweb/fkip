@@ -30,6 +30,7 @@
                                 <select class="form-control" name="level" required="">
                                     <option value="admin">Administrator</option>
                                     <option value="user">User</option>
+                                    <option value="Senat">Senat</option>
                                     <option value="hdp">Humas Dan Promosi</option>
                                     <option value="ia">Implementasi AIK</option>
                                     <option value="kda">Kemahasiswaan dan Alumni</option>
