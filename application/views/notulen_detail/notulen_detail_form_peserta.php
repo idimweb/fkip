@@ -137,6 +137,26 @@
                             </td>
                           </tr>
 
+                        <?php } elseif ($this->session->level == 'Senat' && $ang->prodi == 'Senat') {
+                        ?>
+
+                          <tr>
+                            <td>
+                              <?php echo $no++ ?>
+                            </td>
+
+                            <td>
+                              <?php echo $ang->nama ?>
+                            </td>
+                            <td>
+                              <?php echo $ang->jabatan ?>
+                            </td>
+
+                            <td>
+                              <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                            </td>
+                          </tr>
+
                         <?php } elseif ($this->session->level == 'lab' && $ang->prodi == 'Laboratorium') {
                         ?>
 

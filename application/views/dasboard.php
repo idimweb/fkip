@@ -619,6 +619,13 @@
                                  kegiatan: <?= $row['jumlah_kegiatan'] ?>,
                              },
 
+                         <?php } elseif (($this->session->level == 'Senat') && ($row['agenda'] == 'Senat')) {
+                            ?> {
+                                 bulan: '<?= $row['tanggal_mulai'] ?>',
+                                 peserta: <?= $row['jumlah_peserta'] ?>,
+                                 kegiatan: <?= $row['jumlah_kegiatan'] ?>,
+                             },
+
                          <?php } ?>
 
                      <?php endforeach; ?>

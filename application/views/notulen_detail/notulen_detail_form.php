@@ -24,6 +24,12 @@
                     <input type="text" class="form-control" value="Laboratorium" readonly />
                     <input type="hidden" name="id_notulen" value="39">
 
+                  <?php } elseif ($this->session->level == 'Senat') {
+                  ?>
+
+                    <input type="text" class="form-control" value="Senat" readonly />
+                    <input type="hidden" name="id_notulen" value="40">
+
                   <?php } elseif ($this->session->level == 'ia') {
                   ?>
 
@@ -256,7 +262,30 @@
                               </tr>
 
                             <?php
-                            } elseif ($this->session->level == 'mp' && $ang->prodi == 'MP') {
+                            } elseif ($this->session->level == 'Senat' && $ang->prodi == 'Senat') {
+                            ?>
+
+                              <tr>
+                                <td>
+                                  <?php echo $no++ ?>
+                                </td>
+
+                                <td>
+                                  <?php echo $ang->nama ?>
+                                </td>
+                                <td>
+                                  <?php echo $ang->jabatan ?>
+                                </td>
+                                <td>
+                                  <?php echo $ang->prodi ?>
+                                </td>
+
+                                <td>
+                                  <input type='checkbox' id='id_anggota' name='id_anggota[]' value='<?php echo $ang->id_anggota ?>' />
+                                </td>
+                              </tr>
+
+                            <?php } elseif ($this->session->level == 'mp' && $ang->prodi == 'MP') {
                             ?>
 
                               <tr>

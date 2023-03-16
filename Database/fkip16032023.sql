@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 19, 2023 at 11:16 AM
--- Server version: 10.5.17-MariaDB-cll-lve
--- PHP Version: 7.4.30
+-- Host: localhost
+-- Generation Time: Mar 16, 2023 at 06:42 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u1573148_db`
+-- Database: `fkip`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +33,7 @@ CREATE TABLE `anggota` (
   `jabatan` varchar(100) NOT NULL,
   `prodi` varchar(30) NOT NULL,
   `email` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `anggota`
@@ -313,7 +312,9 @@ INSERT INTO `anggota` (`id_anggota`, `nama`, `jabatan`, `prodi`, `email`) VALUES
 (315, 'Drs. Japen Sarage, M.A.', 'Dosen', 'PBI', '-'),
 (316, 'Sucipto, M.Pd.B.I., Ph.D.', 'Dosen', 'PBI', '-'),
 (317, 'Anggit Prabowo, M.Pd.', 'Dosen Prodi ', 'PMAT', '000'),
-(318, 'Agus Indarjo', 'Tendik Prodi', 'PMAT', 'agus.indarjo@staff.uad.ac.id');
+(318, 'Agus Indarjo', 'Tendik Prodi', 'PMAT', 'agus.indarjo@staff.uad.ac.id'),
+(319, 'tes anggota senat', 'ketua', 'Senat', ''),
+(320, 'tes anggota senat2', 'wakil', 'Senat', '');
 
 -- --------------------------------------------------------
 
@@ -327,7 +328,7 @@ CREATE TABLE `asistensi` (
   `bidang` varchar(100) NOT NULL,
   `prodi` varchar(50) DEFAULT NULL,
   `email` varchar(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `asistensi`
@@ -505,7 +506,7 @@ CREATE TABLE `buku_tamu` (
   `no_hp_peserta` varchar(20) NOT NULL,
   `jabatan_peserta` varchar(50) NOT NULL,
   `tanggal` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -517,7 +518,7 @@ CREATE TABLE `divisi` (
   `id_divisi` int(16) NOT NULL,
   `id_instansi` int(10) DEFAULT NULL,
   `nama_divsi` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `divisi`
@@ -539,7 +540,7 @@ CREATE TABLE `import` (
   `last_name` varchar(100) NOT NULL COMMENT 'Last Name',
   `email` varchar(255) NOT NULL COMMENT 'Email Address',
   `contact_no` varchar(50) NOT NULL COMMENT 'Contact No'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='datatable demo table';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='datatable demo table';
 
 -- --------------------------------------------------------
 
@@ -558,7 +559,7 @@ CREATE TABLE `instansi` (
   `logo` varchar(50) NOT NULL,
   `favicon` varchar(40) NOT NULL,
   `keterangan_situs` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `instansi`
@@ -577,7 +578,7 @@ INSERT INTO `instansi` (`id_instansi`, `nama_instansi`, `alamat_lengkap`, `telp`
 CREATE TABLE `lainya` (
   `id_lainya` int(20) NOT NULL,
   `nama_lainya` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `lainya`
@@ -813,19 +814,19 @@ CREATE TABLE `login` (
   `nama` varchar(59) NOT NULL,
   `email` varchar(50) NOT NULL,
   `foto` varchar(50) NOT NULL,
-  `level` enum('user','admin','hdp','ia','kda','kndi','ppdp','ps','pkrpdp','ta','bk','pbi','pbsi','pmat','pfis','ppkn','pbio','pgsd','pgpaud','pvto','pvte','ppg','mbk','mpmat','mp','mpbi','mpfis','mpgv','lab') NOT NULL,
+  `level` enum('user','admin','Senat','hdp','ia','kda','kndi','ppdp','ps','pkrpdp','ta','bk','pbi','pbsi','pmat','pfis','ppkn','pbio','pgsd','pgpaud','pvto','pvte','ppg','mbk','mpmat','mp','mpbi','mpfis','mpgv','lab') NOT NULL,
   `active` enum('Y','N') NOT NULL,
   `date_create` date NOT NULL,
   `log` datetime DEFAULT NULL,
   `id_divisi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id_user`, `username`, `password`, `nama`, `email`, `foto`, `level`, `active`, `date_create`, `log`, `id_divisi`) VALUES
-(3, 'admin', '1dbc1465bd84ed8dbce7a5e0cb1d7d12', 'Admin FKIP', 'admin@example.com', 'foto1662955020.jpg', 'admin', 'Y', '0000-00-00', '2022-12-28 01:50:58', '1'),
+(3, 'admin', '202cb962ac59075b964b07152d234b70', 'Admin FKIP', 'admin@example.com', 'foto1662955020.jpg', 'admin', 'Y', '0000-00-00', '2022-12-28 01:50:58', '1'),
 (7, 'adminhdp', '202cb962ac59075b964b07152d234b70', 'Humas Dan Promosi', 'humasdanpromosi@admin.com', 'foto1671858494.jpg', 'hdp', 'Y', '0000-00-00', '2022-12-24 06:08:14', '1'),
 (8, 'adminaik', '202cb962ac59075b964b07152d234b70', 'Admin Implementasi AIK', 'ia@admin.com', '', 'ia', 'Y', '0000-00-00', '2022-12-26 04:01:45', '1'),
 (9, 'adminkda', '202cb962ac59075b964b07152d234b70', 'Admin Kemahasiswaan Dan Alumni', 'kda@admin.com', '', 'kda', 'Y', '0000-00-00', '2022-12-05 06:30:16', ''),
@@ -856,7 +857,8 @@ INSERT INTO `login` (`id_user`, `username`, `password`, `nama`, `email`, `foto`,
 (36, 'wadek2', 'bdfcae4f1ee936253f904c0ce4da018c', 'Dr. Ani Susanti, M.Pd.B.I.', 'wadek@example.com', 'foto1672367755.jpg', 'user', 'Y', '0000-00-00', '2022-12-30 02:35:59', '1'),
 (37, 'dekanfkip', 'f9fc7a9d6669dd628490f1b2af233179', 'Muhammad Sayuti, S.Pd., M.Pd., M.Ed., Ph.D.', 'muhammad.sayuti@mpgv.uad.ac.id', 'foto1672191626.JPG', 'user', 'Y', '0000-00-00', '2022-12-28 01:40:26', '1'),
 (38, 'yuwanto', 'e6d957c35df517972096229378180547', 'Yuwanto', 'yuwanto.yoi@staff.uad.ac.id', 'Tidak ada file', 'user', 'Y', '0000-00-00', NULL, '1'),
-(39, 'alqisan', '3fdb5a2f71080bc891c63fcb1df52edc', 'Al Qisan', 'qisan@gmail.com', 'Tidak ada file', 'user', 'Y', '0000-00-00', NULL, '1');
+(39, 'alqisan', '3fdb5a2f71080bc891c63fcb1df52edc', 'Al Qisan', 'qisan@gmail.com', 'Tidak ada file', 'user', 'Y', '0000-00-00', NULL, '1'),
+(40, 'adminsenat', '202cb962ac59075b964b07152d234b70', 'Admin Senat', 'senat@gmail.com', 'Tidak ada file', 'Senat', 'Y', '0000-00-00', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -874,7 +876,7 @@ CREATE TABLE `menu` (
   `urutan` int(3) NOT NULL,
   `position` enum('Bottom','Top','','') NOT NULL,
   `level` varchar(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `menu`
@@ -883,10 +885,10 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `icon`, `link`, `aktif`, `urutan`, `position`, `level`) VALUES
 (18, 0, 'Divisi', 'icon-user fa-fw', 'Divisi', 'Ya', 11, 'Bottom', ''),
 (14, 0, 'Tambah Admin', 'icon-user fa-fw', 'Login', 'Ya', 10, 'Bottom', 'admin'),
-(15, 0, 'Daftar Kegiatan', 'icon-list  fa-fw', 'Notulen_detail', 'Ya', 2, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
+(15, 0, 'Daftar Kegiatan', 'icon-list  fa-fw', 'Notulen_detail', 'Ya', 2, 'Bottom', 'admin.Senat.user.lab.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.riset.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
 (13, 0, 'Prodi & Tim Kerja', 'icon-screen-desktop  fa-fw', 'Notulen', 'Ya', 1, 'Bottom', 'admin'),
 (12, 0, 'Instansi', 'icon-user fa-fw', 'Instansi', 'Ya', 13, 'Bottom', ''),
-(22, 0, 'Anggota Prodi', 'icon-people  fa-fw', 'Anggota', 'Ya', 4, 'Bottom', 'admin.user.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
+(22, 0, 'Anggota Prodi', 'icon-people  fa-fw', 'Anggota', 'Ya', 4, 'Bottom', 'admin.Senat.user.lab.riset.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv'),
 (23, 0, 'Buku Tamu', 'icon-close  fa-fw', 'Buku_tamu', 'Ya', 3, 'Bottom', ''),
 (24, 0, 'Tim Kerja', 'icon-people  fa-fw', 'Asistensi', 'Ya', 5, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta'),
 (25, 0, 'Menu', 'icon-menu  fa-fw', 'Setting/Menu', 'Ya', 12, 'Bottom', 'admin'),
@@ -894,7 +896,7 @@ INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `icon`, `link`, `aktif`
 (27, 0, 'Absensi', 'icon-user fa-fw', 'Absensi', 'Ya', 9, 'Bottom', ''),
 (32, 0, 'Tamu/Peserta Lainya', 'icon-people  fa-fw', 'Lainya', 'Ya', 8, 'Bottom', ''),
 (33, 0, 'Staf Majelis', 'icon-people  fa-fw', 'staf', 'Ya', 7, 'Bottom', ''),
-(35, 0, 'Semua Aktivitas', 'icon-list  fa-fw', 'Notulen_detail/lihat_semua', 'Ya', 1, 'Bottom', 'admin.user.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv');
+(35, 0, 'Semua Aktivitas', 'icon-list  fa-fw', 'Notulen_detail/lihat_semua', 'Ya', 1, 'Bottom', 'admin.Senat.user.lab.hdp.ia.kda.kndi.ppdp.ps.pkrpdp.ta.riset.bk.pbi.pbsi.pmat.pfis.ppkn.pbio.pgsd.pgpaud.pvto.pvte.ppg.mbk.mpmat.mp.mpbi.mpfis.mpgv');
 
 -- --------------------------------------------------------
 
@@ -919,7 +921,7 @@ CREATE TABLE `notulen` (
   `pimpinan_rapat` varchar(100) NOT NULL,
   `jenis_rapat` varchar(100) NOT NULL,
   `no_agenda` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `notulen`
@@ -953,7 +955,8 @@ INSERT INTO `notulen` (`id_notulen`, `agenda`, `id_create`, `start_time`, `end_t
 (33, 'Tim Kerja Percepatan Kinerja Penelitian, Pengabdian dan Publikasi', 3, '12:45', '12:45', 'Dikti', 'a', '2022-11-26', 'absensi_1669441521.pdf', 'absensi_16694415211.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '27'),
 (34, 'Tim Akreditasi', 3, '12:47', '12:48', 'Dikti', 'a', '2022-11-26', 'absensi_1669441698.pdf', 'absensi_16694416981.pdf', '1', '1', 'Admin', 'Peserta Majelis', 'Umum', '28'),
 (37, 'Dekanat', 3, '', '', '', '', NULL, '', '', '', '', '', '', '', ''),
-(39, 'Laboratorium', 3, '', '', '', '', NULL, '', '', '', '', '', '', '', '');
+(39, 'Laboratorium', 3, '', '', '', '', NULL, '', '', '', '', '', '', '', ''),
+(40, 'Senat', 3, '', '', '', '', NULL, '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -973,110 +976,112 @@ CREATE TABLE `notulen_detail` (
   `jenis_kegiatan` varchar(50) NOT NULL,
   `catatan` text DEFAULT NULL,
   `foto` text DEFAULT NULL,
+  `undangan` text DEFAULT NULL,
   `jumlah` int(20) DEFAULT NULL,
   `status` varchar(50) NOT NULL,
   `date_created` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `notulen_detail`
 --
 
-INSERT INTO `notulen_detail` (`id_not_detail`, `id_notulen`, `issue`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `tempat`, `jenis_kegiatan`, `catatan`, `foto`, `jumlah`, `status`, `date_created`) VALUES
-(3, 32, 'Workshop Jafung Lektor', '2022-12-24', '2022-12-24', '08:30', '09:30', 'Dekanat ', 'Rapat', 'Notulen_Rapat_Tim_Kerja_SDM_Ani_24_Desember_2022.pdf', '241222.jpg', 9, 'Y', '2023-01-05'),
-(5, 33, 'Koordinasi Perdana Tim Percepatan Penelitian, Pengabdian & Publikasi FKIP UAD', '2022-12-22', '2022-12-22', '12:30', '14:00', 'Dekanat ', 'Rapat', '22_Desember_2022_Riset,_Publikasi_dan_Pengabdian.pdf', 'WhatsApp Image 2022-12-28 at 08_22_30.jpeg', 14, 'Y', '2023-01-04'),
-(6, 27, 'Pelatihan Penulisan Berita', '2022-12-29', '2022-12-29', '13:00', '15:00', 'Lab. Multimedia Lantai 6', 'Pelatihan', 'Tidak ada file', 'Tidak ada file', 15, 'N', '2022-12-29'),
-(7, 28, 'Koordinasi Survey Kemuhammadiyahan Tim AIK', '2022-12-30', '2022-12-30', '08:00', '09:00', 'Dekanat ', 'Rapat', 'Hasil Rapat Tim AIK 241122.docx', 'WhatsApp Image 2022-12-30 at 08_45_58.jpeg', 7, 'N', '2022-12-30'),
-(9, 28, 'PERKEMBANGAN LOMBA & SURVEY KEMUHAMMADIYAHAN', '2022-12-22', '2022-12-22', '16:00', '17:00', 'Dekanat ', 'Rapat', 'Hasil Rapat Tim AIK 221222.docx', 'WhatsApp Image 2022-12-30 at 08_45_58.jpeg', 7, 'N', '2022-12-30'),
-(10, 28, 'PERSIAPAN LOMBA DARI TIM AIK', '2022-12-08', '2022-12-08', '08:00', '09:00', 'Dekanat ', 'Rapat', 'Hasil Rapat Tim AIK 081222.docx', 'WhatsApp Image 2022-12-30 at 10_33_22.jpeg', 10, 'N', '2022-12-30'),
-(11, 28, 'Koordinasi TIM AIK FKIP UAD', '2022-11-15', '2022-11-15', '13:00', '14:00', 'Dekanat ', 'Rapat', 'Result Meeting Tim AIK 151122.docx', 'WhatsApp Image 2022-12-30 at 10_44_23.jpeg', 7, 'N', '2022-12-30'),
-(12, 32, 'Koordinasi Tim SDM FKIP UAD', '2022-11-23', '2022-11-23', '09:00', '10:00', 'Dekanat ', 'Rapat', 'Notulen Rapat Tim SDM 23 Nov 22.docx', '231122.jpg', 9, 'Y', '2022-12-30'),
-(13, 32, 'Program Pengembangan SDM', '2022-12-09', '2022-12-09', '13:00', '14:00', 'Dekanat ', 'Rapat', 'NOTULEN_RAPAT_09_12_22.doc', '091222.jpg', 7, 'Y', '2022-12-30'),
-(14, 32, 'Persiapan Sosialisasi Jafung', '2022-12-16', '2022-12-16', '19:30', '00:00', 'Daring', 'Rapat', 'NOTULEN_RAPAT_16_12_22.doc', '161222_(1).png', 8, 'Y', '2022-12-30'),
-(17, 29, 'Koordinasi Tim Kemahasiswaan FKIP', '2022-12-17', '2022-12-17', '10:00', '11:00', 'Dekanat ', 'Rapat', '17_Desember-_Presensi_Kemahasiswaan.pdf', 'WhatsApp Image 2022-12-30 at 11_21_45.jpeg', 11, 'Y', '2022-12-30'),
-(18, 29, 'Koordinasi Tim Kemahasiswaan\r\nFKIP', '2022-12-22', '2022-12-22', '14:00', '15:00', 'Dekanat ', 'Rapat', '22_Desember_22_Hasil_Rapat_Tim_Kemahasiswaan_Alumni.pdf', 'Tidak ada file', 9, 'Y', '2022-12-30'),
-(19, 37, 'Sosialisasi Sistem Informasi Notulensi FKIP UAD', '2022-12-30', '2022-12-30', '13:00', '14:00', 'Lab. Multimedia Lantai 6', 'Pelatihan', 'Tidak ada file', 'ECBE95EB-2FEA-4AC2-B429-0ED2FF0310EB.jpeg', 12, 'N', '2022-12-30'),
-(20, 28, 'RAPAT RUTIN TIM AIK FKIP', '2022-11-03', '2022-11-03', '08:00', '09:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil Rapat Tim AIK 031122.docx', 'WhatsApp Image 2022-12-30 at 13_11_59.jpeg', 5, 'N', '2022-12-30'),
-(21, 37, 'RAPAT RUTIN DEKANAT FKIP UAD', '2022-11-28', '2022-11-28', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil Rapat Dekanat 281122.docx', 'WhatsApp Image 2022-12-30 at 13_36_29.jpeg', 5, 'N', '2022-12-30'),
-(24, 37, 'RAPAT RUTIN DEKANAT FKIP UAD', '2022-12-26', '2022-12-26', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil Rapat Dekanat 261222.docx', 'WhatsApp Image 2022-12-30 at 13_44_57 (1).jpeg', 5, 'N', '2022-12-30'),
-(26, 30, 'Rapat Koordinasi Tim Kerjasama', '2022-12-29', '2022-12-29', '08:00', '09:30', 'Dekanat ', 'Rapat', 'notulensi rapat tgl 29 desember 2022.docx', 'WhatsApp Image 2022-12-29 at 08_50_59.jpeg', 6, 'N', '2022-12-31'),
-(27, 16, 'Rapat Persiapan Perkuliahan Genap 2021/2022', '2022-01-31', '2022-01-31', '10:00', '11:30', 'Ruang Dosen PBSI LT. 7', 'Rapat', '1__NOTULEN_RAPAT_PERSIAPAN_PERKULIAHAN_KULIAH_SEMESTER_GENAP_TA_2021_2022.pdf', 'foto_zoom.jpg', 18, 'N', '2023-01-02'),
-(28, 16, 'Rapat Persiapan UTS Genap 2021/2022', '2022-05-13', '2022-05-13', '09:00', '10:30', 'Daring ', 'Rapat', '3__NOTULEN_RAPAT_PERSIAPAN_UTS_GENAP_2021_2022.pdf', 'Tidak ada file', 21, 'N', '2023-01-02'),
-(29, 27, 'Koordinasi Promosi FKIP UAD', '2022-11-16', '2022-11-16', '10:00', '11:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Tim_Humas_Promosi_161122.pdf', 'Tidak ada file', 9, 'N', '2023-01-02'),
-(30, 16, 'Rapat Persiapan Perkuliahan Semester Gasal 2022/2023', '2023-01-02', '2023-01-02', '10:30', '11:30', 'Ruang Dosen PBSI Lt. 7', 'Rapat', '1__NOTULEN_RAPAT_PERSIAPAN_KULIAH_SEMESTER_GASAL_2022_2023.pdf', 'Tidak ada file', 16, 'N', '2023-01-02'),
-(31, 16, 'Rapat Pesrsiapan UTS Gasal 2022/2023', '2022-11-03', '2022-11-03', '13:00', '14:00', 'Ruang Dosen PBSI LT. 7', 'Rapat', '2__NOTULEN_RAPAT_PERSIAPAN_UTS_GASAL_2022_2023.pdf', 'Tidak ada file', 18, 'N', '2023-01-02'),
-(32, 12, 'Persiapan Promosi ke SMA N 1 Godean', '2022-12-30', '2022-12-30', '08:00', '09:00', ' SmartPhysics Classroom kampus 4 UAD', 'Rapat', 'Rapat_Promosi_2023_(1).pdf', 'Tidak ada file', 4, 'N', '2023-01-02'),
-(33, 17, 'Penyusunan Laporan Akhir PKKM 2022', '2022-12-31', '2022-12-31', '10:00', '18:00', 'Daring', 'Rapat', 'Penyusunan_Laporan_Akhir_PKKM.pdf', 'WhatsApp_Image_2023-01-03_at_08_28_54.jpeg', 9, 'Y', '2023-01-03'),
-(34, 12, 'Rapat Persiapan Festival Fisika UAD dan Promosi Prodi', '2022-11-30', '2022-11-30', '07:30', '08:30', 'Ruang Amphitarium lantai 9 Gedung Utama kampu 4 UA', 'Rapat', 'FESTIVAL_FISIKA_2022.pdf', 'Tidak ada file', 17, 'N', '2023-01-03'),
-(35, 37, 'RAPAT RUTIN DEKANAT 020123', '2023-01-02', '2023-01-02', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_020123.pdf', 'WhatsApp_Image_2023-01-02_at_16_05_00_(1).jpeg', 4, 'N', '2023-01-03'),
-(36, 25, 'Rapat Rutin', '2022-12-29', '2022-12-29', '09:00', '11:30', 'Isi nama tempat ', 'Rapat', 'IMG20221229100024.pdf', 'IMG20221229100024.jpg', 8, 'N', '2023-01-03'),
-(37, 25, 'Rapat Rutin', '2022-12-20', '2022-12-20', '21:00', '11:30', 'Isi nama tempat ', 'Rapat', 'Tidak ada file', 'IMG20221220095455.jpg', 9, 'N', '2023-01-03'),
-(38, 37, 'RAPAT RUTIN DEKANAT FKIP UAD 191222', '2022-12-19', '2022-12-19', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_191222.pdf', 'WhatsApp_Image_2022-12-30_at_13_59_21.jpeg', 6, 'N', '2023-01-03'),
-(39, 12, 'Rapat Persiapan Ujian Tengah Semester Gasal 2023', '2022-11-02', '2022-11-02', '07:30', '08:30', 'Ruang virtual googlemeeting', 'Rapat', 'NOTULEN_RAPAT_UTS_2022_2023_(1).pdf', 'Tidak ada file', 16, 'N', '2023-01-05'),
-(40, 12, 'Rapat Pembagian Pembimbing Skripsi, Ide Promosi Prodi, dan AMI', '2023-01-07', '2023-01-07', '08:00', '09:00', 'Ruang virtual googemeeting', 'Rapat', 'NOTULEN_RAPAT_Pembagian_mahasiswa_bimbingan_skripsi_(1).pdf', 'rapat_pemb_skripsi.png', 16, 'N', '2023-01-07'),
-(41, 37, 'PEMBAHASAN AGENDA PRIORITAS DEKANAT', '2022-11-16', '2022-11-16', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_16_November_2022.pdf', 'WhatsApp_Image_2023-01-03_at_09_57_16_(1).jpeg', 5, 'N', '2023-01-03'),
-(42, 37, 'Pemilihan Kaprodi S1 FKIP dan \r\nRTL AMI', '2022-12-03', '2022-12-03', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_3_Desember_2022.pdf', 'WhatsApp_Image_2023-01-03_at_10_47_44.jpeg', 5, 'N', '2023-01-03'),
-(43, 24, 'Audiensi inisiasi kerjasama dengan PDM Kab Wonosobo', '2023-01-03', '2023-01-03', '13:00', '15:00', 'Daring', 'Rapat', 'Notulen_Rapat_3_Januari_2023.pdf', 'WhatsApp_Image_2023-01-03_at_14_03_26.jpeg', 7, 'Y', '2023-01-03'),
-(44, 37, 'Koordinasi Promosi S-2 FKIP UAD', '2023-01-03', '2023-01-03', '13:00', '15:00', 'Ruang Lab. Multimedia FKIP UAD', 'Rapat', 'Hasil_Rapat_Promosi_S-2_FKIP_UAD.pdf', 'WhatsApp_Image_2023-01-03_at_14_21_55.jpeg', 9, 'N', '2023-01-03'),
-(45, 34, 'RTM FKIP UAD', '2022-12-10', '2022-12-10', '08:00', '00:00', 'Daring', 'Rapat', 'NOTULEN_RTM_AMI_UPPS_22_-_101222.pdf', 'NOTULEN_RTM_AMI_UPPS_22_-_101222_-.png', 28, 'Y', '2023-01-03'),
-(46, 20, '1. Serah Terima Kaprodi PPG\r\n2. Persiapan Pelepasan Mahasiswa PPG Dalam Jabatan Kategori 1 Tahun 2022', '2023-01-03', '2023-01-03', '12:30', '16:00', 'Eastparc Hotel', 'Rapat', 'Und_03_Koordinasi_PPG_Eastparc1.pdf', 'Tidak ada file', 1, 'N', '2023-01-03'),
-(47, 32, 'Sosialisasi dan Komitmen Pengembangan Karir Akademik Dosen dari AA ke Lektor', '2022-12-17', '2022-12-17', '12:30', '14:30', 'Aula Islamic Center', 'Pembinaan', 'Notulen_17_12_22_Full.pdf', '4.jpeg', 7, 'Y', '2023-01-05'),
-(49, 23, 'Rapat Persiapan Promosi S2 Pfis', '2023-01-04', '2023-01-04', '09:00', '10:00', 'S2 Pfis dan Zoom', 'Rapat', 'Tidak ada file', 'WhatsApp_Image_2023-01-04_at_09_58_56.jpeg', 8, 'N', '2023-01-04'),
-(50, 23, 'Rapat Persiapan Penerimaan Mahasiswa Baru', '2023-01-02', '2023-01-02', '11:00', '11:45', 'S2 PFIS', 'Rapat', 'Rapat_2_Januari.pdf', 'Tidak ada file', 4, 'N', '2023-01-04'),
-(51, 23, 'Sosialisasi S1 dan S2 PFIS di SMAN 1 Godean', '2023-01-04', '2023-01-04', '07:00', '10:30', 'SMAN 1 Godean', 'Kunjungan', 'Tidak ada file', 'Tidak ada file', 1, 'N', '2023-01-04'),
-(52, 23, 'Rapat Persiapan PMB S2 di FKIP', '2023-01-03', '2023-01-03', '13:00', '14:45', 'Dekanat ', 'Rapat', 'Tidak ada file', 'Tidak ada file', 1, 'N', '2023-01-04'),
-(53, 23, 'Rapat Pembuatan Flyer Prodi dan Profil Laboratorium S2 Pfis', '2023-01-03', '2023-01-03', '08:00', '10:45', 'Lab S2 Pfis', 'Rapat', 'Tidak ada file', 'Tidak ada file', 2, 'N', '2023-01-04'),
-(54, 23, 'Pengambilan Foto untuk profil Laboratorium', '2023-01-04', '2023-01-04', '07:30', '09:00', 'Lab S2 Pfis', 'Rapat', 'Tidak ada file', 'Tidak ada file', 2, 'N', '2023-01-04'),
-(55, 23, 'Rapat persiapan pameran bersama pp muhammadiyah', '2023-01-03', '2023-01-03', '09:00', '10:00', 'zoom lppm uad', 'Rapat', 'Tidak ada file', 'Tidak ada file', 1, 'N', '2023-01-04'),
-(56, 23, 'Rapat persiapan pameran bersama PP MUhammadiyah', '2023-01-04', '2023-01-04', '10:00', '11:00', 'ruang prodi S2 PFis ', 'Rapat', 'PEMELIHARAAN_IKAN_HIAS_DI_KAWASAN_TANAH_WAKAF_PWM_Yogyakarta.pdf', 'WhatsApp_Image_2023-01-04_at_11_04_27.jpeg', 4, 'N', '2023-01-04'),
-(57, 23, 'Pengisian SKP', '2023-01-04', '2023-01-04', '08:00', '09:10', 'TU FKIP', 'Pendampingan', 'Tidak ada file', 'Tidak ada file', 1, 'N', '2023-01-04'),
-(58, 23, 'RAPAT PERSIAPAN PELATIHAN DENGAN GURU-GURU MGMP FISIKA MA SE DIY DALAM RANGKA PROMOSI PRODI', '2023-01-05', '2023-01-05', '05:45', '06:30', 'Daring', 'Rapat', 'PELATIHAN_DENGAN_GURU_MA_SE_DIY.pdf', 'Tidak ada file', 3, 'N', '2023-01-05'),
-(59, 37, 'Workshop Perkembangan Data Notulensi', '2023-01-04', '2023-01-04', '08:00', '09:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Tim_Admin.pdf', 'WhatsApp_Image_2023-01-04_at_09_33_51.jpeg', 9, 'N', '2023-01-05'),
-(60, 16, 'Rapat Persiapan UAS Gasal 2022-2023', '2023-01-04', '2023-01-04', '11:00', '12:00', 'Ruang Dosen PBSI LT. 7', 'Rapat', '1__NOTULEN_PERSIAPAN_UAS_GASAL_JANUARI_2023.pdf', 'pesiapan_UAS.jpeg', 20, 'N', '2023-01-05'),
-(61, 16, 'Rapat Pembagian Matakuliah Semester Genap 2022-2023', '2023-01-04', '2023-01-04', '12:00', '12:30', 'Ruang Dosen PBSI LT. 7', 'Rapat', '2__NOTULEN_RAPAT_PEMBAGIAN_MATA_KULIAH_SEM_GENAP_2022_2023.pdf', 'Pembagian_Matakuliah_genap_22.jpeg', 20, 'N', '2023-01-05'),
-(62, 32, 'Rakor Tim SDM: Workshop Jafung Lektor', '2023-01-05', '2023-01-05', '07:30', '08:30', 'Dekanat ', 'Rapat', 'Notulen_5_1_23_Full.pdf', 'IMG-20230105-WA0010.jpg', 12, 'Y', '2023-01-05'),
-(63, 16, 'Rapat TIM Medsos dan Promosi Prodi PBSI', '2023-01-04', '2023-01-04', '13:00', '14:00', 'Ruang Dosen PBSI LT. 7', 'Rapat', '3_NOTULEN_RAPAT_MEDSOS_PROMOSI_PBSI.pdf', '3__TIM_Medsos_PBSI.jpeg', 12, 'N', '2023-01-05'),
-(64, 14, 'Rapat Persiapan Ujian Tengah Semester Gasal 2022/2023', '2022-11-05', '2022-11-05', '13:00', '14:00', 'Daring', 'Rapat', 'Persiapan_UTS_Gasal_20222023.pdf', 'Foto_Rapat_Persiapan_UTS_Gasal_20222023_page-0001.jpg', 13, 'N', '2023-01-05'),
-(65, 14, 'Rapat Persiapan Perkuliahan Semester Genap 2021/2022', '2022-03-10', '2022-03-10', '10:00', '12:00', 'Daring', 'Rapat', 'Persiapan_Kuliah_Sem__Genap_20212022.pdf', 'Foto_Persiapan_Kuliah_Semester_Genap_20212022_page-0001.jpg', 15, 'N', '2023-01-05'),
-(66, 14, 'Rapat Persiapan UTS Semester Genap 2021/2022', '2022-05-12', '2022-05-12', '10:00', '12:00', 'Daring', 'Rapat', 'Persiapan_UTS_Genap_20212022.pdf', 'Foto_Persiapan_UTS_Genap_20212022_page-0001.jpg', 12, 'N', '2023-01-05'),
-(67, 14, 'Rapat Persiapan UAS Genap 20212022', '2022-07-20', '2022-07-20', '13:00', '14:00', 'Lab PPKn', 'Rapat', 'Persiapan_UAS_Genap_20212022.pdf', 'Foto_Persiapan_UTS_Genap_20212022_page-00011.jpg', 7, 'N', '2023-01-05'),
-(68, 12, 'Persiapan Prodi Pendidikan Fisika menghadapi Assessmen Lapangan LAMDIK', '2022-10-03', '2022-10-03', '08:00', '09:30', 'LTPS UAD', 'Rapat', 'NOTULEN_RAPAT_Persiapan_AL.pdf', 'Tidak ada file', 14, 'N', '2023-01-05'),
-(69, 12, 'Kunjungan mahasiswa dan dosen Universitas Siliwangi', '2022-11-08', '2022-11-08', '08:00', '11:00', 'Ruang Amphitarium lantai 9 Gedung Utama kampu 4 UA', 'Seminar', 'NOTULEN_RAPAT_Siliwangi_(1).pdf', 'Tidak ada file', 11, 'N', '2023-01-05'),
-(70, 37, 'Riset Memahami Mahasiswa FKIP', '2022-09-14', '2022-09-14', '08:00', '09:00', 'Ruang Dekanat FKIP Lt 7 dan Zoom Meeting', 'Rapat', '14_September_Riset_Memahami_Mahasiswa_FKIP_docx.pdf', 'WhatsApp_Image_2022-12-30_at_11_21_45.jpeg', 13, 'N', '2023-01-05'),
-(71, 37, 'Riset Memahami Karakteristik Mahasiswa FKIP', '2023-01-05', '2023-01-05', '00:00', '00:00', 'Dekanat FKIP Lt 7 dan Zoom ', 'Rapat', '23_September_2022_Riset_Memahami_MHS.pdf', 'Tidak ada file', 9, 'N', '2023-01-05'),
-(72, 37, 'Riset Memahami Mahasiswa FKIP', '2022-10-03', '2022-10-03', '09:00', '13:00', 'Dekanat FKIP ', 'Rapat', '3_Oktober_2022_Tim_Riset_Memahami_Mahasiswa_FKIP.pdf', 'WhatsApp_Image_2023-01-05_at_10_18_00.jpeg', 12, 'N', '2023-01-05'),
-(73, 37, 'Riset Memahami Mahasiswa FKIP', '2022-10-27', '2022-10-27', '09:00', '13:00', 'Dekanat FKIP dan Zoom Meeting', 'Rapat', '27_Oktober_2022_Tim_Riset_Memahami_MHS_FKIP.pdf', 'WhatsApp_Image_2022-10-03_at_09_31_18.jpeg', 11, 'N', '2023-01-05'),
-(74, 37, 'Riset Memahami Mahasiswa FKIP', '2022-11-22', '2022-11-22', '13:00', '15:00', 'Dekanat FKIP Lt 7 dan Zoom Meeting', 'Rapat', '22_November_2022_TIm_Riset_Memahami_MHS.pdf', 'Tidak ada file', 8, 'N', '2023-01-05'),
-(75, 37, 'Riset Memahami Mahasiswa FKIP', '2022-11-28', '2022-11-28', '13:00', '14:00', 'Dekanat LT 7 dan Zoom Meeting', 'Rapat', '28_November_2022_Tim_Riset_Memahami_MHS_FKIP.pdf', 'Tidak ada file', 11, 'N', '2023-01-05'),
-(76, 9, 'Koordinasi', '2023-01-05', '2023-01-05', '11:00', '13:00', 'Dekanat ', 'Rapat', 'IMG20230105130645.jpg', 'IMG20230105115939.jpg', 6, 'N', '2023-01-06'),
-(77, 17, 'Rapat Koordinasi Pelepasan Wisuda Mahasiswa FKIP Periode Januari 2023', '2023-01-05', '2023-01-05', '08:00', '10:00', 'Lab. Multimedia FKIP', 'Rapat', 'Pelepasan_Wisuda_FKIP_Periode_2023.pdf', 'WhatsApp_Image_2023-01-05_at_09_30_31.jpeg', 22, 'Y', '2023-01-06'),
-(78, 12, 'Forum Group Discussion Praktikum Fisika di Sekolah', '2023-01-07', '2023-01-07', '13:00', '15:00', 'Ruang virtual googemeeting', 'Workshop', 'NOTULEN_RAPAT_Materi_open_lab_(1).pdf', '146628383_428840055199176_5467687752449046729_n.jpg', 8, 'N', '2023-01-07'),
-(79, 23, 'Rapat promosi dengan MGMP Fisika MA se DIY dan MGMP IPA Kab. Magelang', '2023-01-06', '2023-01-06', '10:30', '11:20', 'Ruang Prodi S2 PFis ', 'Rapat', 'Tidak ada file', 'WhatsApp_Image_2023-01-06_at_11_17_11.jpeg', 3, 'N', '2023-01-06'),
-(80, 15, 'Pembahasan Permohonan Studi Lanjut S3 Dosen PBI', '2023-01-06', '2023-01-06', '09:00', '10:00', 'Zoom', 'Rapat', 'Undangan_Pembahasan_Permohonan_Studi_Lanjut S3 Dosen PBI.pdf', 'Tidak ada file', 19, 'Y', '2023-01-06'),
-(81, 9, 'Pisah sambut kaprodi lama dan kaprodi baru', '2023-01-06', '2023-01-06', '12:30', '16:00', 'Dekanat ', 'Rapat', 'Tidak ada file', 'IMG-20230107-WA0002.jpg', 18, 'N', '2023-01-06'),
-(82, 13, 'Rapat Pembagian Tugas Mengajar Semester Genap Tahun 2022 dan Serah Terima Jabatan Kaprodi', '2023-01-02', '2023-01-02', '13:00', '15:00', 'Warung Pohon Omah Sawah ', 'Rapat', 'Tidak ada file', 'Tidak ada file', 19, 'N', '2023-01-07'),
-(83, 10, 'Rapat Persiapan UAS GASAL 2022/2023', '2023-01-07', '2023-01-07', '13:00', '14:30', 'Daring', 'Rapat', '05-Undangan_Rapat_UAS_Gasal_2022.pdf', 'IMG-20230107-WA0006.jpg', 33, 'N', '2023-01-07'),
-(84, 32, 'TOT Pendamping Workshop Inkubasi Asisten Ahli ke Lektor', '2023-01-07', '2023-01-07', '08:30', '10:00', 'Dekanat ', 'Pelatihan', 'NOTULEN_TOT_07_01_23.pdf', 'IMG-20230107-WA0017.jpg', 10, 'Y', '2023-01-07'),
-(85, 11, 'Persiapan UAS Ganjil 2022/2023', '2023-01-06', '2023-01-06', '09:00', '11:00', 'Daring', 'Rapat', 'und-daftar_hadir-notulen.pdf', 'Rapat_1.jpeg', 16, 'N', '2023-01-09'),
-(86, 12, 'Rapat Persiapan UAS dan Evaluasi perkuliahan semester ganjil 2022/2023', '2023-01-16', '2023-01-16', '13:00', '14:00', 'Ruang virtual googlemeeting', 'Rapat', 'NOTULEN_RAPAT_UAS_2022_2023.pdf', 'foto_uas.png', 11, 'N', '2023-01-16'),
-(87, 37, 'Rapat Rutin Dekanat FKIP UAD', '2023-01-09', '2023-01-09', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_9_Januari_2023.pdf', 'WhatsApp_Image_2023-01-10_at_21_35_53.jpeg', 7, 'N', '2023-01-10'),
-(88, 22, 'Sosialisasi Perkuliahan Semester Gasal TA 2022/2023', '2022-09-19', '2022-09-19', '13:00', '15:00', 'Ruang 2.1.108', 'Pembinaan', 'Notulen,_19_September_2022.pdf', '19_September_2022.jpg', 7, 'N', '2023-01-11'),
-(89, 22, 'Rapat Kerja Prodi, TA 2022/2023', '2022-10-10', '2022-10-10', '09:00', '15:00', 'R. Sidang Kampus 2A', 'Rapat', 'Notulen_Rapat,_10_Oktober_2022.pdf', 'Tidak ada file', 9, 'N', '2023-01-11'),
-(90, 22, 'Rapat Evaluasi Perkuliahan dan Persiapan UAS Gasal TA 2022/2023', '2023-01-10', '2023-01-10', '13:00', '14:30', 'Daring', 'Rapat', 'Notulen_Rapat,_10_Januari_2023.pdf', '10_Januari_2023.jpg', 11, 'N', '2023-01-11'),
-(91, 13, 'APR Soal UAS Gasal Tahun Ajaran 2022/2023', '2023-01-11', '2023-01-11', '09:00', '10:15', 'Lab Teknologi Pembelajaran P Mat lt 5 Lab terpadu', 'Rapat', 'Tidak ada file', 'Foto_Rapat_APR_Soal_UAS_Gasal_2022_P_Mat.jpeg', 14, 'N', '2023-01-11'),
-(92, 21, 'Rapat Koordinasi Persiapan UAS Gasal 2022/2023', '2023-01-11', '2023-01-11', '13:00', '14:30', 'Ruang Rapat MPMAT', 'Rapat', 'NOTULEN_11_Januari_2023_Persiapan_UAS.pdf', 'WhatsApp_Image_2023-01-11_at_13_28_11.jpeg', 7, 'N', '2023-01-11'),
-(93, 17, 'Workshop Penyusunan Jurnal Psikopedagogia', '2023-01-06', '2023-01-06', '13:00', '17:00', 'Lab. BK', 'Workshop', 'Notulen_Workshop_Jurnal_Psikopedagogia.pdf', 'WhatsApp_Image_2023-01-12_at_08_55_15.jpeg', 7, 'N', '2023-01-12'),
-(94, 17, 'Rapat UAS & Lepas Sambut Kepala Laboratorium BK', '2023-01-09', '2023-01-09', '10:00', '12:00', 'R. 4.1.3.16', 'Rapat', 'rapat_UAS_lepas_sambut_kalab.pdf', 'WhatsApp_Image_2023-01-12_at_08_52_09.jpeg', 20, 'N', '2023-01-12'),
-(95, 15, 'Rapat Persiapan UAS, Pembagian Tugas Mengajar dan Serah Terima Kaprodi Tahun 2023', '2023-01-11', '2023-01-11', '09:30', '12:00', 'Lab. Multimedia FKIP UAD', 'Rapat', '11-01-2023_Notulensi_Rapat_Rutin_PBI.pdf', '11-01-2023_Rapat_Rutin.jpeg', 22, 'Y', '2023-01-12'),
-(96, 14, 'Rapat Evaluasi Perkuliahan dan Persiapan UAS Gasal 2022/2023', '2023-01-12', '2023-01-12', '13:00', '14:30', 'Daring', 'Rapat', 'Notulen_Rapat_Persiapan_UAS.pdf', 'Foto_Persiapan_UAS_Gasal_20222023.pdf', 18, 'N', '2023-01-13'),
-(97, 31, 'Rapat Perdana Koordinasi Tim Pendidikan dan Pembelajaran FKIP Universitas Ahmad Dahlan', '2023-01-12', '2023-01-12', '09:00', '10:00', 'SmartPhysics Classroom Pfis', 'Rapat', '12_Januari_2023_Koordinasi_Tim_Pembelajaran.pdf', 'Image.jpeg', 13, 'Y', '2023-01-13'),
-(98, 34, 'Koordinasi Akreditasi LAMDIK Program Studi S-2 Pendidikan Matematika', '2023-01-10', '2023-01-10', '09:00', '11:30', 'Lab. Multimedia FKIP UAD', 'Rapat', '10-1-2023_-_Koordinasi_Akred_s2_pmat.pdf', 'Koordinasi_akrditasi_s2_pmat.jpeg', 25, 'N', '2023-01-14'),
-(99, 15, 'Bimbingan akademik mahasiswa smt 1', '2023-01-14', '2023-01-14', '01:00', '00:00', 'Lab Bahasa', 'Pendampingan', 'Tidak ada file', 'Tidak ada file', 4, 'N', '2023-01-14'),
-(100, 34, 'Rapat Koordinasi Tim Kerja UPPS FKIP Universitas Ahmad Dahlan', '2023-01-11', '2023-01-11', '13:00', '14:30', 'Dekanat ', 'Rapat', '11-01-23_Notulen_Rapat_koordinasi_UPPS.pdf', 'upps_2.jpeg', 17, 'N', '2023-01-14'),
-(101, 15, 'Sarasehan mahasiswa dan dosen PBI UAD', '2023-01-15', '2023-01-15', '09:00', '12:00', 'Daring', 'Pembinaan', 'Tidak ada file', 'sarasehan_2023.jpg', 10, 'N', '2023-01-16'),
-(102, 25, 'Rapat Prodi', '2023-01-16', '2023-01-16', '01:00', '03:00', 'Daring', 'Rapat', 'Notulen_Rapat_16_Januari_2023.pdf', 'Tidak ada file', 9, 'N', '2023-01-17'),
-(103, 37, 'Rapat Rutin Dekanat', '2023-01-16', '2023-01-16', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_16_Januari_2023.pdf', 'WhatsApp_Image_2023-01-18_at_09_02_43.jpeg', 1, 'N', '2023-01-18'),
-(104, 19, 'Rapat Persiapan UAS Gasal 2022/2023', '2023-01-19', '2023-01-19', '08:00', '10:00', 'R.102 2B', 'Rapat', 'NOTULEN_RAPAT_PERSIAPAN_UAS_SEMESTER_GASAL_2022-2023_PVTE.pdf', 'WhatsApp_Image_2023-01-11_at_08_05_21.jpeg', 10, 'N', '2023-01-19');
+INSERT INTO `notulen_detail` (`id_not_detail`, `id_notulen`, `issue`, `tanggal_mulai`, `tanggal_selesai`, `waktu_mulai`, `waktu_selesai`, `tempat`, `jenis_kegiatan`, `catatan`, `foto`, `undangan`, `jumlah`, `status`, `date_created`) VALUES
+(3, 32, 'Workshop Jafung Lektor', '2022-12-24', '2022-12-24', '08:30', '09:30', 'Dekanat ', 'Rapat', 'Notulen_Rapat_Tim_Kerja_SDM_Ani_24_Desember_2022.pdf', '241222.jpg', NULL, 9, 'Y', '2023-01-05'),
+(5, 33, 'Koordinasi Perdana Tim Percepatan Penelitian, Pengabdian & Publikasi FKIP UAD', '2022-12-22', '2022-12-22', '12:30', '14:00', 'Dekanat ', 'Rapat', '22_Desember_2022_Riset,_Publikasi_dan_Pengabdian.pdf', 'WhatsApp Image 2022-12-28 at 08_22_30.jpeg', NULL, 14, 'Y', '2023-01-04'),
+(6, 27, 'Pelatihan Penulisan Berita', '2022-12-29', '2022-12-29', '13:00', '15:00', 'Lab. Multimedia Lantai 6', 'Pelatihan', 'Tidak ada file', 'Tidak ada file', NULL, 15, 'N', '2022-12-29'),
+(7, 28, 'Koordinasi Survey Kemuhammadiyahan Tim AIK', '2022-12-30', '2022-12-30', '08:00', '09:00', 'Dekanat ', 'Rapat', 'Hasil Rapat Tim AIK 241122.docx', 'WhatsApp Image 2022-12-30 at 08_45_58.jpeg', NULL, 7, 'N', '2022-12-30'),
+(9, 28, 'PERKEMBANGAN LOMBA & SURVEY KEMUHAMMADIYAHAN', '2022-12-22', '2022-12-22', '16:00', '17:00', 'Dekanat ', 'Rapat', 'Hasil Rapat Tim AIK 221222.docx', 'WhatsApp Image 2022-12-30 at 08_45_58.jpeg', NULL, 7, 'N', '2022-12-30'),
+(10, 28, 'PERSIAPAN LOMBA DARI TIM AIK', '2022-12-08', '2022-12-08', '08:00', '09:00', 'Dekanat ', 'Rapat', 'Hasil Rapat Tim AIK 081222.docx', 'WhatsApp Image 2022-12-30 at 10_33_22.jpeg', NULL, 10, 'N', '2022-12-30'),
+(11, 28, 'Koordinasi TIM AIK FKIP UAD', '2022-11-15', '2022-11-15', '13:00', '14:00', 'Dekanat ', 'Rapat', 'Result Meeting Tim AIK 151122.docx', 'WhatsApp Image 2022-12-30 at 10_44_23.jpeg', NULL, 7, 'N', '2022-12-30'),
+(12, 32, 'Koordinasi Tim SDM FKIP UAD', '2022-11-23', '2022-11-23', '09:00', '10:00', 'Dekanat ', 'Rapat', 'Notulen Rapat Tim SDM 23 Nov 22.docx', '231122.jpg', NULL, 9, 'Y', '2022-12-30'),
+(13, 32, 'Program Pengembangan SDM', '2022-12-09', '2022-12-09', '13:00', '14:00', 'Dekanat ', 'Rapat', 'NOTULEN_RAPAT_09_12_22.doc', '091222.jpg', NULL, 7, 'Y', '2022-12-30'),
+(14, 32, 'Persiapan Sosialisasi Jafung', '2022-12-16', '2022-12-16', '19:30', '00:00', 'Daring', 'Rapat', 'NOTULEN_RAPAT_16_12_22.doc', '161222_(1).png', NULL, 8, 'Y', '2022-12-30'),
+(17, 29, 'Koordinasi Tim Kemahasiswaan FKIP', '2022-12-17', '2022-12-17', '10:00', '11:00', 'Dekanat ', 'Rapat', '17_Desember-_Presensi_Kemahasiswaan.pdf', 'WhatsApp Image 2022-12-30 at 11_21_45.jpeg', NULL, 11, 'Y', '2022-12-30'),
+(18, 29, 'Koordinasi Tim Kemahasiswaan\r\nFKIP', '2022-12-22', '2022-12-22', '14:00', '15:00', 'Dekanat ', 'Rapat', '22_Desember_22_Hasil_Rapat_Tim_Kemahasiswaan_Alumni.pdf', 'Tidak ada file', NULL, 9, 'Y', '2022-12-30'),
+(19, 37, 'Sosialisasi Sistem Informasi Notulensi FKIP UAD', '2022-12-30', '2022-12-30', '13:00', '14:00', 'Lab. Multimedia Lantai 6', 'Pelatihan', 'Tidak ada file', 'ECBE95EB-2FEA-4AC2-B429-0ED2FF0310EB.jpeg', NULL, 12, 'N', '2022-12-30'),
+(20, 28, 'RAPAT RUTIN TIM AIK FKIP', '2022-11-03', '2022-11-03', '08:00', '09:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil Rapat Tim AIK 031122.docx', 'WhatsApp Image 2022-12-30 at 13_11_59.jpeg', NULL, 5, 'N', '2022-12-30'),
+(21, 37, 'RAPAT RUTIN DEKANAT FKIP UAD', '2022-11-28', '2022-11-28', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil Rapat Dekanat 281122.docx', 'WhatsApp Image 2022-12-30 at 13_36_29.jpeg', NULL, 5, 'N', '2022-12-30'),
+(24, 37, 'RAPAT RUTIN DEKANAT FKIP UAD', '2022-12-26', '2022-12-26', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil Rapat Dekanat 261222.docx', 'WhatsApp Image 2022-12-30 at 13_44_57 (1).jpeg', NULL, 5, 'N', '2022-12-30'),
+(26, 30, 'Rapat Koordinasi Tim Kerjasama', '2022-12-29', '2022-12-29', '08:00', '09:30', 'Dekanat ', 'Rapat', 'notulensi rapat tgl 29 desember 2022.docx', 'WhatsApp Image 2022-12-29 at 08_50_59.jpeg', NULL, 6, 'N', '2022-12-31'),
+(27, 16, 'Rapat Persiapan Perkuliahan Genap 2021/2022', '2022-01-31', '2022-01-31', '10:00', '11:30', 'Ruang Dosen PBSI LT. 7', 'Rapat', '1__NOTULEN_RAPAT_PERSIAPAN_PERKULIAHAN_KULIAH_SEMESTER_GENAP_TA_2021_2022.pdf', 'foto_zoom.jpg', NULL, 18, 'N', '2023-01-02'),
+(28, 16, 'Rapat Persiapan UTS Genap 2021/2022', '2022-05-13', '2022-05-13', '09:00', '10:30', 'Daring ', 'Rapat', '3__NOTULEN_RAPAT_PERSIAPAN_UTS_GENAP_2021_2022.pdf', 'Tidak ada file', NULL, 21, 'N', '2023-01-02'),
+(29, 27, 'Koordinasi Promosi FKIP UAD', '2022-11-16', '2022-11-16', '10:00', '11:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Tim_Humas_Promosi_161122.pdf', 'Tidak ada file', NULL, 9, 'N', '2023-01-02'),
+(30, 16, 'Rapat Persiapan Perkuliahan Semester Gasal 2022/2023', '2023-01-02', '2023-01-02', '10:30', '11:30', 'Ruang Dosen PBSI Lt. 7', 'Rapat', '1__NOTULEN_RAPAT_PERSIAPAN_KULIAH_SEMESTER_GASAL_2022_2023.pdf', 'Tidak ada file', NULL, 16, 'N', '2023-01-02'),
+(31, 16, 'Rapat Pesrsiapan UTS Gasal 2022/2023', '2022-11-03', '2022-11-03', '13:00', '14:00', 'Ruang Dosen PBSI LT. 7', 'Rapat', '2__NOTULEN_RAPAT_PERSIAPAN_UTS_GASAL_2022_2023.pdf', 'Tidak ada file', NULL, 18, 'N', '2023-01-02'),
+(32, 12, 'Persiapan Promosi ke SMA N 1 Godean', '2022-12-30', '2022-12-30', '08:00', '09:00', ' SmartPhysics Classroom kampus 4 UAD', 'Rapat', 'Rapat_Promosi_2023_(1).pdf', 'Tidak ada file', NULL, 4, 'N', '2023-01-02'),
+(33, 17, 'Penyusunan Laporan Akhir PKKM 2022', '2022-12-31', '2022-12-31', '10:00', '18:00', 'Daring', 'Rapat', 'Penyusunan_Laporan_Akhir_PKKM.pdf', 'WhatsApp_Image_2023-01-03_at_08_28_54.jpeg', NULL, 9, 'Y', '2023-01-03'),
+(34, 12, 'Rapat Persiapan Festival Fisika UAD dan Promosi Prodi', '2022-11-30', '2022-11-30', '07:30', '08:30', 'Ruang Amphitarium lantai 9 Gedung Utama kampu 4 UA', 'Rapat', 'FESTIVAL_FISIKA_2022.pdf', 'Tidak ada file', NULL, 17, 'N', '2023-01-03'),
+(35, 37, 'RAPAT RUTIN DEKANAT 020123', '2023-01-02', '2023-01-02', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_020123.pdf', 'WhatsApp_Image_2023-01-02_at_16_05_00_(1).jpeg', NULL, 4, 'N', '2023-01-03'),
+(36, 25, 'Rapat Rutin', '2022-12-29', '2022-12-29', '09:00', '11:30', 'Isi nama tempat ', 'Rapat', 'IMG20221229100024.pdf', 'IMG20221229100024.jpg', NULL, 8, 'N', '2023-01-03'),
+(37, 25, 'Rapat Rutin', '2022-12-20', '2022-12-20', '21:00', '11:30', 'Isi nama tempat ', 'Rapat', 'Tidak ada file', 'IMG20221220095455.jpg', NULL, 9, 'N', '2023-01-03'),
+(38, 37, 'RAPAT RUTIN DEKANAT FKIP UAD 191222', '2022-12-19', '2022-12-19', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_191222.pdf', 'WhatsApp_Image_2022-12-30_at_13_59_21.jpeg', NULL, 6, 'N', '2023-01-03'),
+(39, 12, 'Rapat Persiapan Ujian Tengah Semester Gasal 2023', '2022-11-02', '2022-11-02', '07:30', '08:30', 'Ruang virtual googlemeeting', 'Rapat', 'NOTULEN_RAPAT_UTS_2022_2023_(1).pdf', 'Tidak ada file', NULL, 16, 'N', '2023-01-05'),
+(40, 12, 'Rapat Pembagian Pembimbing Skripsi, Ide Promosi Prodi, dan AMI', '2023-01-07', '2023-01-07', '08:00', '09:00', 'Ruang virtual googemeeting', 'Rapat', 'NOTULEN_RAPAT_Pembagian_mahasiswa_bimbingan_skripsi_(1).pdf', 'rapat_pemb_skripsi.png', NULL, 16, 'N', '2023-01-07'),
+(41, 37, 'PEMBAHASAN AGENDA PRIORITAS DEKANAT', '2022-11-16', '2022-11-16', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_16_November_2022.pdf', 'WhatsApp_Image_2023-01-03_at_09_57_16_(1).jpeg', NULL, 5, 'N', '2023-01-03'),
+(42, 37, 'Pemilihan Kaprodi S1 FKIP dan \r\nRTL AMI', '2022-12-03', '2022-12-03', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_3_Desember_2022.pdf', 'WhatsApp_Image_2023-01-03_at_10_47_44.jpeg', NULL, 5, 'N', '2023-01-03'),
+(43, 24, 'Audiensi inisiasi kerjasama dengan PDM Kab Wonosobo', '2023-01-03', '2023-01-03', '13:00', '15:00', 'Daring', 'Rapat', 'Notulen_Rapat_3_Januari_2023.pdf', 'WhatsApp_Image_2023-01-03_at_14_03_26.jpeg', NULL, 7, 'Y', '2023-01-03'),
+(44, 37, 'Koordinasi Promosi S-2 FKIP UAD', '2023-01-03', '2023-01-03', '13:00', '15:00', 'Ruang Lab. Multimedia FKIP UAD', 'Rapat', 'Hasil_Rapat_Promosi_S-2_FKIP_UAD.pdf', 'WhatsApp_Image_2023-01-03_at_14_21_55.jpeg', NULL, 9, 'N', '2023-01-03'),
+(45, 34, 'RTM FKIP UAD', '2022-12-10', '2022-12-10', '08:00', '00:00', 'Daring', 'Rapat', 'NOTULEN_RTM_AMI_UPPS_22_-_101222.pdf', 'NOTULEN_RTM_AMI_UPPS_22_-_101222_-.png', NULL, 28, 'Y', '2023-01-03'),
+(46, 20, '1. Serah Terima Kaprodi PPG\r\n2. Persiapan Pelepasan Mahasiswa PPG Dalam Jabatan Kategori 1 Tahun 2022', '2023-01-03', '2023-01-03', '12:30', '16:00', 'Eastparc Hotel', 'Rapat', 'Und_03_Koordinasi_PPG_Eastparc1.pdf', 'Tidak ada file', NULL, 1, 'N', '2023-01-03'),
+(47, 32, 'Sosialisasi dan Komitmen Pengembangan Karir Akademik Dosen dari AA ke Lektor', '2022-12-17', '2022-12-17', '12:30', '14:30', 'Aula Islamic Center', 'Pembinaan', 'Notulen_17_12_22_Full.pdf', '4.jpeg', NULL, 7, 'Y', '2023-01-05'),
+(49, 23, 'Rapat Persiapan Promosi S2 Pfis', '2023-01-04', '2023-01-04', '09:00', '10:00', 'S2 Pfis dan Zoom', 'Rapat', 'Tidak ada file', 'WhatsApp_Image_2023-01-04_at_09_58_56.jpeg', NULL, 8, 'N', '2023-01-04'),
+(50, 23, 'Rapat Persiapan Penerimaan Mahasiswa Baru', '2023-01-02', '2023-01-02', '11:00', '11:45', 'S2 PFIS', 'Rapat', 'Rapat_2_Januari.pdf', 'Tidak ada file', NULL, 4, 'N', '2023-01-04'),
+(51, 23, 'Sosialisasi S1 dan S2 PFIS di SMAN 1 Godean', '2023-01-04', '2023-01-04', '07:00', '10:30', 'SMAN 1 Godean', 'Kunjungan', 'Tidak ada file', 'Tidak ada file', NULL, 1, 'N', '2023-01-04'),
+(52, 23, 'Rapat Persiapan PMB S2 di FKIP', '2023-01-03', '2023-01-03', '13:00', '14:45', 'Dekanat ', 'Rapat', 'Tidak ada file', 'Tidak ada file', NULL, 1, 'N', '2023-01-04'),
+(53, 23, 'Rapat Pembuatan Flyer Prodi dan Profil Laboratorium S2 Pfis', '2023-01-03', '2023-01-03', '08:00', '10:45', 'Lab S2 Pfis', 'Rapat', 'Tidak ada file', 'Tidak ada file', NULL, 2, 'N', '2023-01-04'),
+(54, 23, 'Pengambilan Foto untuk profil Laboratorium', '2023-01-04', '2023-01-04', '07:30', '09:00', 'Lab S2 Pfis', 'Rapat', 'Tidak ada file', 'Tidak ada file', NULL, 2, 'N', '2023-01-04'),
+(55, 23, 'Rapat persiapan pameran bersama pp muhammadiyah', '2023-01-03', '2023-01-03', '09:00', '10:00', 'zoom lppm uad', 'Rapat', 'Tidak ada file', 'Tidak ada file', NULL, 1, 'N', '2023-01-04'),
+(56, 23, 'Rapat persiapan pameran bersama PP MUhammadiyah', '2023-01-04', '2023-01-04', '10:00', '11:00', 'ruang prodi S2 PFis ', 'Rapat', 'PEMELIHARAAN_IKAN_HIAS_DI_KAWASAN_TANAH_WAKAF_PWM_Yogyakarta.pdf', 'WhatsApp_Image_2023-01-04_at_11_04_27.jpeg', NULL, 4, 'N', '2023-01-04'),
+(57, 23, 'Pengisian SKP', '2023-01-04', '2023-01-04', '08:00', '09:10', 'TU FKIP', 'Pendampingan', 'Tidak ada file', 'Tidak ada file', NULL, 1, 'N', '2023-01-04'),
+(58, 23, 'RAPAT PERSIAPAN PELATIHAN DENGAN GURU-GURU MGMP FISIKA MA SE DIY DALAM RANGKA PROMOSI PRODI', '2023-01-05', '2023-01-05', '05:45', '06:30', 'Daring', 'Rapat', 'PELATIHAN_DENGAN_GURU_MA_SE_DIY.pdf', 'Tidak ada file', NULL, 3, 'N', '2023-01-05'),
+(59, 37, 'Workshop Perkembangan Data Notulensi', '2023-01-04', '2023-01-04', '08:00', '09:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Tim_Admin.pdf', 'WhatsApp_Image_2023-01-04_at_09_33_51.jpeg', NULL, 9, 'N', '2023-01-05'),
+(60, 16, 'Rapat Persiapan UAS Gasal 2022-2023', '2023-01-04', '2023-01-04', '11:00', '12:00', 'Ruang Dosen PBSI LT. 7', 'Rapat', '1__NOTULEN_PERSIAPAN_UAS_GASAL_JANUARI_2023.pdf', 'pesiapan_UAS.jpeg', NULL, 20, 'N', '2023-01-05'),
+(61, 16, 'Rapat Pembagian Matakuliah Semester Genap 2022-2023', '2023-01-04', '2023-01-04', '12:00', '12:30', 'Ruang Dosen PBSI LT. 7', 'Rapat', '2__NOTULEN_RAPAT_PEMBAGIAN_MATA_KULIAH_SEM_GENAP_2022_2023.pdf', 'Pembagian_Matakuliah_genap_22.jpeg', NULL, 20, 'N', '2023-01-05'),
+(62, 32, 'Rakor Tim SDM: Workshop Jafung Lektor', '2023-01-05', '2023-01-05', '07:30', '08:30', 'Dekanat ', 'Rapat', 'Notulen_5_1_23_Full.pdf', 'IMG-20230105-WA0010.jpg', NULL, 12, 'Y', '2023-01-05'),
+(63, 16, 'Rapat TIM Medsos dan Promosi Prodi PBSI', '2023-01-04', '2023-01-04', '13:00', '14:00', 'Ruang Dosen PBSI LT. 7', 'Rapat', '3_NOTULEN_RAPAT_MEDSOS_PROMOSI_PBSI.pdf', '3__TIM_Medsos_PBSI.jpeg', NULL, 12, 'N', '2023-01-05'),
+(64, 14, 'Rapat Persiapan Ujian Tengah Semester Gasal 2022/2023', '2022-11-05', '2022-11-05', '13:00', '14:00', 'Daring', 'Rapat', 'Persiapan_UTS_Gasal_20222023.pdf', 'Foto_Rapat_Persiapan_UTS_Gasal_20222023_page-0001.jpg', NULL, 13, 'N', '2023-01-05'),
+(65, 14, 'Rapat Persiapan Perkuliahan Semester Genap 2021/2022', '2022-03-10', '2022-03-10', '10:00', '12:00', 'Daring', 'Rapat', 'Persiapan_Kuliah_Sem__Genap_20212022.pdf', 'Foto_Persiapan_Kuliah_Semester_Genap_20212022_page-0001.jpg', NULL, 15, 'N', '2023-01-05'),
+(66, 14, 'Rapat Persiapan UTS Semester Genap 2021/2022', '2022-05-12', '2022-05-12', '10:00', '12:00', 'Daring', 'Rapat', 'Persiapan_UTS_Genap_20212022.pdf', 'Foto_Persiapan_UTS_Genap_20212022_page-0001.jpg', NULL, 12, 'N', '2023-01-05'),
+(67, 14, 'Rapat Persiapan UAS Genap 20212022', '2022-07-20', '2022-07-20', '13:00', '14:00', 'Lab PPKn', 'Rapat', 'Persiapan_UAS_Genap_20212022.pdf', 'Foto_Persiapan_UTS_Genap_20212022_page-00011.jpg', NULL, 7, 'N', '2023-01-05'),
+(68, 12, 'Persiapan Prodi Pendidikan Fisika menghadapi Assessmen Lapangan LAMDIK', '2022-10-03', '2022-10-03', '08:00', '09:30', 'LTPS UAD', 'Rapat', 'NOTULEN_RAPAT_Persiapan_AL.pdf', 'Tidak ada file', NULL, 14, 'N', '2023-01-05'),
+(69, 12, 'Kunjungan mahasiswa dan dosen Universitas Siliwangi', '2022-11-08', '2022-11-08', '08:00', '11:00', 'Ruang Amphitarium lantai 9 Gedung Utama kampu 4 UA', 'Seminar', 'NOTULEN_RAPAT_Siliwangi_(1).pdf', 'Tidak ada file', NULL, 11, 'N', '2023-01-05'),
+(70, 37, 'Riset Memahami Mahasiswa FKIP', '2022-09-14', '2022-09-14', '08:00', '09:00', 'Ruang Dekanat FKIP Lt 7 dan Zoom Meeting', 'Rapat', '14_September_Riset_Memahami_Mahasiswa_FKIP_docx.pdf', 'WhatsApp_Image_2022-12-30_at_11_21_45.jpeg', NULL, 13, 'N', '2023-01-05'),
+(71, 37, 'Riset Memahami Karakteristik Mahasiswa FKIP', '2023-01-05', '2023-01-05', '00:00', '00:00', 'Dekanat FKIP Lt 7 dan Zoom ', 'Rapat', '23_September_2022_Riset_Memahami_MHS.pdf', 'Tidak ada file', NULL, 9, 'N', '2023-01-05'),
+(72, 37, 'Riset Memahami Mahasiswa FKIP', '2022-10-03', '2022-10-03', '09:00', '13:00', 'Dekanat FKIP ', 'Rapat', '3_Oktober_2022_Tim_Riset_Memahami_Mahasiswa_FKIP.pdf', 'WhatsApp_Image_2023-01-05_at_10_18_00.jpeg', NULL, 12, 'N', '2023-01-05'),
+(73, 37, 'Riset Memahami Mahasiswa FKIP', '2022-10-27', '2022-10-27', '09:00', '13:00', 'Dekanat FKIP dan Zoom Meeting', 'Rapat', '27_Oktober_2022_Tim_Riset_Memahami_MHS_FKIP.pdf', 'WhatsApp_Image_2022-10-03_at_09_31_18.jpeg', NULL, 11, 'N', '2023-01-05'),
+(74, 37, 'Riset Memahami Mahasiswa FKIP', '2022-11-22', '2022-11-22', '13:00', '15:00', 'Dekanat FKIP Lt 7 dan Zoom Meeting', 'Rapat', '22_November_2022_TIm_Riset_Memahami_MHS.pdf', 'Tidak ada file', NULL, 8, 'N', '2023-01-05'),
+(75, 37, 'Riset Memahami Mahasiswa FKIP', '2022-11-28', '2022-11-28', '13:00', '14:00', 'Dekanat LT 7 dan Zoom Meeting', 'Rapat', '28_November_2022_Tim_Riset_Memahami_MHS_FKIP.pdf', 'Tidak ada file', NULL, 11, 'N', '2023-01-05'),
+(76, 9, 'Koordinasi', '2023-01-05', '2023-01-05', '11:00', '13:00', 'Dekanat ', 'Rapat', 'IMG20230105130645.jpg', 'IMG20230105115939.jpg', NULL, 6, 'N', '2023-01-06'),
+(77, 17, 'Rapat Koordinasi Pelepasan Wisuda Mahasiswa FKIP Periode Januari 2023', '2023-01-05', '2023-01-05', '08:00', '10:00', 'Lab. Multimedia FKIP', 'Rapat', 'Pelepasan_Wisuda_FKIP_Periode_2023.pdf', 'WhatsApp_Image_2023-01-05_at_09_30_31.jpeg', NULL, 22, 'Y', '2023-01-06'),
+(78, 12, 'Forum Group Discussion Praktikum Fisika di Sekolah', '2023-01-07', '2023-01-07', '13:00', '15:00', 'Ruang virtual googemeeting', 'Workshop', 'NOTULEN_RAPAT_Materi_open_lab_(1).pdf', '146628383_428840055199176_5467687752449046729_n.jpg', NULL, 8, 'N', '2023-01-07'),
+(79, 23, 'Rapat promosi dengan MGMP Fisika MA se DIY dan MGMP IPA Kab. Magelang', '2023-01-06', '2023-01-06', '10:30', '11:20', 'Ruang Prodi S2 PFis ', 'Rapat', 'Tidak ada file', 'WhatsApp_Image_2023-01-06_at_11_17_11.jpeg', NULL, 3, 'N', '2023-01-06'),
+(80, 15, 'Pembahasan Permohonan Studi Lanjut S3 Dosen PBI', '2023-01-06', '2023-01-06', '09:00', '10:00', 'Zoom', 'Rapat', 'Undangan_Pembahasan_Permohonan_Studi_Lanjut S3 Dosen PBI.pdf', 'Tidak ada file', NULL, 19, 'Y', '2023-01-06'),
+(81, 9, 'Pisah sambut kaprodi lama dan kaprodi baru', '2023-01-06', '2023-01-06', '12:30', '16:00', 'Dekanat ', 'Rapat', 'Tidak ada file', 'IMG-20230107-WA0002.jpg', NULL, 18, 'N', '2023-01-06'),
+(82, 13, 'Rapat Pembagian Tugas Mengajar Semester Genap Tahun 2022 dan Serah Terima Jabatan Kaprodi', '2023-01-02', '2023-01-02', '13:00', '15:00', 'Warung Pohon Omah Sawah ', 'Rapat', 'Tidak ada file', 'Tidak ada file', NULL, 19, 'N', '2023-01-07'),
+(83, 10, 'Rapat Persiapan UAS GASAL 2022/2023', '2023-01-07', '2023-01-07', '13:00', '14:30', 'Daring', 'Rapat', '05-Undangan_Rapat_UAS_Gasal_2022.pdf', 'IMG-20230107-WA0006.jpg', NULL, 33, 'N', '2023-01-07'),
+(84, 32, 'TOT Pendamping Workshop Inkubasi Asisten Ahli ke Lektor', '2023-01-07', '2023-01-07', '08:30', '10:00', 'Dekanat ', 'Pelatihan', 'NOTULEN_TOT_07_01_23.pdf', 'IMG-20230107-WA0017.jpg', NULL, 10, 'Y', '2023-01-07'),
+(85, 11, 'Persiapan UAS Ganjil 2022/2023', '2023-01-06', '2023-01-06', '09:00', '11:00', 'Daring', 'Rapat', 'und-daftar_hadir-notulen.pdf', 'Rapat_1.jpeg', NULL, 16, 'N', '2023-01-09'),
+(86, 12, 'Rapat Persiapan UAS dan Evaluasi perkuliahan semester ganjil 2022/2023', '2023-01-16', '2023-01-16', '13:00', '14:00', 'Ruang virtual googlemeeting', 'Rapat', 'NOTULEN_RAPAT_UAS_2022_2023.pdf', 'foto_uas.png', NULL, 11, 'N', '2023-01-16'),
+(87, 37, 'Rapat Rutin Dekanat FKIP UAD', '2023-01-09', '2023-01-09', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_9_Januari_2023.pdf', 'WhatsApp_Image_2023-01-10_at_21_35_53.jpeg', NULL, 7, 'N', '2023-01-10'),
+(88, 22, 'Sosialisasi Perkuliahan Semester Gasal TA 2022/2023', '2022-09-19', '2022-09-19', '13:00', '15:00', 'Ruang 2.1.108', 'Pembinaan', 'Notulen,_19_September_2022.pdf', '19_September_2022.jpg', NULL, 7, 'N', '2023-01-11'),
+(89, 22, 'Rapat Kerja Prodi, TA 2022/2023', '2022-10-10', '2022-10-10', '09:00', '15:00', 'R. Sidang Kampus 2A', 'Rapat', 'Notulen_Rapat,_10_Oktober_2022.pdf', 'Tidak ada file', NULL, 9, 'N', '2023-01-11'),
+(90, 22, 'Rapat Evaluasi Perkuliahan dan Persiapan UAS Gasal TA 2022/2023', '2023-01-10', '2023-01-10', '13:00', '14:30', 'Daring', 'Rapat', 'Notulen_Rapat,_10_Januari_2023.pdf', '10_Januari_2023.jpg', NULL, 11, 'N', '2023-01-11'),
+(91, 13, 'APR Soal UAS Gasal Tahun Ajaran 2022/2023', '2023-01-11', '2023-01-11', '09:00', '10:15', 'Lab Teknologi Pembelajaran P Mat lt 5 Lab terpadu', 'Rapat', 'Tidak ada file', 'Foto_Rapat_APR_Soal_UAS_Gasal_2022_P_Mat.jpeg', NULL, 14, 'N', '2023-01-11'),
+(92, 21, 'Rapat Koordinasi Persiapan UAS Gasal 2022/2023', '2023-01-11', '2023-01-11', '13:00', '14:30', 'Ruang Rapat MPMAT', 'Rapat', 'NOTULEN_11_Januari_2023_Persiapan_UAS.pdf', 'WhatsApp_Image_2023-01-11_at_13_28_11.jpeg', NULL, 7, 'N', '2023-01-11'),
+(93, 17, 'Workshop Penyusunan Jurnal Psikopedagogia', '2023-01-06', '2023-01-06', '13:00', '17:00', 'Lab. BK', 'Workshop', 'Notulen_Workshop_Jurnal_Psikopedagogia.pdf', 'WhatsApp_Image_2023-01-12_at_08_55_15.jpeg', NULL, 7, 'N', '2023-01-12'),
+(94, 17, 'Rapat UAS & Lepas Sambut Kepala Laboratorium BK', '2023-01-09', '2023-01-09', '10:00', '12:00', 'R. 4.1.3.16', 'Rapat', 'rapat_UAS_lepas_sambut_kalab.pdf', 'WhatsApp_Image_2023-01-12_at_08_52_09.jpeg', NULL, 20, 'N', '2023-01-12'),
+(95, 15, 'Rapat Persiapan UAS, Pembagian Tugas Mengajar dan Serah Terima Kaprodi Tahun 2023', '2023-01-11', '2023-01-11', '09:30', '12:00', 'Lab. Multimedia FKIP UAD', 'Rapat', '11-01-2023_Notulensi_Rapat_Rutin_PBI.pdf', '11-01-2023_Rapat_Rutin.jpeg', NULL, 22, 'Y', '2023-01-12'),
+(96, 14, 'Rapat Evaluasi Perkuliahan dan Persiapan UAS Gasal 2022/2023', '2023-01-12', '2023-01-12', '13:00', '14:30', 'Daring', 'Rapat', 'Notulen_Rapat_Persiapan_UAS.pdf', 'Foto_Persiapan_UAS_Gasal_20222023.pdf', NULL, 18, 'N', '2023-01-13'),
+(97, 31, 'Rapat Perdana Koordinasi Tim Pendidikan dan Pembelajaran FKIP Universitas Ahmad Dahlan', '2023-01-12', '2023-01-12', '09:00', '10:00', 'SmartPhysics Classroom Pfis', 'Rapat', '12_Januari_2023_Koordinasi_Tim_Pembelajaran.pdf', 'Image.jpeg', NULL, 13, 'Y', '2023-01-13'),
+(98, 34, 'Koordinasi Akreditasi LAMDIK Program Studi S-2 Pendidikan Matematika', '2023-01-10', '2023-01-10', '09:00', '11:30', 'Lab. Multimedia FKIP UAD', 'Rapat', '10-1-2023_-_Koordinasi_Akred_s2_pmat.pdf', 'Koordinasi_akrditasi_s2_pmat.jpeg', NULL, 25, 'N', '2023-01-14'),
+(99, 15, 'Bimbingan akademik mahasiswa smt 1', '2023-01-14', '2023-01-14', '01:00', '00:00', 'Lab Bahasa', 'Pendampingan', 'Tidak ada file', 'Tidak ada file', NULL, 4, 'N', '2023-01-14'),
+(100, 34, 'Rapat Koordinasi Tim Kerja UPPS FKIP Universitas Ahmad Dahlan', '2023-01-11', '2023-01-11', '13:00', '14:30', 'Dekanat ', 'Rapat', '11-01-23_Notulen_Rapat_koordinasi_UPPS.pdf', 'upps_2.jpeg', NULL, 17, 'N', '2023-01-14'),
+(101, 15, 'Sarasehan mahasiswa dan dosen PBI UAD', '2023-01-15', '2023-01-15', '09:00', '12:00', 'Daring', 'Pembinaan', 'Tidak ada file', 'sarasehan_2023.jpg', NULL, 10, 'N', '2023-01-16'),
+(102, 25, 'Rapat Prodi', '2023-01-16', '2023-01-16', '01:00', '03:00', 'Daring', 'Rapat', 'Notulen_Rapat_16_Januari_2023.pdf', 'Tidak ada file', NULL, 9, 'N', '2023-01-17'),
+(103, 37, 'Rapat Rutin Dekanat', '2023-01-16', '2023-01-16', '16:00', '17:00', 'Dekanat FKIP Lnt.7 Kampus 4 UAD', 'Rapat', 'Hasil_Rapat_Dekanat_16_Januari_2023.pdf', 'WhatsApp_Image_2023-01-18_at_09_02_43.jpeg', NULL, 1, 'N', '2023-01-18'),
+(104, 19, 'Rapat Persiapan UAS Gasal 2022/2023', '2023-01-19', '2023-01-19', '08:00', '10:00', 'R.102 2B', 'Rapat', 'NOTULEN_RAPAT_PERSIAPAN_UAS_SEMESTER_GASAL_2022-2023_PVTE.pdf', 'WhatsApp_Image_2023-01-11_at_08_05_21.jpeg', NULL, 10, 'N', '2023-01-19'),
+(105, 40, 'tes senat', '2023-03-16', '2023-03-16', '01:00', '01:00', 'Daring', 'Rapat', 'Tidak ada file', 'Tidak ada file', 'Tidak ada file', 2, 'N', '2023-03-16');
 
 -- --------------------------------------------------------
 
@@ -1092,7 +1097,7 @@ CREATE TABLE `peserta` (
   `id_tamu` int(50) DEFAULT NULL,
   `id_lainya` int(50) DEFAULT NULL,
   `id_staf` int(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `peserta`
@@ -1933,7 +1938,9 @@ INSERT INTO `peserta` (`id_peserta`, `id_not_detail`, `id_anggota`, `id_asistens
 (869, 104, NULL, NULL, NULL, 332, NULL),
 (870, 104, NULL, NULL, NULL, 333, NULL),
 (871, 104, NULL, NULL, NULL, 334, NULL),
-(872, 104, NULL, NULL, NULL, 335, NULL);
+(872, 104, NULL, NULL, NULL, 335, NULL),
+(873, 105, 319, NULL, NULL, NULL, NULL),
+(874, 105, 320, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1943,8 +1950,8 @@ INSERT INTO `peserta` (`id_peserta`, `id_not_detail`, `id_anggota`, `id_asistens
 
 CREATE TABLE `staf` (
   `id_staf` int(50) NOT NULL COMMENT 'Primary Key',
-  `nama_staf` varchar(128) CHARACTER SET latin1 NOT NULL COMMENT 'Nama Staf'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nama_staf` varchar(128) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT 'Nama Staf'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staf`
@@ -2058,7 +2065,7 @@ ALTER TABLE `staf`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
 
 --
 -- AUTO_INCREMENT for table `asistensi`
@@ -2094,7 +2101,7 @@ ALTER TABLE `lainya`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -2106,19 +2113,19 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `notulen`
 --
 ALTER TABLE `notulen`
-  MODIFY `id_notulen` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_notulen` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `notulen_detail`
 --
 ALTER TABLE `notulen_detail`
-  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id_not_detail` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
-  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=873;
+  MODIFY `id_peserta` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=875;
 
 --
 -- AUTO_INCREMENT for table `staf`

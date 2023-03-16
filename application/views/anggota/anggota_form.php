@@ -119,6 +119,11 @@
 
                                         <input type="text" class="form-control" name="prodi" value="Laboratorium" readonly />
 
+                                    <?php } elseif ($this->session->level == 'Senat') {
+                                    ?>
+
+                                        <input type="text" class="form-control" name="prodi" value="Senat" readonly />
+
                                     <?php } elseif ($this->session->level == 'admin') { ?>
 
                                         <label class="col-sm-2 control-label no-padding-right"> <?php echo form_error('prodi') ?></label>
