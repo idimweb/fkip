@@ -412,7 +412,7 @@
 
          "use strict";
 
-         Morris.Line({
+         Morris.Bar({
              element: 'total',
              data: [
 
@@ -655,6 +655,7 @@
              pointSize: 3,
              fillOpacity: 0,
              pointStrokeColors: ['#00bbd9', '#ffb136', '#4a23ad'],
+             barColors: ['#00bbd9', '#ffb136'],
              behaveLikeLine: true,
              gridLineColor: '#e0e0e0',
              lineWidth: 1,
